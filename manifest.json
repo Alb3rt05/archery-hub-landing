@@ -1,0 +1,96 @@
+{
+  "esportataIl": "2026-10-12T15:27:09.560Z",
+  "landing": {
+    "id": "cmt9ujuwr0001vez0zox6q8fs",
+    "name": "CustomArchery - Mini sito piattaforma",
+    "displayName": "CustomArchery - Piattaforma per società di tiro con l’arco",
+    "slug": "customarchery",
+    "status": "ACTIVE",
+    "company": {
+      "id": "cmpph5b1e004v9jfe7rgqp6iq",
+      "name": "CustomArchery"
+    }
+  },
+  "steps": [
+    {
+      "file": "00-home.html",
+      "id": "cmt9ujuyn0003vez004lr0gcz",
+      "position": 0,
+      "name": "home",
+      "displayName": "CustomArchery | Piattaforma Archery Hub",
+      "stepPath": "home",
+      "htmlBytes": 12170,
+      "cssBytes": 17651
+    },
+    {
+      "file": "01-societa.html",
+      "id": "cmt9wp4ae0001veio1fob8zpa",
+      "position": 1,
+      "name": "societa",
+      "displayName": "CustomArchery | Per societa",
+      "stepPath": "societa",
+      "htmlBytes": 7205,
+      "cssBytes": 17651
+    },
+    {
+      "file": "02-arcieri.html",
+      "id": "cmt9wp4c20003veio57wqefwi",
+      "position": 2,
+      "name": "arcieri",
+      "displayName": "CustomArchery | Portale arcieri",
+      "stepPath": "arcieri",
+      "htmlBytes": 4614,
+      "cssBytes": 17583
+    },
+    {
+      "file": "03-moduli-fuori-uso.html",
+      "id": "cmt9wp4cz0005veio8il2spgs",
+      "position": 3,
+      "name": "moduli (fuori uso - stepPath rimosso 1 set 2026)",
+      "displayName": "CustomArchery | Moduli piattaforma",
+      "stepPath": null,
+      "htmlBytes": 4323,
+      "cssBytes": 17583
+    },
+    {
+      "file": "04-demo-fuori-uso.html",
+      "id": "cmt9wp4dx0007veiokvikxinq",
+      "position": 4,
+      "name": "demo (fuori uso - stepPath rimosso 1 set 2026)",
+      "displayName": "CustomArchery | Richiedi demo",
+      "stepPath": null,
+      "htmlBytes": 3892,
+      "cssBytes": 17583
+    },
+    {
+      "file": "05-tecnici.html",
+      "id": "cmtifo5tr0007ve1kwp08i6d9",
+      "position": 5,
+      "name": "tecnici",
+      "displayName": null,
+      "stepPath": "tecnici",
+      "htmlBytes": 5424,
+      "cssBytes": 17651
+    },
+    {
+      "file": "06-termini-e-condizioni.html",
+      "id": "cmtityl6c0000ve4of4buaq0p",
+      "position": 6,
+      "name": "termini-e-condizioni",
+      "displayName": null,
+      "stepPath": "termini-e-condizioni",
+      "htmlBytes": 54127,
+      "cssBytes": 18941
+    },
+    {
+      "file": "07-cookie-policy.html",
+      "id": "cmtityldc0001ve4o41qbs8bc",
+      "position": 7,
+      "name": "cookie-policy",
+      "displayName": null,
+      "stepPath": "cookie-policy",
+      "htmlBytes": 19729,
+      "cssBytes": 18941
+    }
+  ]
+}

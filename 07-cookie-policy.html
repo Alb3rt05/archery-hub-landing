@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cookie-policy</title>
+<style>
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ah-page {
+  --brand: #342877;
+  --brand-dark: #251c54;
+  --accent: #e00074;
+  --accent-dark: #a30055;
+  --accent-soft: #ff5cb8;
+  --ink: #1f1f1f;
+  --muted: #5e5e5e;
+  --bg: #ffffff;
+  --bg-alt: #f6f5fb;
+  --panel: #ffffff;
+  --line: #e3e1ec;
+  --blue: #1d4ed8;
+  --green: #1f9d57;
+  --shadow: 0 20px 60px rgba(37, 28, 84, 0.16);
+  --radius: 14px;
+  --maxw: 1180px;
+  min-height: 100vh;
+  overflow-x: clip;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: Lato, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.ah-shell {
+  width: min(100% - 40px, var(--maxw));
+  margin-inline: auto;
+}
+
+.ah-kicker {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.ah-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.ah-button:hover {
+  transform: translateY(-2px);
+}
+
+.ah-button--primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  box-shadow: 0 18px 38px rgba(224, 0, 116, 0.27);
+}
+
+.ah-button--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.ah-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ah-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  color: #fff;
+  background: rgba(37, 28, 84, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(16px);
+}
+
+.ah-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 74px;
+  gap: 24px;
+}
+
+.ah-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 900;
+}
+
+.ah-brand__mark {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 6px var(--accent), inset 0 0 0 13px #fff;
+  background: var(--brand);
+}
+
+.ah-brand__mark::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 36px;
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  transform: rotate(-14deg);
+}
+
+.ah-menu {
+  display: none;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  font: inherit;
+  font-weight: 800;
+}
+
+.ah-nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+}
+
+.ah-nav__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+}
+
+.ah-nav__links a:hover {
+  color: #fff;
+}
+
+.ah-nav__cta {
+  margin-left: 4px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--accent);
+}
+
+.ah-hero {
+  position: relative;
+  min-height: 88vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(37, 28, 84, 0.97), rgba(52, 40, 119, 0.9) 52%, rgba(163, 0, 85, 0.78)),
+    url("https://ichef.bbci.co.uk/news/976/cpsprodpb/0CDB/production/_119419230_312ac4f3-5b56-4d6c-9346-c94c3ee49e45.jpg") center / cover;
+}
+
+.ah-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.52fr);
+  gap: 48px;
+  align-items: end;
+  padding: 118px 0 72px;
+}
+
+.ah-hero h1,
+.ah-section h2 {
+  margin: 0;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.ah-hero h1 {
+  max-width: 900px;
+  font-size: clamp(3.4rem, 7vw, 6.8rem);
+}
+
+.ah-hero__copy > p:not(.ah-kicker) {
+  max-width: 700px;
+  margin: 24px 0 30px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.18rem;
+}
+
+.ah-product-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.ah-product-card__image {
+  min-height: 250px;
+  background:
+    linear-gradient(180deg, transparent, rgba(37, 28, 84, 0.38)),
+    url("https://www.sandwellresidentials.co.uk/_webedit/cached-images/128-0-556-0-8889-10000-1707.jpg") center / cover;
+}
+
+.ah-product-card__body {
+  padding: 24px;
+}
+
+.ah-product-card h2 {
+  margin: 12px 0 10px;
+  font-size: 1.55rem;
+  line-height: 1.12;
+}
+
+.ah-product-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.ah-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.ah-product-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ah-product-card__stats span {
+  min-height: 82px;
+  padding: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.86rem;
+}
+
+.ah-product-card__stats span:last-child {
+  border-right: 0;
+}
+
+.ah-product-card__stats strong {
+  display: block;
+  color: var(--accent-soft);
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.4rem;
+}
+
+.ah-section {
+  padding: 92px 0;
+}
+
+.ah-section__grid,
+.ah-dashboard-grid,
+.ah-video-grid,
+.ah-flow__grid,
+.ah-faq-grid,
+.ah-cta__box {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.52fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.ah-section__header {
+  max-width: 780px;
+  margin-bottom: 36px;
+}
+
+.ah-section h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+.ah-section__text,
+.ah-section p {
+  color: var(--muted);
+}
+
+.ah-workspace {
+  background: var(--bg-alt);
+}
+
+.ah-module-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.ah-module-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ah-module,
+.ah-feature,
+.ah-program,
+.ah-solution,
+.ah-dashboard {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 0 14px 38px rgba(37, 28, 84, 0.06);
+}
+
+.ah-module {
+  min-height: 260px;
+  padding: 26px;
+}
+
+.ah-module span,
+.ah-program span,
+.ah-solution span {
+  color: var(--accent);
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 900;
+}
+
+.ah-module h3,
+.ah-feature h3,
+.ah-program h3,
+.ah-flow-step h3 {
+  margin: 16px 0 8px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+
+.ah-module p,
+.ah-feature p,
+.ah-program p,
+.ah-flow-step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.ah-feature-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.ah-feature {
+  min-height: 250px;
+  padding: 26px;
+}
+
+.ah-feature--large {
+  grid-column: span 2;
+  grid-row: span 2;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(52, 40, 119, 0.94), rgba(224, 0, 116, 0.78)),
+    url("https://gdb.voanews.com/5157767E-EF76-4E7D-BFAA-6F4C9DFB74E5_w1080_h608.jpg") center / cover;
+}
+
+.ah-feature--large h3 {
+  max-width: 420px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.ah-feature--large p {
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ah-flow,
+.ah-video-band,
+.ah-cta {
+  color: #fff;
+  background: var(--brand-dark);
+}
+
+.ah-flow .ah-kicker,
+.ah-video-band .ah-kicker,
+.ah-cta .ah-kicker {
+  color: var(--accent-soft);
+}
+
+.ah-flow p,
+.ah-video-band p,
+.ah-cta p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.ah-flow__steps {
+  display: grid;
+  gap: 14px;
+}
+
+.ah-flow-step {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.ah-flow-step b {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--accent);
+}
+
+.ah-flow-step h3 {
+  color: #fff;
+  margin-top: 0;
+}
+
+.ah-dashboard-band {
+  background: linear-gradient(180deg, var(--bg-alt), #fff);
+}
+
+.ah-dashboard-grid {
+  align-items: center;
+}
+
+.ah-dashboard {
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.ah-dashboard__top {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  background: var(--brand);
+}
+
+.ah-dashboard__top span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.ah-dashboard__body {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  min-height: 360px;
+}
+
+.ah-dashboard aside {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 22px;
+  color: #fff;
+  background: var(--brand-dark);
+}
+
+.ah-dashboard aside strong {
+  margin-bottom: 12px;
+  font-family: Montserrat, system-ui, sans-serif;
+}
+
+.ah-dashboard aside a {
+  min-height: 38px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.ah-dashboard__body section {
+  display: grid;
+  place-items: center;
+  gap: 22px;
+  padding: 28px;
+  background: #fff;
+}
+
+.ah-target {
+  position: relative;
+  width: min(250px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 0 24px #e7ebf3,
+    0 0 0 48px var(--blue),
+    0 0 0 72px #d23b3b,
+    0 0 0 96px var(--accent);
+}
+
+.ah-target i {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-dark);
+}
+
+.ah-target i:nth-child(1) { top: 42%; left: 48%; }
+.ah-target i:nth-child(2) { top: 50%; left: 54%; }
+.ah-target i:nth-child(3) { top: 47%; left: 42%; }
+.ah-target i:nth-child(4) { top: 56%; left: 49%; }
+
+.ah-dashboard__rows {
+  display: grid;
+  width: min(100%, 420px);
+  gap: 10px;
+}
+
+.ah-dashboard__rows span {
+  height: 12px;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.ah-dashboard__rows span:nth-child(2) {
+  width: 78%;
+}
+
+.ah-dashboard__rows span:nth-child(3) {
+  width: 58%;
+}
+
+.ah-programs {
+  background: var(--bg-alt);
+}
+
+.ah-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ah-program {
+  overflow: hidden;
+}
+
+.ah-program img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.ah-program div {
+  padding: 24px;
+}
+
+.ah-program h3 {
+  margin-top: 8px;
+  font-size: 1.35rem;
+}
+
+.ah-video-grid {
+  grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.38fr);
+  align-items: center;
+}
+
+.ah-video {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.ah-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.ah-solution-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ah-solution {
+  display: grid;
+  gap: 8px;
+  min-height: 168px;
+  padding: 24px;
+}
+
+.ah-solution strong {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.3rem;
+}
+
+.ah-solution em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+.ah-faq {
+  background: var(--bg-alt);
+}
+
+.ah-faq-grid {
+  grid-template-columns: minmax(260px, 0.48fr) 1fr;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+}
+
+summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 68px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 800;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--accent);
+}
+
+details[open] summary::after {
+  content: "-";
+}
+
+details p {
+  margin: 0;
+  padding: 0 54px 24px 0;
+}
+
+.ah-cta__box {
+  align-items: center;
+}
+
+.ah-footer {
+  padding: 34px 0;
+  color: rgba(255, 255, 255, 0.72);
+  background: #14182b;
+}
+
+.ah-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.ah-footer strong {
+  color: #fff;
+  font-family: Montserrat, system-ui, sans-serif;
+}
+
+.ah-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.ah-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ah-reveal,
+  .ah-button {
+    transition: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .ah-shell {
+    width: min(100% - 28px, var(--maxw));
+  }
+
+  .ah-nav__inner {
+    min-height: auto;
+    padding: 12px 0;
+  }
+
+  .ah-menu {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .ah-nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 10px 14px 16px;
+    background: rgba(37, 28, 84, 0.97);
+  }
+
+  .ah-nav.is-open .ah-nav__links {
+    display: grid;
+  }
+
+  .ah-nav__links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ah-hero__grid,
+  .ah-section__grid,
+  .ah-dashboard-grid,
+  .ah-video-grid,
+  .ah-flow__grid,
+  .ah-faq-grid,
+  .ah-cta__box {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-hero {
+    min-height: auto;
+  }
+
+  .ah-hero__grid {
+    padding: 78px 0 54px;
+  }
+
+  .ah-module-grid,
+  .ah-program-grid,
+  .ah-solution-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ah-feature-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ah-hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .ah-section {
+    padding: 68px 0;
+  }
+
+  .ah-module-grid,
+  .ah-program-grid,
+  .ah-solution-list,
+  .ah-feature-board {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-feature--large {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .ah-product-card__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-product-card__stats span {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .ah-product-card__stats span:last-child {
+    border-bottom: 0;
+  }
+
+  .ah-dashboard__body {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-dashboard aside {
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: auto;
+  }
+
+  .ah-dashboard aside strong {
+    grid-column: 1 / -1;
+  }
+}
+
+
+.ah-brand__logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 4px;
+}
+
+.ah-reveal,
+.ah-reveal.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.ah-nav__links [aria-current="page"] {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.ah-platform-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  font-weight: 900;
+}
+
+/* CustomArchery hero layout tuning — foto in alto, testo sotto, meno distanza dalla nav */
+.ah-hero {
+  min-height: 0;
+  align-items: stretch;
+}
+
+.ah-hero__grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 36px;
+  padding: 56px 0 64px;
+}
+
+.ah-product-card {
+  order: 1;
+  width: min(100%, 640px);
+  justify-self: center;
+}
+
+.ah-product-card__image {
+  min-height: 260px;
+}
+
+.ah-product-card h2 {
+  font-size: clamp(1.18rem, 1.55vw, 1.45rem);
+}
+
+.ah-hero__copy {
+  order: 2;
+  min-width: 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+.ah-hero__copy .ah-actions {
+  justify-content: center;
+}
+
+.ah-hero h1 {
+  max-width: 720px;
+  font-size: clamp(2.75rem, 4.2vw, 4.6rem);
+  line-height: 1.06;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.ah-hero__copy > p:not(.ah-kicker) {
+  max-width: 600px;
+  margin: 20px auto 28px;
+  font-size: 1.08rem;
+}
+
+/* Badge QR "Iscriviti da mobile" */
+.ah-hero-qr {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto 0;
+  padding: 6px 16px 6px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-align: left;
+  opacity: 0.85;
+  transition: opacity 180ms ease;
+}
+
+.ah-hero-qr:hover {
+  opacity: 1;
+}
+
+.ah-hero-qr__code {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ah-hero-qr__code svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ah-hero-qr__text strong {
+  display: block;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 0.76rem;
+  color: #fff;
+}
+
+.ah-hero-qr__text span {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.7rem;
+}
+
+@media (max-width: 980px) {
+  .ah-hero-qr {
+    display: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .ah-hero__grid {
+    gap: 26px;
+    padding: 36px 0 44px;
+  }
+
+  .ah-product-card {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ah-hero__grid {
+    padding: 26px 0 36px;
+  }
+
+  .ah-hero h1 {
+    font-size: clamp(2.1rem, 9vw, 3.1rem);
+  }
+
+  .ah-hero-qr {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.ah-footer__inner {
+  align-items: flex-start;
+}
+
+.ah-footer__brand {
+  display: grid;
+  gap: 4px;
+}
+
+.ah-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ah-footer__legal a:hover {
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .ah-footer__inner {
+    flex-direction: column;
+  }
+}
+
+.ah-legal {
+  padding: 56px 0 96px;
+}
+
+.ah-legal .ah-shell {
+  max-width: 760px;
+}
+
+.ah-legal__back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ah-legal h1 {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0 0 10px;
+  color: var(--brand-dark);
+}
+
+.ah-legal__meta {
+  color: var(--muted);
+  margin: 0 0 40px;
+  font-size: 0.92rem;
+}
+
+.ah-legal h2 {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.22rem;
+  margin: 38px 0 14px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  color: var(--brand-dark);
+}
+
+.ah-legal h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.ah-legal p,
+.ah-legal li {
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.ah-legal p {
+  margin: 0 0 16px;
+}
+
+.ah-legal ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.ah-legal li {
+  margin-bottom: 8px;
+}
+
+.ah-legal a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.ah-legal strong {
+  color: var(--brand-dark);
+}
+
+.ah-legal table {
+  width: 100%;
+  margin: 0 0 20px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.ah-legal th,
+.ah-legal td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+</style>
+</head>
+<body>
+<main class="ah-page" id="top">
+<nav class="ah-nav" data-afai-block="hero-section" data-gjs-name="Navigazione">
+  <div class="ah-shell ah-nav__inner">
+    <a class="ah-brand" href="./home" aria-label="CustomArchery">
+      <img class="ah-brand__logo" src="/api/public/company/cmpph5b1e004v9jfe7rgqp6iq/logo" alt="CustomArchery" />
+      <span>CustomArchery</span>
+    </a>
+    <button class="ah-menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <div class="ah-nav__links" id="site-menu">
+      <a href="./home">Home</a>
+      <a href="./societa">Società</a>
+      <a href="./arcieri">Arcieri</a>
+      <a href="./tecnici">Tecnici</a>
+      <a class="ah-nav__cta" href="https://archeryhub.it/login" target="_blank" rel="noopener">Accedi</a>
+    </div>
+  </div>
+</nav>
+<script>
+(function () {
+  if (window.__ahNavMenuBound) return;
+  window.__ahNavMenuBound = true;
+  document.addEventListener("click", function (e) {
+    var menuBtn = e.target.closest(".ah-menu");
+    if (menuBtn) {
+      var nav = menuBtn.closest(".ah-nav");
+      if (!nav) return;
+      var open = nav.classList.toggle("is-open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      return;
+    }
+    var navLink = e.target.closest(".ah-nav__links a");
+    if (navLink) {
+      var nav2 = navLink.closest(".ah-nav");
+      if (nav2) {
+        nav2.classList.remove("is-open");
+        var btn2 = nav2.querySelector(".ah-menu");
+        if (btn2) btn2.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+})();
+</script>
+<section class="ah-section ah-legal" data-afai-block="features-section" data-gjs-name="INFORMATIVA SULL'USO DEI COOKIE E DEGLI ALTRI STRUMENTI DI TRACCIAMENTO">
+  <div class="ah-shell">
+    <a class="ah-legal__back" href="./home">&larr; Torna alla struttura</a>
+    <h1>INFORMATIVA SULL'USO DEI COOKIE E DEGLI ALTRI STRUMENTI DI TRACCIAMENTO</h1>
+    <p class="ah-legal__meta">Documento fornito da AMT di Francesco Toso, titolare del portale Archery Hub — pubblicato qui integralmente per trasparenza verso i visitatori del mini sito CustomArchery.</p>
+    <p><strong>Portale Archery Hub</strong></p><p><a href="https://www.archeryhub.it">www.archeryhub.it</a> e <a href="https://www.archeryhub.eu">www.archeryhub.eu</a></p><p>Ultimo aggiornamento: 6 agosto 2026</p><h2>1. Oggetto e quadro normativo</h2><p>La presente informativa illustra le modalità con cui AMT di Francesco Toso, quale titolare del trattamento, impiega i cookie e gli altri strumenti di tracciamento sul sito vetrina e nell'area riservata del portale Archery Hub, accessibili agli indirizzi <a href="https://www.archeryhub.it">www.archeryhub.it</a> e <a href="https://www.archeryhub.eu">www.archeryhub.eu</a>.</p><p>La disciplina applicabile è costituita dall'articolo 122 del Decreto Legislativo 30 giugno 2003, n. 196, recante il Codice in materia di protezione dei dati personali, disposizione che dà attuazione all'articolo 5, paragrafo 3, della Direttiva 2002/58/CE, e dal Regolamento (UE) 2016/679. Il quadro è completato dalle Linee guida cookie e altri strumenti di tracciamento adottate dal Garante per la protezione dei dati personali con provvedimento del 10 giugno 2021, n. 231, pubblicate nella Gazzetta Ufficiale del 9 luglio 2021, nonché dalle Linee guida 2/2023 del Comitato europeo per la protezione dei dati sull'ambito di applicazione dell'articolo 5, paragrafo 3, della Direttiva 2002/58/CE, adottate il 7 ottobre 2024.</p><p>Il documento integra l'Informativa sul trattamento dei dati personali, alla quale si rinvia per ogni aspetto non espressamente disciplinato, e in particolare per l'individuazione dei diritti dell'interessato e delle modalità del loro esercizio.</p><h2>2. Nozione di cookie e di strumento di tracciamento</h2><p>I cookie sono stringhe di testo di ridotte dimensioni che un sito web invia al terminale dell'utente, dove vengono memorizzate per essere ritrasmesse al medesimo sito nelle visite successive. La nozione rilevante ai fini della normativa richiamata non si esaurisce peraltro nei soli cookie, ma comprende ogni tecnica che consenta di archiviare informazioni nel terminale dell'utente ovvero di accedere a informazioni ivi già archiviate.</p><p>Rientrano pertanto nell'ambito di applicazione della presente informativa gli identificativi memorizzati nel local storage e nel session storage del browser, i pixel invisibili, gli script di rilevazione, le tecniche di identificazione basate sulle caratteristiche del terminale, e ogni altro strumento funzionalmente assimilabile.</p><p>Il Comitato europeo per la protezione dei dati, nelle Linee guida sopra richiamate, ha confermato l'estensione della disciplina a tali tecniche, indipendentemente dalla denominazione tecnica adottata e dalla circostanza che le informazioni trattate abbiano o meno natura di dato personale.</p><h2>3. Classificazione adottata</h2><h2>3.1 Cookie tecnici</h2><p>Sono qualificati come tecnici i cookie utilizzati al solo fine di effettuare la trasmissione di una comunicazione su una rete di comunicazione elettronica, ovvero nella misura strettamente necessaria al fornitore di un servizio della società dell'informazione esplicitamente richiesto dall'utente a erogare tale servizio.</p><p>L'installazione di tali strumenti non richiede il consenso dell'interessato, in forza dell'esenzione prevista dall'articolo 122, comma 1, secondo periodo, del Codice Privacy. Permane peraltro l'obbligo di rendere l'informativa, assolto mediante il presente documento.</p><p>Il Portale impiega le seguenti sottocategorie di cookie tecnici:</p><ul><li><strong>Cookie di sessione</strong>: mantengono attiva la sessione autenticata dell'utente durante la navigazione nell'area riservata, evitando la reiterazione delle credenziali a ogni pagina.</li><li><strong>Cookie di autenticazione persistente</strong>: consentono, previa opzione esercitata dall'utente in fase di accesso, di mantenere il riconoscimento del dispositivo per un periodo determinato.</li><li><strong>Cookie di sicurezza</strong>: prevengono le richieste fraudolente di tipo cross-site request forgery e concorrono alla rilevazione dei tentativi di accesso non autorizzato.</li><li><strong>Cookie di bilanciamento del carico</strong>: assicurano la corretta distribuzione delle richieste fra i server che erogano il servizio.</li><li><strong>Cookie di preferenza</strong>: memorizzano le impostazioni selezionate dall'utente, quali la lingua dell'interfaccia e le opzioni di visualizzazione.</li><li><strong>Cookie di registrazione del consenso</strong>: conservano l'esito delle scelte espresse mediante il banner, in modo da non riproporre la richiesta a ogni visita.</li></ul><h2>3.2 Cookie analitici</h2><p>I cookie analitici rilevano informazioni sul modo in cui gli utenti utilizzano il sito, quali le pagine consultate, il tempo di permanenza, e i percorsi di navigazione.</p><p>Il Garante ha chiarito che i cookie analitici possono essere assimilati ai cookie tecnici, e installati pertanto in assenza di consenso, unicamente quando ricorrano congiuntamente determinate condizioni: l'utilizzo per la produzione di statistiche aggregate riferite a un singolo sito o a una singola applicazione, la riduzione della capacità identificativa mediante mascheramento di almeno la quarta componente dell'indirizzo IP, e l'assenza di combinazione con altre elaborazioni ovvero di trasmissione a terzi.</p><p><strong>Stato attuale.</strong> Alla data indicata in apertura il Portale non impiega cookie analitici di terza parte. Le statistiche di utilizzo sono ricavate dai registri del server secondo quanto descritto nell'Informativa sul trattamento dei dati personali, senza installazione di alcuno strumento sul terminale dell'utente.</p><p>L'eventuale futura attivazione di strumenti analitici comporterà l'aggiornamento della presente informativa e, ove non ricorrano le condizioni di assimilazione sopra richiamate, la subordinazione dell'installazione al consenso dell'interessato.</p><h2>3.3 Cookie di profilazione e di marketing</h2><p>I cookie di profilazione sono volti alla creazione di profili relativi all'utente e all'invio di messaggi pubblicitari in linea con le preferenze manifestate nel corso della navigazione. La loro installazione richiede sempre il consenso preventivo, libero, specifico, e informato dell'interessato.</p><p><strong>Stato attuale.</strong> Il Portale non installa cookie di profilazione, né consente a terzi di installarne attraverso le proprie pagine. Le inserzioni pubblicitarie descritte nell'Informativa sul trattamento dei dati personali sono selezionate all'interno dell'area riservata sulla base dei dati che l'arciere abbia volontariamente inserito nel proprio profilo, previo consenso specifico, senza ricorso a strumenti di tracciamento installati sul terminale.</p><h2>3.4 Cookie di terza parte</h2><p>I cookie di terza parte sono installati da soggetti diversi dal gestore del sito visitato, i quali operano quali autonomi titolari del trattamento per le finalità da essi determinate.</p><p>Il Portale ricorre a componenti di terza parte nei soli casi di seguito indicati:</p><ul><li><strong>Prestatore di servizi di pagamento</strong>: la procedura di pagamento degli abbonamenti e degli acquisti nell'area corsi è erogata da un prestatore autorizzato, che installa cookie strettamente necessari all'esecuzione della transazione e alla prevenzione delle frodi. Gli strumenti sono attivati unicamente all'avvio della procedura di pagamento e sono qualificabili come tecnici.</li><li><strong>Fornitore di infrastruttura cloud</strong>: i servizi di erogazione dei contenuti possono comportare l'impiego di cookie tecnici funzionali alla sicurezza e alla stabilità della connessione.</li></ul><p>Sui trattamenti eseguiti dai soggetti terzi nell'esercizio della propria titolarità autonoma AMT non esercita alcun controllo. Le relative informative sono consultabili sui siti dei rispettivi fornitori, i cui riferimenti sono resi disponibili nel pannello di gestione delle preferenze.</p><h2>4. Prospetto degli strumenti impiegati</h2><table><tr><td><p><strong>Denominazione</strong></p></td><td><p><strong>Tipologia</strong></p></td><td><p><strong>Titolarità</strong></p></td><td><p><strong>Finalità</strong></p></td><td><p><strong>Durata</strong></p></td></tr><tr><td><p>Identificativo di sessione</p></td><td><p>Tecnico</p></td><td><p>Prima parte</p></td><td><p>Mantenimento della sessione autenticata</p></td><td><p>Sessione</p></td></tr><tr><td><p>Token di autenticazione</p></td><td><p>Tecnico</p></td><td><p>Prima parte</p></td><td><p>Riconoscimento del dispositivo su opzione dell'utente</p></td><td><p>30 giorni</p></td></tr><tr><td><p>Token anti-contraffazione</p></td><td><p>Tecnico</p></td><td><p>Prima parte</p></td><td><p>Protezione dalle richieste fraudolente</p></td><td><p>Sessione</p></td></tr><tr><td><p>Preferenze di interfaccia</p></td><td><p>Tecnico</p></td><td><p>Prima parte</p></td><td><p>Memorizzazione di lingua e impostazioni</p></td><td><p>12 mesi</p></td></tr><tr><td><p>Registrazione del consenso</p></td><td><p>Tecnico</p></td><td><p>Prima parte</p></td><td><p>Conservazione delle scelte espresse nel banner</p></td><td><p>6 mesi</p></td></tr><tr><td><p>Cookie del prestatore di pagamento</p></td><td><p>Tecnico</p></td><td><p>Terza parte</p></td><td><p>Esecuzione della transazione e antifrode</p></td><td><p>Secondo il fornitore</p></td></tr></table><p>Il prospetto è aggiornato alla data indicata in apertura. L'elenco puntuale e sempre attuale, comprensivo delle denominazioni tecniche esatte, è consultabile nel pannello di gestione delle preferenze accessibile dal piè di pagina di ogni pagina del sito.</p><h2>5. Banner di prima informativa</h2><p>All'atto del primo accesso al sito è mostrata all'utente una finestra di dimensioni contenute, sovrapposta al contenuto della pagina, conforme alle prescrizioni delle Linee guida del Garante sopra richiamate.</p><p>Il banner presenta le seguenti caratteristiche:</p><ul><li><strong>Comando di chiusura</strong>: una X collocata in alto a destra consente la chiusura del banner senza prestare alcun consenso, con conseguente installazione dei soli cookie tecnici.</li><li><strong>Comando di accettazione</strong>: un pulsante consente di prestare il consenso a tutti gli strumenti che lo richiedano.</li><li><strong>Comando di personalizzazione</strong>: un collegamento apre il pannello che consente la selezione granulare per singola categoria.</li><li><strong>Informativa sintetica</strong>: il testo indica che il sito impiega cookie tecnici e, ove attivati, strumenti ulteriori, con rinvio alla presente informativa estesa.</li><li><strong>Assenza di consensi preimpostati</strong>: le opzioni relative agli strumenti non necessari sono presentate disattivate, e nessuna selezione risulta valorizzata in senso affermativo prima dell'intervento dell'utente.</li></ul><p><strong>Comportamenti che non integrano consenso.</strong> Lo scorrimento della pagina, la prosecuzione della navigazione, e la chiusura del banner mediante il comando di chiusura non costituiscono manifestazione di consenso. La pratica del cosiddetto scroll down quale meccanismo di acquisizione del consenso è stata espressamente censurata dal Garante nelle Linee guida richiamate.</p><p><strong>Divieto di cookie wall.</strong> L'accesso ai contenuti del sito non è in alcun modo subordinato alla prestazione del consenso all'installazione di strumenti non necessari.</p><h2>6. Riproposizione della richiesta</h2><p>La richiesta di consenso non è riproposta all'utente che l'abbia già riscontrata, salvo che ricorra una delle seguenti circostanze: mutamento significativo delle condizioni del trattamento, impossibilità di conoscere la scelta precedentemente espressa a causa della cancellazione dei cookie da parte dell'utente, ovvero decorso di almeno sei mesi dalla precedente presentazione.</p><p>Il criterio temporale recepisce l'indicazione contenuta nelle Linee guida del Garante, che individua nel termine semestrale la periodicità minima al di sotto della quale la reiterazione della richiesta assume carattere vessatorio.</p><h2>7. Revoca del consenso e gestione delle preferenze</h2><p>Il consenso può essere revocato in qualsiasi momento, con la medesima agevolezza con la quale è stato prestato.</p><p><strong>Pannello di gestione.</strong> Un collegamento permanente, collocato nel piè di pagina di ogni pagina del sito e denominato "Preferenze cookie", consente in ogni momento di riaprire il pannello, di modificare le scelte espresse per singola categoria, e di revocare i consensi precedentemente prestati.</p><p><strong>Impostazioni del browser.</strong> L'utente può altresì configurare il proprio programma di navigazione in modo da rifiutare l'installazione dei cookie, da cancellare quelli già memorizzati, ovvero da ricevere un avviso preventivo. Le istruzioni sono reperibili nella documentazione dei principali browser:</p><ul><li><strong>Google Chrome</strong>: le istruzioni sono pubblicate alla pagina <a href="https://support.google.com/chrome/answer/95647">https://support.google.com/chrome/answer/95647</a> del centro assistenza.</li><li><strong>Mozilla Firefox</strong>: le istruzioni sono pubblicate alla pagina <a href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox-desktop">https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox-desktop</a> del centro assistenza.</li><li><strong>Microsoft Edge</strong>: le istruzioni sono pubblicate alla pagina <a href="https://support.microsoft.com/it-it/microsoft-edge">https://support.microsoft.com/it-it/microsoft-edge</a> del centro assistenza.</li><li><strong>Apple Safari</strong>: le istruzioni sono pubblicate alla pagina <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac">https://support.apple.com/it-it/guide/safari/sfri11471/mac</a> della guida utente.</li></ul><p>La disabilitazione dei cookie tecnici compromette il funzionamento dell'area riservata e può impedire il completamento della procedura di autenticazione.</p><h2>8. Pixel di tracciamento nelle comunicazioni di posta elettronica</h2><p>Il Garante per la protezione dei dati personali ha adottato, con provvedimento del 17 aprile 2026, n. 284, le Linee guida in materia di utilizzo di tracking pixel nelle comunicazioni di posta elettronica, pubblicate nella Gazzetta Ufficiale, Serie Generale, n. 98 del 29 aprile 2026. Il termine di adeguamento è fissato in sei mesi decorrenti dalla pubblicazione.</p><p>Il provvedimento qualifica i pixel di tracciamento come strumenti particolarmente invasivi, in ragione del loro funzionamento occulto, e ne subordina l'impiego al consenso dell'interessato, salve limitate eccezioni riferite alle esigenze di sicurezza e alle comunicazioni istituzionali obbligatorie. È inoltre richiesto che la revoca del consenso possa essere esercitata in forma granulare, distintamente rispetto alla revoca dell'iscrizione al servizio di comunicazione.</p><p><strong>Stato attuale.</strong> AMT non inserisce pixel di tracciamento nelle comunicazioni di posta elettronica inviate agli utenti del Portale. Le comunicazioni di servizio e quelle promozionali non contengono elementi volti a rilevare l'apertura del messaggio o l'interazione con il medesimo.</p><p>Qualora tali strumenti fossero introdotti, la presente informativa sarà aggiornata e l'impiego avverrà nel rispetto integrale delle prescrizioni del provvedimento richiamato, ivi compresa l'adozione di identificativi non sequenziali e separati dall'indirizzo di posta elettronica del destinatario.</p><h2>9. Titolare del trattamento e contatti</h2><p><strong>AMT di Francesco Toso</strong></p><p>Via San Pietro 60, 20033 Solaro (MI), Italia</p><p>Codice fiscale: TSOFNC80B22C933Z</p><p>Partita IVA: 13333860966</p><p>Posta elettronica: <a href="mailto:info@archeryhub.it">info@archeryhub.it</a></p><p>Le istanze relative all'esercizio dei diritti riconosciuti dagli articoli da 15 a 22 del Regolamento (UE) 2016/679 possono essere indirizzate al recapito sopra indicato, secondo le modalità descritte nell'Informativa sul trattamento dei dati personali.</p><p>L'interessato ha diritto di proporre reclamo al Garante per la protezione dei dati personali, con sede in Piazza Venezia 11, 00187 Roma, posta elettronica <a href="mailto:protocollo@gpdp.it">protocollo@gpdp.it</a>, sito istituzionale <a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>.</p><h2>10. Aggiornamenti</h2><p>La presente informativa è soggetta a revisione in occasione di ogni modifica degli strumenti impiegati, nonché a seguito di sopravvenienze normative o di indicazioni delle autorità di controllo.</p><p>Ogni revisione comporta l'aggiornamento della data riportata in apertura. L'introduzione di strumenti che richiedano il consenso determina la nuova sottoposizione del banner agli utenti, indipendentemente dalle scelte in precedenza espresse.</p><p>*  *  *</p><p>Documento aggiornato al 6 agosto 2026</p><p>AMT di Francesco Toso</p>
+  </div>
+</section>
+<footer class="ah-footer" data-afai-block="footer-section" data-gjs-name="Footer">
+  <div class="ah-shell ah-footer__inner" data-afai-block="features-section" data-gjs-name="Sezione Features">
+    <div class="ah-footer__brand"><strong>CustomArchery</strong><span>La piattaforma per società, istruttori e arcieri.</span></div>
+    <nav class="ah-footer__legal" aria-label="Informazioni legali">
+      <a href="https://archeryhub.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="./termini-e-condizioni">Termini e Condizioni</a>
+      <a href="./cookie-policy">Cookie Policy</a>
+    </nav>
+  </div>
+</footer>
+</main>
+</body>
+</html>

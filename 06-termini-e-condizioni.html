@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>termini-e-condizioni</title>
+<style>
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ah-page {
+  --brand: #342877;
+  --brand-dark: #251c54;
+  --accent: #e00074;
+  --accent-dark: #a30055;
+  --accent-soft: #ff5cb8;
+  --ink: #1f1f1f;
+  --muted: #5e5e5e;
+  --bg: #ffffff;
+  --bg-alt: #f6f5fb;
+  --panel: #ffffff;
+  --line: #e3e1ec;
+  --blue: #1d4ed8;
+  --green: #1f9d57;
+  --shadow: 0 20px 60px rgba(37, 28, 84, 0.16);
+  --radius: 14px;
+  --maxw: 1180px;
+  min-height: 100vh;
+  overflow-x: clip;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: Lato, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.ah-shell {
+  width: min(100% - 40px, var(--maxw));
+  margin-inline: auto;
+}
+
+.ah-kicker {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.ah-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.ah-button:hover {
+  transform: translateY(-2px);
+}
+
+.ah-button--primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  box-shadow: 0 18px 38px rgba(224, 0, 116, 0.27);
+}
+
+.ah-button--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.ah-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ah-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  color: #fff;
+  background: rgba(37, 28, 84, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(16px);
+}
+
+.ah-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 74px;
+  gap: 24px;
+}
+
+.ah-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 900;
+}
+
+.ah-brand__mark {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 6px var(--accent), inset 0 0 0 13px #fff;
+  background: var(--brand);
+}
+
+.ah-brand__mark::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 36px;
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  transform: rotate(-14deg);
+}
+
+.ah-menu {
+  display: none;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  font: inherit;
+  font-weight: 800;
+}
+
+.ah-nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+}
+
+.ah-nav__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+}
+
+.ah-nav__links a:hover {
+  color: #fff;
+}
+
+.ah-nav__cta {
+  margin-left: 4px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--accent);
+}
+
+.ah-hero {
+  position: relative;
+  min-height: 88vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(37, 28, 84, 0.97), rgba(52, 40, 119, 0.9) 52%, rgba(163, 0, 85, 0.78)),
+    url("https://ichef.bbci.co.uk/news/976/cpsprodpb/0CDB/production/_119419230_312ac4f3-5b56-4d6c-9346-c94c3ee49e45.jpg") center / cover;
+}
+
+.ah-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.52fr);
+  gap: 48px;
+  align-items: end;
+  padding: 118px 0 72px;
+}
+
+.ah-hero h1,
+.ah-section h2 {
+  margin: 0;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.ah-hero h1 {
+  max-width: 900px;
+  font-size: clamp(3.4rem, 7vw, 6.8rem);
+}
+
+.ah-hero__copy > p:not(.ah-kicker) {
+  max-width: 700px;
+  margin: 24px 0 30px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.18rem;
+}
+
+.ah-product-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.ah-product-card__image {
+  min-height: 250px;
+  background:
+    linear-gradient(180deg, transparent, rgba(37, 28, 84, 0.38)),
+    url("https://www.sandwellresidentials.co.uk/_webedit/cached-images/128-0-556-0-8889-10000-1707.jpg") center / cover;
+}
+
+.ah-product-card__body {
+  padding: 24px;
+}
+
+.ah-product-card h2 {
+  margin: 12px 0 10px;
+  font-size: 1.55rem;
+  line-height: 1.12;
+}
+
+.ah-product-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.ah-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.ah-product-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ah-product-card__stats span {
+  min-height: 82px;
+  padding: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.86rem;
+}
+
+.ah-product-card__stats span:last-child {
+  border-right: 0;
+}
+
+.ah-product-card__stats strong {
+  display: block;
+  color: var(--accent-soft);
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.4rem;
+}
+
+.ah-section {
+  padding: 92px 0;
+}
+
+.ah-section__grid,
+.ah-dashboard-grid,
+.ah-video-grid,
+.ah-flow__grid,
+.ah-faq-grid,
+.ah-cta__box {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.52fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.ah-section__header {
+  max-width: 780px;
+  margin-bottom: 36px;
+}
+
+.ah-section h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+.ah-section__text,
+.ah-section p {
+  color: var(--muted);
+}
+
+.ah-workspace {
+  background: var(--bg-alt);
+}
+
+.ah-module-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.ah-module-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ah-module,
+.ah-feature,
+.ah-program,
+.ah-solution,
+.ah-dashboard {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 0 14px 38px rgba(37, 28, 84, 0.06);
+}
+
+.ah-module {
+  min-height: 260px;
+  padding: 26px;
+}
+
+.ah-module span,
+.ah-program span,
+.ah-solution span {
+  color: var(--accent);
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 900;
+}
+
+.ah-module h3,
+.ah-feature h3,
+.ah-program h3,
+.ah-flow-step h3 {
+  margin: 16px 0 8px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+
+.ah-module p,
+.ah-feature p,
+.ah-program p,
+.ah-flow-step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.ah-feature-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.ah-feature {
+  min-height: 250px;
+  padding: 26px;
+}
+
+.ah-feature--large {
+  grid-column: span 2;
+  grid-row: span 2;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(52, 40, 119, 0.94), rgba(224, 0, 116, 0.78)),
+    url("https://gdb.voanews.com/5157767E-EF76-4E7D-BFAA-6F4C9DFB74E5_w1080_h608.jpg") center / cover;
+}
+
+.ah-feature--large h3 {
+  max-width: 420px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.ah-feature--large p {
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ah-flow,
+.ah-video-band,
+.ah-cta {
+  color: #fff;
+  background: var(--brand-dark);
+}
+
+.ah-flow .ah-kicker,
+.ah-video-band .ah-kicker,
+.ah-cta .ah-kicker {
+  color: var(--accent-soft);
+}
+
+.ah-flow p,
+.ah-video-band p,
+.ah-cta p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.ah-flow__steps {
+  display: grid;
+  gap: 14px;
+}
+
+.ah-flow-step {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.ah-flow-step b {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--accent);
+}
+
+.ah-flow-step h3 {
+  color: #fff;
+  margin-top: 0;
+}
+
+.ah-dashboard-band {
+  background: linear-gradient(180deg, var(--bg-alt), #fff);
+}
+
+.ah-dashboard-grid {
+  align-items: center;
+}
+
+.ah-dashboard {
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.ah-dashboard__top {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  background: var(--brand);
+}
+
+.ah-dashboard__top span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.ah-dashboard__body {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  min-height: 360px;
+}
+
+.ah-dashboard aside {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 22px;
+  color: #fff;
+  background: var(--brand-dark);
+}
+
+.ah-dashboard aside strong {
+  margin-bottom: 12px;
+  font-family: Montserrat, system-ui, sans-serif;
+}
+
+.ah-dashboard aside a {
+  min-height: 38px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.ah-dashboard__body section {
+  display: grid;
+  place-items: center;
+  gap: 22px;
+  padding: 28px;
+  background: #fff;
+}
+
+.ah-target {
+  position: relative;
+  width: min(250px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 0 24px #e7ebf3,
+    0 0 0 48px var(--blue),
+    0 0 0 72px #d23b3b,
+    0 0 0 96px var(--accent);
+}
+
+.ah-target i {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-dark);
+}
+
+.ah-target i:nth-child(1) { top: 42%; left: 48%; }
+.ah-target i:nth-child(2) { top: 50%; left: 54%; }
+.ah-target i:nth-child(3) { top: 47%; left: 42%; }
+.ah-target i:nth-child(4) { top: 56%; left: 49%; }
+
+.ah-dashboard__rows {
+  display: grid;
+  width: min(100%, 420px);
+  gap: 10px;
+}
+
+.ah-dashboard__rows span {
+  height: 12px;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.ah-dashboard__rows span:nth-child(2) {
+  width: 78%;
+}
+
+.ah-dashboard__rows span:nth-child(3) {
+  width: 58%;
+}
+
+.ah-programs {
+  background: var(--bg-alt);
+}
+
+.ah-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ah-program {
+  overflow: hidden;
+}
+
+.ah-program img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.ah-program div {
+  padding: 24px;
+}
+
+.ah-program h3 {
+  margin-top: 8px;
+  font-size: 1.35rem;
+}
+
+.ah-video-grid {
+  grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.38fr);
+  align-items: center;
+}
+
+.ah-video {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.ah-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.ah-solution-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ah-solution {
+  display: grid;
+  gap: 8px;
+  min-height: 168px;
+  padding: 24px;
+}
+
+.ah-solution strong {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.3rem;
+}
+
+.ah-solution em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+.ah-faq {
+  background: var(--bg-alt);
+}
+
+.ah-faq-grid {
+  grid-template-columns: minmax(260px, 0.48fr) 1fr;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+}
+
+summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 68px;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-weight: 800;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--accent);
+}
+
+details[open] summary::after {
+  content: "-";
+}
+
+details p {
+  margin: 0;
+  padding: 0 54px 24px 0;
+}
+
+.ah-cta__box {
+  align-items: center;
+}
+
+.ah-footer {
+  padding: 34px 0;
+  color: rgba(255, 255, 255, 0.72);
+  background: #14182b;
+}
+
+.ah-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.ah-footer strong {
+  color: #fff;
+  font-family: Montserrat, system-ui, sans-serif;
+}
+
+.ah-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.ah-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ah-reveal,
+  .ah-button {
+    transition: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .ah-shell {
+    width: min(100% - 28px, var(--maxw));
+  }
+
+  .ah-nav__inner {
+    min-height: auto;
+    padding: 12px 0;
+  }
+
+  .ah-menu {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .ah-nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 10px 14px 16px;
+    background: rgba(37, 28, 84, 0.97);
+  }
+
+  .ah-nav.is-open .ah-nav__links {
+    display: grid;
+  }
+
+  .ah-nav__links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ah-hero__grid,
+  .ah-section__grid,
+  .ah-dashboard-grid,
+  .ah-video-grid,
+  .ah-flow__grid,
+  .ah-faq-grid,
+  .ah-cta__box {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-hero {
+    min-height: auto;
+  }
+
+  .ah-hero__grid {
+    padding: 78px 0 54px;
+  }
+
+  .ah-module-grid,
+  .ah-program-grid,
+  .ah-solution-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ah-feature-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ah-hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .ah-section {
+    padding: 68px 0;
+  }
+
+  .ah-module-grid,
+  .ah-program-grid,
+  .ah-solution-list,
+  .ah-feature-board {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-feature--large {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .ah-product-card__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-product-card__stats span {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .ah-product-card__stats span:last-child {
+    border-bottom: 0;
+  }
+
+  .ah-dashboard__body {
+    grid-template-columns: 1fr;
+  }
+
+  .ah-dashboard aside {
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: auto;
+  }
+
+  .ah-dashboard aside strong {
+    grid-column: 1 / -1;
+  }
+}
+
+
+.ah-brand__logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 4px;
+}
+
+.ah-reveal,
+.ah-reveal.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.ah-nav__links [aria-current="page"] {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.ah-platform-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  font-weight: 900;
+}
+
+/* CustomArchery hero layout tuning — foto in alto, testo sotto, meno distanza dalla nav */
+.ah-hero {
+  min-height: 0;
+  align-items: stretch;
+}
+
+.ah-hero__grid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 36px;
+  padding: 56px 0 64px;
+}
+
+.ah-product-card {
+  order: 1;
+  width: min(100%, 640px);
+  justify-self: center;
+}
+
+.ah-product-card__image {
+  min-height: 260px;
+}
+
+.ah-product-card h2 {
+  font-size: clamp(1.18rem, 1.55vw, 1.45rem);
+}
+
+.ah-hero__copy {
+  order: 2;
+  min-width: 0;
+  max-width: 720px;
+  text-align: center;
+}
+
+.ah-hero__copy .ah-actions {
+  justify-content: center;
+}
+
+.ah-hero h1 {
+  max-width: 720px;
+  font-size: clamp(2.75rem, 4.2vw, 4.6rem);
+  line-height: 1.06;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.ah-hero__copy > p:not(.ah-kicker) {
+  max-width: 600px;
+  margin: 20px auto 28px;
+  font-size: 1.08rem;
+}
+
+/* Badge QR "Iscriviti da mobile" */
+.ah-hero-qr {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto 0;
+  padding: 6px 16px 6px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-align: left;
+  opacity: 0.85;
+  transition: opacity 180ms ease;
+}
+
+.ah-hero-qr:hover {
+  opacity: 1;
+}
+
+.ah-hero-qr__code {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ah-hero-qr__code svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ah-hero-qr__text strong {
+  display: block;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 0.76rem;
+  color: #fff;
+}
+
+.ah-hero-qr__text span {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.7rem;
+}
+
+@media (max-width: 980px) {
+  .ah-hero-qr {
+    display: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .ah-hero__grid {
+    gap: 26px;
+    padding: 36px 0 44px;
+  }
+
+  .ah-product-card {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ah-hero__grid {
+    padding: 26px 0 36px;
+  }
+
+  .ah-hero h1 {
+    font-size: clamp(2.1rem, 9vw, 3.1rem);
+  }
+
+  .ah-hero-qr {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.ah-footer__inner {
+  align-items: flex-start;
+}
+
+.ah-footer__brand {
+  display: grid;
+  gap: 4px;
+}
+
+.ah-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ah-footer__legal a:hover {
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .ah-footer__inner {
+    flex-direction: column;
+  }
+}
+
+.ah-legal {
+  padding: 56px 0 96px;
+}
+
+.ah-legal .ah-shell {
+  max-width: 760px;
+}
+
+.ah-legal__back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ah-legal h1 {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0 0 10px;
+  color: var(--brand-dark);
+}
+
+.ah-legal__meta {
+  color: var(--muted);
+  margin: 0 0 40px;
+  font-size: 0.92rem;
+}
+
+.ah-legal h2 {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.22rem;
+  margin: 38px 0 14px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  color: var(--brand-dark);
+}
+
+.ah-legal h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.ah-legal p,
+.ah-legal li {
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.ah-legal p {
+  margin: 0 0 16px;
+}
+
+.ah-legal ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.ah-legal li {
+  margin-bottom: 8px;
+}
+
+.ah-legal a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.ah-legal strong {
+  color: var(--brand-dark);
+}
+
+.ah-legal table {
+  width: 100%;
+  margin: 0 0 20px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.ah-legal th,
+.ah-legal td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+</style>
+</head>
+<body>
+<main class="ah-page" id="top">
+<nav class="ah-nav" data-afai-block="hero-section" data-gjs-name="Navigazione">
+  <div class="ah-shell ah-nav__inner">
+    <a class="ah-brand" href="./home" aria-label="CustomArchery">
+      <img class="ah-brand__logo" src="/api/public/company/cmpph5b1e004v9jfe7rgqp6iq/logo" alt="CustomArchery" />
+      <span>CustomArchery</span>
+    </a>
+    <button class="ah-menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <div class="ah-nav__links" id="site-menu">
+      <a href="./home">Home</a>
+      <a href="./societa">Società</a>
+      <a href="./arcieri">Arcieri</a>
+      <a href="./tecnici">Tecnici</a>
+      <a class="ah-nav__cta" href="https://archeryhub.it/login" target="_blank" rel="noopener">Accedi</a>
+    </div>
+  </div>
+</nav>
+<script>
+(function () {
+  if (window.__ahNavMenuBound) return;
+  window.__ahNavMenuBound = true;
+  document.addEventListener("click", function (e) {
+    var menuBtn = e.target.closest(".ah-menu");
+    if (menuBtn) {
+      var nav = menuBtn.closest(".ah-nav");
+      if (!nav) return;
+      var open = nav.classList.toggle("is-open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      return;
+    }
+    var navLink = e.target.closest(".ah-nav__links a");
+    if (navLink) {
+      var nav2 = navLink.closest(".ah-nav");
+      if (nav2) {
+        nav2.classList.remove("is-open");
+        var btn2 = nav2.querySelector(".ah-menu");
+        if (btn2) btn2.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+})();
+</script>
+<section class="ah-section ah-legal" data-afai-block="features-section" data-gjs-name="TERMINI E CONDIZIONI GENERALI DI UTILIZZO">
+  <div class="ah-shell">
+    <a class="ah-legal__back" href="./home">&larr; Torna alla struttura</a>
+    <h1>TERMINI E CONDIZIONI GENERALI DI UTILIZZO</h1>
+    <p class="ah-legal__meta">Documento fornito da AMT di Francesco Toso, titolare del portale Archery Hub — pubblicato qui integralmente per trasparenza verso i visitatori del mini sito CustomArchery.</p>
+    <p><strong>Portale Archery Hub</strong></p><p><a href="https://www.archeryhub.it">www.archeryhub.it</a> e <a href="https://www.archeryhub.eu">www.archeryhub.eu</a></p><p>Ultimo aggiornamento: 6 agosto 2026</p><h2>1. Identificazione del fornitore</h2><p>Il portale Archery Hub è gestito da:</p><p><strong>AMT di Francesco Toso</strong></p><p>Via San Pietro 60, 20033 Solaro (MI), Italia</p><p>Codice fiscale: TSOFNC80B22C933Z</p><p>Partita IVA: 13333860966</p><p>Numero REA: MI-2716348</p><p>Posta elettronica: <a href="mailto:info@archeryhub.it">info@archeryhub.it</a></p><p>Posta elettronica certificata: <a href="mailto:toso.francesco@pec.it">toso.francesco@pec.it</a></p><p>Le informazioni riportate assolvono agli obblighi previsti dall'articolo 7 del Decreto Legislativo 9 aprile 2003, n. 70, recante attuazione della Direttiva 2000/31/CE in materia di commercio elettronico, nonché agli obblighi informativi precontrattuali di cui all'articolo 49 del Decreto Legislativo 6 settembre 2005, n. 206, recante il Codice del Consumo.</p><h2>2. Definizioni</h2><p>Nel testo che segue le espressioni di seguito riportate assumono il significato a ciascuna attribuito:</p><ul><li><strong>AMT</strong>: AMT di Francesco Toso, quale gestore del Portale e fornitore dei servizi.</li><li><strong>Portale</strong>: l'applicativo software accessibile agli indirizzi <a href="https://www.archeryhub.it">www.archeryhub.it</a> e <a href="https://www.archeryhub.eu">www.archeryhub.eu</a>, comprensivo del sito vetrina e dell'area riservata.</li><li><strong>Condizioni</strong>: il presente documento, unitamente agli allegati e ai documenti in esso richiamati.</li><li><strong>Utente</strong>: chiunque acceda al Portale, con o senza registrazione.</li><li><strong>Account</strong>: il profilo personale che consente l'accesso all'area riservata, nelle quattro tipologie previste dall'articolo 6.</li><li><strong>Società</strong>: l'associazione o società sportiva dilettantistica titolare di un account della corrispondente tipologia.</li><li><strong>Arciere</strong>: la persona fisica titolare di un account personale destinato alla pratica del tiro con l'arco.</li><li><strong>Tecnico</strong>: la persona fisica titolare di un account destinato all'erogazione di prestazioni tecniche a favore degli arcieri.</li><li><strong>Operatore commerciale</strong>: l'esercente titolare di un account destinato alle attività di promozione commerciale.</li><li><strong>Consumatore</strong>: la persona fisica che agisce per scopi estranei all'attività imprenditoriale, commerciale, artigianale, o professionale eventualmente svolta, secondo la definizione dell'articolo 3, comma 1, lettera a), del Codice del Consumo.</li><li><strong>Contenuti dell'Utente</strong>: i materiali di qualunque natura caricati o trasmessi dagli Utenti attraverso le funzioni del Portale.</li><li><strong>Videocorso</strong>: il contenuto audiovisivo a carattere didattico posto in vendita nell'area corsi.</li></ul><h2>3. Oggetto e ambito di applicazione</h2><p>Le presenti Condizioni disciplinano l'accesso al Portale e l'utilizzo dei servizi ivi erogati, e costituiscono parte integrante di ogni contratto concluso fra AMT e l'Utente.</p><p>Il Portale mette a disposizione un insieme di strumenti destinati alla gestione dell'attività sportiva nella disciplina del tiro con l'arco. Rientrano nell'offerta la gestione dei rapporti fra società sportive, arcieri, e tecnici, la comunicazione interna, la registrazione dei risultati e delle statistiche, la consultazione dei calendari e delle graduatorie di fonte federale, la contabilità delle società, la vendita di contenuti didattici, e la pubblicazione di annunci.</p><p><strong>Rapporti con le società sportive.</strong> L'accesso della Società al Portale è regolato da autonomo contratto di utilizzo del software, sottoscritto fra AMT e l'ente, del quale le presenti Condizioni costituiscono disciplina integrativa e residuale. In caso di contrasto fra le presenti Condizioni e le pattuizioni del contratto di utilizzo, prevalgono queste ultime limitatamente al rapporto con la Società.</p><p><strong>Rapporti con arcieri, tecnici, e operatori commerciali.</strong> Per tali categorie il rapporto contrattuale si perfeziona mediante accettazione delle presenti Condizioni in sede di registrazione, senza necessità di ulteriore sottoscrizione. Le sezioni da 12 a 14 recano la disciplina specifica di ciascuna categoria.</p><h2>4. Accettazione</h2><p>L'accettazione delle presenti Condizioni avviene mediante apposizione della spunta nell'apposita casella presentata durante la procedura di registrazione, non preselezionata, distinta rispetto a ogni altra manifestazione di volontà.</p><p>AMT registra e conserva l'identificativo dell'account, la data e l'ora dell'accettazione, l'indirizzo IP di provenienza, e il numero di versione del documento accettato. La documentazione così formata costituisce prova dell'accettazione e può essere esibita in caso di contestazione.</p><p>La mancata accettazione preclude il completamento della registrazione e l'accesso all'area riservata. La semplice consultazione del sito vetrina non richiede accettazione, ma comporta l'assoggettamento alle disposizioni di cui agli articoli 21, 22, e 27.</p><h2>5. Requisiti per la registrazione</h2><p>La registrazione è consentita alle persone fisiche che abbiano compiuto i quattordici anni di età e alle persone giuridiche per il tramite dei propri rappresentanti legittimati.</p><p><strong>Minori di quattordici anni.</strong> La registrazione del minore che non abbia compiuto quattordici anni è consentita unicamente previo consenso di chi esercita la responsabilità genitoriale, prestato attraverso la procedura di collegamento dell'account genitoriale descritta all'articolo 11. La soglia di età recepisce la previsione dell'articolo 2-quinquies del Decreto Legislativo 30 giugno 2003, n. 196.</p><p><strong>Veridicità dei dati.</strong> L'Utente garantisce la veridicità, l'esattezza, e l'attualità dei dati comunicati in fase di registrazione, e si obbliga ad aggiornarli tempestivamente in caso di variazione. AMT si riserva la facoltà di sospendere l'account nel caso in cui emergano elementi che facciano ragionevolmente ritenere la non corrispondenza al vero dei dati dichiarati.</p><p><strong>Unicità dell'account.</strong> Ciascuna persona fisica può disporre di un solo account per ciascuna tipologia. La cumulabilità fra le posizioni di arciere e di tecnico è consentita secondo quanto previsto dall'articolo 13.</p><h2>6. Tipologie di account</h2><p>Il Portale prevede quattro tipologie di account, distinte per funzioni accessibili e per regime contrattuale:</p><ul><li><strong>Account Società Sportiva</strong>: riservato alle associazioni e alle società sportive dilettantistiche, regolato dal contratto di utilizzo del software di cui all'articolo 3.</li><li><strong>Account Arciere</strong>: riservato alle persone fisiche che praticano il tiro con l'arco, disciplinato dall'articolo 12.</li><li><strong>Account Tecnico</strong>: riservato agli istruttori e agli allenatori, disciplinato dall'articolo 13.</li><li><strong>Account Operatore Commerciale</strong>: riservato agli esercenti del settore, disciplinato dall'articolo 14.</li></ul><p>Ciascuna tipologia prevede un livello gratuito e uno o più livelli a pagamento, secondo il listino pubblicato nella sezione dedicata del Portale. Le funzioni comprese in ciascun livello sono indicate nella medesima sezione e possono essere oggetto di variazione secondo l'articolo 24.</p><h2>7. Credenziali e sicurezza dell'account</h2><p>Le credenziali di accesso sono personali e non cedibili. L'Utente è tenuto a custodirle con la diligenza richiesta dalla natura del rapporto, ad astenersi dal comunicarle a terzi, e a modificarle tempestivamente qualora sospetti che siano state conosciute da soggetti non autorizzati.</p><p>Le operazioni compiute mediante le credenziali si presumono riferibili all'Utente titolare, salvo che questi dimostri l'utilizzo abusivo da parte di terzi e la propria assenza di colpa nella custodia.</p><p>L'Utente è tenuto a segnalare senza ritardo all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a> ogni accesso non autorizzato di cui venga a conoscenza. AMT provvede alla sospensione cautelare dell'account e all'assistenza necessaria al ripristino.</p><p>Per gli account che dispongono di privilegi di amministrazione è resa disponibile l'autenticazione a due fattori, il cui utilizzo è raccomandato.</p><h2>8. Corrispettivi, fatturazione, e rinnovo</h2><p><strong>Determinazione del corrispettivo.</strong> I corrispettivi dovuti per i livelli a pagamento sono indicati nella sezione del Portale dedicata al listino, con evidenza dell'imposta sul valore aggiunto ove applicabile. Il prezzo applicabile è quello vigente al momento della conclusione del contratto.</p><p><strong>Modalità di pagamento.</strong> Il pagamento è eseguito mediante gli strumenti resi disponibili nella procedura di acquisto, gestiti da Stripe Payments Europe, Limited. Sono ammessi il pagamento con carta, la dilazione in tre rate offerta da Klarna Bank AB (publ), e il bonifico bancario. AMT non acquisisce i dati completi degli strumenti di pagamento.</p><p><strong>Perfezionamento.</strong> Il contratto si perfeziona con l'invio da parte di AMT della conferma d'ordine all'indirizzo di posta elettronica associato all'account. La conferma riepiloga il servizio acquistato, la durata, il corrispettivo, e le informazioni prescritte dall'articolo 51, comma 7, del Codice del Consumo.</p><p><strong>Durata e rinnovo.</strong> Gli abbonamenti hanno la durata mensile o annuale prescelta all'atto della sottoscrizione e si rinnovano automaticamente per periodi di pari durata, salvo disdetta comunicata almeno sette giorni prima della scadenza per gli abbonamenti mensili, e almeno trenta giorni prima della scadenza per quelli annuali. La disdetta si esercita mediante la funzione dedicata presente nelle impostazioni dell'account, ovvero mediante comunicazione all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>.</p><p><strong>Avviso di rinnovo.</strong> AMT trasmette all'Utente, con preavviso non inferiore a quarantacinque giorni rispetto alla data di rinnovo degli abbonamenti annuali, una comunicazione che ne ricorda la scadenza, l'importo, e le modalità di disdetta. Il termine è determinato in modo che l'avviso pervenga all'Utente prima della scadenza del termine utile per la disdetta.</p><p><strong>Variazione dei corrispettivi.</strong> AMT può modificare i corrispettivi con effetto dai rinnovi successivi, dandone comunicazione all'Utente con preavviso di almeno trenta giorni. L'Utente che non intenda accettare la variazione può recedere entro la data di efficacia, senza oneri.</p><p><strong>Mancato pagamento.</strong> Il mancato buon fine del pagamento comporta la sospensione delle funzioni a pagamento decorsi sette giorni dal sollecito, con conservazione dei dati per il periodo indicato all'articolo 20.</p><p><strong>Fatturazione.</strong> La fattura o il documento fiscale equipollente è emesso secondo la normativa applicabile e reso disponibile nell'area riservata.</p><h2>9. Diritto di recesso del consumatore</h2><p>Le disposizioni del presente articolo si applicano ai soli Utenti che rivestano la qualità di consumatore ai sensi dell'articolo 3, comma 1, lettera a), del Codice del Consumo. Sono pertanto escluse le Società, gli operatori commerciali, e i Tecnici che agiscano nell'esercizio della propria attività professionale.</p><p><strong>Termine.</strong> Il consumatore ha diritto di recedere dal contratto concluso a distanza, senza indicarne le ragioni e senza sostenere costi diversi da quelli previsti dalla legge, entro quattordici giorni decorrenti dalla conclusione del contratto, ai sensi dell'articolo 52 del Codice del Consumo.</p><p><strong>Modalità di esercizio.</strong> Il recesso si esercita mediante dichiarazione esplicita, trasmessa all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a> ovvero alla sede di AMT, contenente l'indicazione della volontà di recedere. Il consumatore può utilizzare il modulo tipo di cui all'allegato I, parte B, del Codice del Consumo, senza che il suo impiego costituisca condizione di validità.</p><p><strong>Effetti.</strong> AMT rimborsa i pagamenti ricevuti entro quattordici giorni dalla ricezione della comunicazione di recesso, utilizzando il medesimo mezzo di pagamento impiegato dal consumatore, salvo diverso accordo e comunque senza addebito di spese.</p><p><strong>Esecuzione anticipata dei servizi.</strong> Il consumatore che richieda l'attivazione immediata del servizio in abbonamento prima della scadenza del termine di recesso, e che eserciti successivamente il diritto, è tenuto a corrispondere l'importo proporzionale al servizio fruito sino alla comunicazione del recesso, secondo l'articolo 57, comma 3, del Codice del Consumo.</p><p><strong>Esclusione per i contenuti digitali.</strong> Il diritto di recesso è escluso, ai sensi dell'articolo 59, comma 1, lettera o), del Codice del Consumo, con riferimento alla fornitura di contenuto digitale mediante supporto non materiale, quale il Videocorso, qualora ricorrano congiuntamente le seguenti condizioni: l'esecuzione sia iniziata; il consumatore abbia prestato il proprio previo consenso espresso all'avvio dell'esecuzione durante il periodo di recesso; il consumatore abbia dichiarato di essere consapevole che, prestando tale consenso, perde il diritto di recesso; AMT abbia fornito la conferma prescritta dall'articolo 51, comma 7, del medesimo Codice.</p><p>La procedura di acquisto dei Videocorsi presenta all'utente due caselle di spunta distinte e non preselezionate, mediante le quali sono raccolte le due dichiarazioni sopra indicate. In difetto di entrambe le dichiarazioni la fruizione è differita alla scadenza del termine di recesso.</p><h2>10. Area corsi e Videocorsi</h2><p><strong>Struttura dell'offerta.</strong> L'area corsi ospita contenuti didattici prodotti da AMT, dalle Società, e dai Tecnici. La vendita al pubblico è effettuata in ogni caso da AMT, in nome e per conto proprio, quale unico soggetto contrattualmente obbligato verso l'acquirente.</p><p><strong>Ripartizione dei proventi.</strong> AMT incassa integralmente il corrispettivo e riconosce al produttore del contenuto la quota concordata nell'accordo di pubblicazione, secondo la periodicità ivi stabilita. Il produttore non vanta alcuna pretesa diretta nei confronti dell'acquirente.</p><p><strong>Verifica preventiva.</strong> Ogni contenuto proposto per la pubblicazione è sottoposto a verifica da parte di AMT, che ne accerta la conformità alle presenti Condizioni, l'assenza di materiale illecito, di linguaggio gravemente inappropriato, e di contenuti lesivi di diritti altrui. La verifica non comporta l'assunzione da parte di AMT di alcuna garanzia sulla qualità didattica del contenuto, né esonera il produttore dalla responsabilità per quanto pubblicato.</p><p><strong>Rifiuto e rimozione.</strong> AMT può rifiutare la pubblicazione, ovvero rimuovere un contenuto già pubblicato, dandone comunicazione motivata al produttore. Nel caso di rimozione di un contenuto già acquistato, agli acquirenti è garantita la fruizione per il periodo residuo ovvero il rimborso proporzionale.</p><p><strong>Licenza d'uso all'acquirente.</strong> L'acquisto attribuisce all'acquirente una licenza personale, non esclusiva, non trasferibile, e non sublicenziabile, limitata alla fruizione del contenuto attraverso il Portale per la durata indicata nella scheda del prodotto. Sono vietati la riproduzione, la distribuzione, la comunicazione al pubblico, la messa a disposizione, e ogni altra utilizzazione non espressamente consentita, ai sensi della Legge 22 aprile 1941, n. 633.</p><p><strong>Requisiti tecnici.</strong> La fruizione richiede una connessione a Internet e un dispositivo dotato di browser aggiornato. I requisiti puntuali sono indicati nella scheda di ciascun contenuto.</p><h2>11. Minori di età</h2><p>Il Portale è accessibile ai minori secondo il regime di seguito descritto.</p><p><strong>Account genitoriale.</strong> Chi esercita la responsabilità genitoriale può attivare un proprio account e collegarvi il profilo del minore. Il collegamento è obbligatorio per i minori di quattordici anni e facoltativo per quelli di età compresa fra quattordici e diciotto anni.</p><p><strong>Effetti del collegamento.</strong> Il genitore presta il consenso ai trattamenti che lo richiedano, accede ai dati e alle attività del minore, esercita per suo conto i diritti in materia di protezione dei dati, e autorizza le operazioni di acquisto.</p><p><strong>Acquisti.</strong> Nessuna operazione di acquisto o di attivazione di funzioni a pagamento può essere perfezionata da un account riferito a un minore in assenza della conferma dell'account genitoriale collegato.</p><p><strong>Esclusione dalla profilazione.</strong> I profili riferiti a minori non sono inclusi negli insiemi di destinatari delle inserzioni personalizzate di cui all'articolo 14, né sono sottoposti a trattamenti di profilazione a fini di marketing.</p><p><strong>Segnalazioni.</strong> Chiunque ritenga che un minore utilizzi il Portale in difformità dal presente articolo può segnalarlo all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>. AMT provvede alle verifiche e, ove necessario, alla sospensione o alla cancellazione dell'account.</p><h2>12. Disposizioni specifiche per gli Arcieri</h2><h2>12.1 Funzioni disponibili</h2><p>L'account Arciere consente di gestire il proprio profilo sportivo, di collegarsi a una Società e a uno o più Tecnici, di consultare il calendario delle competizioni e le graduatorie di fonte federale, di inoltrare alla Società la richiesta di iscrizione a una gara, di registrare i punteggi conseguiti, di annotare la configurazione dell'attrezzatura impiegata, di compilare la lista dell'attrezzatura di interesse, di accedere all'area corsi, e di utilizzare gli strumenti di calcolo e di analisi resi disponibili.</p><h2>12.2 Collegamenti con Società e Tecnici</h2><p>Il collegamento a una Società o a un Tecnico è instaurato mediante richiesta dell'Arciere accolta dalla controparte, ovvero mediante inserimento del profilo da parte della Società nell'esercizio delle proprie funzioni associative, in tal caso previa comunicazione all'Arciere.</p><p>Il collegamento determina la visibilità, in favore della Società o del Tecnico, dei dati sportivi dell'Arciere, quali i risultati, i punteggi, le indicazioni di allenamento, i filmati del gesto tecnico, e la configurazione dell'attrezzatura, nei limiti dei permessi configurati dalla Società.</p><p>L'Arciere può interrompere in qualsiasi momento il collegamento con un Tecnico mediante la funzione dedicata. L'interruzione del collegamento con la Società segue le regole dell'ordinamento sportivo in materia di tesseramento e non è rimessa alla unilaterale determinazione dell'Arciere all'interno del Portale.</p><p>Cessato il collegamento, la Società o il Tecnico non accedono ai dati generati successivamente. I dati anteriori restano nella disponibilità del titolare che li ha raccolti, secondo la disciplina descritta nell'Informativa sul trattamento dei dati personali.</p><h2>12.3 Iscrizioni alle competizioni</h2><p>La funzione di richiesta di iscrizione consente all'Arciere di manifestare alla propria Società l'intenzione di partecipare a una competizione. La richiesta non produce di per sé alcun effetto nei confronti degli organi federali o degli organizzatori.</p><p>L'iscrizione è perfezionata dalla Società secondo le procedure dell'ordinamento sportivo. AMT non assume alcuna obbligazione in ordine all'esito della richiesta, ai termini di iscrizione, al pagamento delle relative quote, e alla effettiva ammissione alla gara.</p><h2>12.4 Dati sull'attrezzatura e lista dei desideri</h2><p>L'inserimento dei dati relativi all'attrezzatura utilizzata e della lista dell'attrezzatura di interesse è facoltativo.</p><p>Tali informazioni sono rese accessibili agli operatori commerciali titolari di account attivo in forma aggregata ovvero priva degli elementi identificativi dell'Arciere. Gli operatori commerciali non ricevono elenchi nominativi, non accedono ai dati anagrafici, e non sono posti in condizione di risalire alla persona fisica cui il dato si riferisce.</p><p>La ricezione di inserzioni selezionate sulla base di tali dati richiede il consenso specifico dell'Arciere, revocabile in ogni momento dalle impostazioni del profilo. La revoca non pregiudica la fruizione delle altre funzioni.</p><h2>12.5 Livello gratuito e livello a pagamento</h2><p>L'account Arciere è attivabile a titolo gratuito. Alcune funzioni sono riservate agli abbonamenti a pagamento secondo il listino pubblicato.</p><p>AMT si riserva la facoltà di modificare la ripartizione delle funzioni fra i due livelli, dandone comunicazione con preavviso di trenta giorni. Qualora una funzione già compresa nel livello gratuito sia trasferita al livello a pagamento, gli Arcieri che ne fruivano conservano l'accesso per novanta giorni dalla comunicazione.</p><h2>13. Disposizioni specifiche per i Tecnici</h2><h2>13.1 Funzioni disponibili</h2><p>L'account Tecnico consente di collegarsi agli Arcieri seguiti, di predisporre e assegnare piani di allenamento, di consultare i dati relativi ai punteggi e all'attrezzatura degli Arcieri collegati, di comunicare con i medesimi attraverso gli strumenti del Portale, e, previa sottoscrizione dell'abbonamento dedicato, di comparire nell'elenco nazionale dei tecnici e di pubblicare Videocorsi.</p><h2>13.2 Cumulo con la posizione di Arciere</h2><p>Il Tecnico che pratichi altresì il tiro con l'arco può attivare le funzioni proprie dell'account Arciere. Le due posizioni restano distinte quanto a permessi e a visibilità dei dati; i dati sportivi personali del Tecnico non sono resi accessibili agli Arcieri da questi seguiti.</p><h2>13.3 Elenco nazionale dei tecnici</h2><p>L'inserimento nell'elenco consultabile dagli Utenti del Portale è subordinato alla sottoscrizione dell'abbonamento dedicato e comporta la pubblicazione dei soli dati che il Tecnico destini espressamente a tale finalità, quali il nome, l'ambito territoriale di operatività, le qualifiche dichiarate, e un recapito professionale.</p><p><strong>Qualifiche dichiarate.</strong> Il Tecnico garantisce la veridicità delle qualifiche indicate e si obbliga a comunicarne senza ritardo la sospensione, la revoca, o la scadenza. AMT non svolge attività di verifica sulle qualifiche dichiarate e non rilascia alcuna certificazione al riguardo; l'inserimento nell'elenco non costituisce accreditamento, abilitazione, o attestazione di idoneità professionale.</p><p><strong>Rimozione.</strong> AMT rimuove dall'elenco il Tecnico che risulti aver dichiarato qualifiche non veritiere, fatto salvo il risarcimento del danno e senza obbligo di rimborso del corrispettivo versato.</p><h2>13.4 Rapporto con gli Arcieri seguiti</h2><p>Il rapporto fra il Tecnico e l'Arciere, ivi compresi il contenuto della prestazione tecnica, il corrispettivo eventualmente pattuito, e le modalità di svolgimento, intercorre esclusivamente fra i medesimi. AMT si limita a rendere disponibili gli strumenti informatici e resta estranea a tale rapporto.</p><p>AMT non risponde della correttezza dei piani di allenamento, dell'idoneità delle indicazioni tecniche fornite, e delle conseguenze derivanti dalla loro applicazione. Ogni pretesa relativa alla prestazione tecnica va rivolta al Tecnico che l'ha erogata.</p><p><strong>Titolarità dei dati.</strong> Il Tecnico che tratti i dati degli Arcieri seguiti nell'esercizio della propria attività professionale assume la qualità di titolare del trattamento per tali operazioni, con i conseguenti obblighi. AMT opera in tal caso quale responsabile del trattamento.</p><h2>13.5 Pubblicazione di Videocorsi</h2><p>Il Tecnico abbonato può proporre ad AMT contenuti didattici destinati alla vendita nell'area corsi, secondo la procedura descritta all'articolo 10.</p><p><strong>Garanzie sul contenuto.</strong> Il Tecnico garantisce di disporre di tutti i diritti necessari alla pubblicazione, ivi compresi i diritti sulle opere dell'ingegno eventualmente incorporate e le liberatorie delle persone riprese. Il medesimo manleva AMT da ogni pretesa di terzi fondata sulla violazione di tali diritti.</p><p><strong>Quota spettante.</strong> La percentuale riconosciuta al Tecnico sul prezzo di vendita, al netto dell'imposta sul valore aggiunto e delle commissioni applicate dal prestatore di servizi di pagamento, è stabilita nell'accordo di pubblicazione. La liquidazione avviene con la periodicità ivi indicata, previa emissione del documento fiscale da parte del Tecnico ove dovuto.</p><p><strong>Rendicontazione.</strong> AMT rende disponibile nell'area riservata del Tecnico il prospetto delle vendite realizzate, con indicazione del numero, degli importi, e della quota maturata. Non sono comunicati i dati identificativi degli acquirenti.</p><h2>14. Disposizioni specifiche per gli Operatori Commerciali</h2><h2>14.1 Oggetto dell'account</h2><p>L'account riservato agli esercenti del settore consente la pubblicazione di inserzioni all'interno del Portale e la consultazione dei dati aggregati relativi all'attrezzatura utilizzata dagli Arcieri e alle liste dell'attrezzatura di interesse.</p><p>L'attivazione è subordinata alla sottoscrizione dell'abbonamento e alla dichiarazione dei dati identificativi e fiscali dell'impresa, dei quali AMT si riserva la verifica.</p><h2>14.2 Dati resi disponibili</h2><p>L'operatore commerciale accede esclusivamente a informazioni aggregate ovvero prive degli elementi identificativi degli Arcieri. È in ogni caso preclusa la conoscenza dei dati anagrafici, dei recapiti, e di ogni altro elemento che consenta la riconduzione a una persona fisica determinata.</p><p>L'operatore commerciale si obbliga ad astenersi da qualunque tentativo di reidentificazione degli Arcieri, anche mediante incrocio con dati di altra provenienza. La violazione dell'obbligo comporta la risoluzione di diritto del rapporto ai sensi dell'articolo 1456 del Codice civile, fatto salvo il risarcimento del danno.</p><h2>14.3 Inserzioni</h2><p>Le inserzioni possono essere generiche, e in tal caso mostrate indistintamente agli Utenti della sezione interessata, ovvero personalizzate, e in tal caso mostrate agli Utenti che presentino le caratteristiche selezionate.</p><p><strong>Consenso degli Arcieri.</strong> Le inserzioni personalizzate sono recapitate ai soli Arcieri che abbiano prestato il consenso specifico. L'ampiezza dell'insieme dei destinatari dipende pertanto dal numero dei consensi in essere e non è oggetto di garanzia da parte di AMT.</p><p><strong>Esclusione dei minori.</strong> I profili riferiti a minori sono in ogni caso esclusi dagli insiemi di destinatari delle inserzioni personalizzate.</p><p><strong>Contenuto dell'inserzione.</strong> L'operatore commerciale è responsabile del contenuto pubblicato e ne garantisce la conformità alla disciplina in materia di pratiche commerciali scorrette di cui agli articoli da 18 a 27-quater del Codice del Consumo, alla disciplina della pubblicità ingannevole e comparativa di cui al Decreto Legislativo 2 agosto 2007, n. 145, e a ogni altra norma applicabile.</p><p><strong>Facoltà di rifiuto.</strong> AMT può rifiutare la pubblicazione di inserzioni che risultino contrarie alla legge, lesive di diritti altrui, ovvero incompatibili con la natura del Portale, dandone comunicazione motivata.</p><p><strong>Rendicontazione.</strong> Sono resi disponibili all'operatore commerciale i soli dati statistici aggregati relativi alle visualizzazioni ottenute.</p><h2>14.4 Mercatino dell'usato</h2><p>Le disposizioni del presente paragrafo si applicano a tutti gli Utenti abilitati alla pubblicazione di annunci nella sezione dedicata all'attrezzatura usata, ivi comprese le Società, e non ai soli operatori commerciali.</p><p>La sezione destinata alla compravendita di attrezzatura usata ha natura di mera bacheca di annunci. Nessuna transazione è conclusa, eseguita, o comunque gestita attraverso il Portale.</p><p>AMT non interviene nella negoziazione, non riceve pagamenti, non presta garanzie sull'esistenza, sulla titolarità, sulla conformità, o sullo stato dei beni offerti, e non assume la posizione di intermediario, di mandatario, o di depositario.</p><p>Ogni contratto è concluso direttamente ed esclusivamente fra gli Utenti interessati, i quali ne assumono integralmente i rischi. Le contestazioni relative ai beni oggetto degli annunci vanno rivolte alla controparte contrattuale.</p><p>L'Utente che pubblichi annunci nell'esercizio di un'attività d'impresa è tenuto a dichiararlo e a rispettare la disciplina applicabile alle vendite a distanza concluse con i consumatori.</p><h2>15. Contenuti dell'Utente</h2><p><strong>Titolarità.</strong> I diritti sui Contenuti dell'Utente permangono in capo a chi li ha caricati. Nessuna disposizione delle presenti Condizioni comporta trasferimento della titolarità.</p><p><strong>Licenza ad AMT.</strong> L'Utente concede ad AMT una licenza non esclusiva, gratuita, e limitata a quanto strettamente necessario all'erogazione del servizio, avente per oggetto la memorizzazione, la riproduzione tecnica, l'adattamento dei formati, e la messa a disposizione dei Contenuti ai soli soggetti abilitati alla visualizzazione secondo la configurazione dei permessi. La licenza cessa con la rimozione del contenuto o con la chiusura dell'account, salvo il tempo tecnico necessario alla cancellazione dalle copie di sicurezza.</p><p><strong>Garanzie dell'Utente.</strong> L'Utente garantisce di disporre dei diritti necessari al caricamento e alla diffusione dei Contenuti nei limiti sopra indicati, e che i medesimi non violano diritti di terzi, né disposizioni di legge.</p><p><strong>Contenuti vietati.</strong> È vietato caricare, trasmettere, o diffondere contenuti che integrino illecito penale, che siano diffamatori, discriminatori, o comunque lesivi della dignità della persona, che violino diritti di proprietà intellettuale o industriale altrui, che contengano dati personali di terzi in assenza di idoneo fondamento, che abbiano carattere pornografico, ovvero che risultino gravemente inappropriati rispetto alla natura sportiva del Portale e alla presenza di minori fra gli Utenti.</p><p><strong>Assenza di obbligo generale di sorveglianza.</strong> AMT non è soggetta a un obbligo generale di sorveglianza sui contenuti memorizzati, ai sensi dell'articolo 8 del Regolamento (UE) 2022/2065 e dell'articolo 17 del Decreto Legislativo 9 aprile 2003, n. 70. La verifica preventiva dei Videocorsi di cui all'articolo 10 costituisce controllo volontario e circoscritto, e non determina l'assunzione di un obbligo di controllo generalizzato.</p><h2>16. Segnalazione di contenuti illeciti</h2><p><strong>Procedura di segnalazione.</strong> Chiunque può segnalare la presenza di contenuti ritenuti illeciti mediante comunicazione all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, ovvero attraverso la funzione di segnalazione presente in prossimità dei contenuti pubblicati.</p><p>La segnalazione deve contenere una motivazione sufficientemente circostanziata, l'indicazione precisa della collocazione del contenuto, i dati identificativi e di contatto del segnalante salvo che la segnalazione riguardi reati contro la libertà individuale, e una dichiarazione di buona fede circa l'esattezza delle informazioni fornite. I requisiti riprendono quelli enunciati dall'articolo 16 del Regolamento (UE) 2022/2065.</p><p><strong>Trattazione.</strong> AMT esamina le segnalazioni con tempestività, in modo diligente, non arbitrario, e obiettivo, e comunica al segnalante la decisione adottata.</p><p><strong>Motivazione.</strong> All'Utente destinatario di una misura di rimozione, di disabilitazione dell'accesso, di sospensione, o di chiusura dell'account è comunicata una motivazione chiara e specifica, con indicazione dei fatti contestati, del fondamento della misura, e delle possibilità di contestazione, secondo quanto previsto dall'articolo 17 del Regolamento richiamato.</p><p><strong>Contestazione.</strong> L'Utente può contestare la misura entro trenta giorni dalla comunicazione, mediante istanza motivata trasmessa all'indirizzo sopra indicato. AMT riesamina la decisione e comunica l'esito entro quindici giorni.</p><p><strong>Regime applicabile ad AMT.</strong> AMT integra la nozione di microimpresa e beneficia pertanto dell'esclusione prevista dall'articolo 19 del Regolamento (UE) 2022/2065 con riferimento alla Sezione 3 del Capo III del medesimo. Le procedure descritte nel presente articolo sono adottate in adempimento degli obblighi comunque applicabili ai prestatori di servizi di memorizzazione di informazioni, nonché, per la parte eccedente, in via volontaria.</p><h2>17. Condotta degli Utenti</h2><p>L'Utente si obbliga a utilizzare il Portale in conformità alla legge, alle presenti Condizioni, e alla correttezza. È in particolare vietato:</p><ul><li><strong>Accesso non autorizzato</strong>: tentare di accedere ad aree, funzioni, o dati non riservati al proprio account, ovvero eludere le misure di controllo degli accessi.</li><li><strong>Interferenza con il servizio</strong>: compiere operazioni idonee a compromettere la disponibilità, l'integrità, o la sicurezza del Portale, ivi compresi l'invio massivo di richieste automatizzate e l'introduzione di codice dannoso.</li><li><strong>Estrazione sistematica di dati</strong>: procedere all'estrazione, alla copia, o al riutilizzo sistematico di parti sostanziali delle banche dati del Portale mediante strumenti automatizzati.</li><li><strong>Uso improprio della messaggistica</strong>: impiegare la chat, le notifiche, e la posta elettronica per finalità estranee all'attività sportiva, per l'invio di comunicazioni commerciali non richieste, o per condotte moleste.</li><li><strong>Condotte lesive verso i minori</strong>: instaurare contatti con minori per finalità estranee all'attività sportiva, ovvero tenere nei loro confronti condotte inappropriate.</li><li><strong>Cessione dell'account</strong>: cedere, condividere, o rendere altrimenti disponibili a terzi le proprie credenziali.</li><li><strong>Reidentificazione</strong>: tentare di risalire all'identità degli Arcieri a partire dai dati resi disponibili in forma aggregata o priva di elementi identificativi.</li></ul><h2>18. Assistenza tecnica</h2><p>Le richieste di assistenza sono inoltrate mediante la funzione di apertura dei ticket disponibile nell'area riservata, accessibile a tutte le tipologie di account.</p><p>AMT presta l'assistenza nei giorni lavorativi, dal lunedì al venerdì, con esclusione delle festività. I tempi di riscontro sono determinati in funzione della gravità della segnalazione secondo i seguenti criteri indicativi: dodici ore lavorative per le anomalie che impediscono integralmente l'accesso al Portale; due giorni lavorativi per le anomalie che limitano in modo significativo l'utilizzo di una funzione essenziale; cinque giorni lavorativi per le restanti segnalazioni.</p><p>I termini indicati si riferiscono alla presa in carico e non alla risoluzione, la cui tempistica dipende dalla natura dell'anomalia. Livelli di servizio distinti e vincolanti possono essere pattuiti nel contratto di utilizzo del software sottoscritto dalle Società.</p><h2>19. Sospensione e chiusura dell'account</h2><p><strong>Recesso dell'Utente.</strong> L'Utente può in qualsiasi momento chiudere il proprio account mediante la funzione dedicata. La chiusura ha effetto dalla scadenza del periodo di abbonamento in corso, senza diritto al rimborso dei corrispettivi già versati per il periodo non fruito, salvo quanto previsto dall'articolo 9.</p><p><strong>Sospensione cautelare.</strong> AMT può sospendere l'account in presenza di fondati indizi di violazione delle presenti Condizioni, di utilizzo abusivo delle credenziali, di rischio per la sicurezza del Portale, ovvero di mancato pagamento secondo l'articolo 8. La sospensione è comunicata all'Utente con l'indicazione dei motivi.</p><p><strong>Risoluzione.</strong> AMT può risolvere il contratto, previa diffida ad adempiere con termine non inferiore a quindici giorni, in caso di violazione grave delle presenti Condizioni. La diffida non è richiesta quando la violazione integri illecito penale, riguardi la tutela dei minori, ovvero comprometta la sicurezza del Portale.</p><p><strong>Effetti.</strong> La chiusura comporta la cessazione dell'accesso e il trattamento dei dati secondo quanto previsto dall'articolo 20 e dall'Informativa sul trattamento dei dati personali.</p><h2>20. Portabilità ed esportazione dei dati</h2><p>Prima della chiusura dell'account, e comunque entro trenta giorni successivi, l'Utente può esportare i dati da lui inseriti mediante la funzione dedicata, in formato strutturato e di uso comune.</p><p>Decorsi trenta giorni dalla chiusura, i contenuti caricati e i dati sportivi inseriti dall'Utente sono cancellati ovvero resi anonimi. I dati identificativi e quelli relativi allo svolgimento del rapporto contrattuale sono conservati per i dodici mesi successivi alla chiusura, secondo quanto indicato nell'Informativa sul trattamento dei dati personali. Resta ferma la conservazione dei dati imposta dalla legge o necessaria all'accertamento, all'esercizio, o alla difesa di un diritto in sede giudiziaria.</p><p>I dati inseriti da una Società nell'esercizio della propria titolarità non sono oggetto di esportazione da parte dell'Arciere o del Tecnico, e restano soggetti alle determinazioni dell'ente, secondo la ripartizione dei ruoli descritta nell'Informativa sul trattamento dei dati personali.</p><p>Per le Società trovano applicazione le previsioni del contratto di utilizzo del software in materia di restituzione dei dati alla cessazione del rapporto, nonché, per quanto compatibili, le disposizioni del Regolamento (UE) 2023/2854 in materia di passaggio fra servizi di trattamento dei dati, le cui previsioni relative al Capo III trovano applicazione a decorrere dal 12 settembre 2026 e quelle di cui al Capo IV a decorrere dal 12 settembre 2027.</p><h2>21. Proprietà intellettuale</h2><p>Il software, l'interfaccia, la struttura delle banche dati, i marchi, i loghi, la documentazione, e ogni altro elemento del Portale sono di titolarità di AMT ovvero dei rispettivi aventi diritto, e sono protetti dalla Legge 22 aprile 1941, n. 633, dal Decreto Legislativo 10 febbraio 2005, n. 30, e dalle convenzioni internazionali applicabili.</p><p>L'accesso al Portale non trasferisce alcun diritto di proprietà intellettuale e attribuisce all'Utente una licenza d'uso personale, non esclusiva, non trasferibile, e limitata alla durata del rapporto, funzionale alla sola fruizione dei servizi.</p><p>Sono in particolare vietati la decompilazione, la disassemblazione, e la retroingegneria del software, salvi i casi consentiti dalle disposizioni inderogabili di legge, nonché la riproduzione, la modifica, e la distribuzione degli elementi del Portale al di fuori di quanto strettamente necessario alla fruizione.</p><h2>22. Dati di fonte federale</h2><p>Il Portale rielabora e rende consultabili informazioni pubblicate in area ad accesso libero dal sito istituzionale della Federazione Italiana di Tiro con l'Arco, quali i calendari delle competizioni, le graduatorie, e i risultati ufficiali.</p><p><strong>Nessun accesso ad aree riservate.</strong> Il Portale non acquisisce credenziali di accesso degli Arcieri all'area riservata del portale federale e non preleva dati da sezioni protette.</p><p><strong>Assenza di rapporti con la Federazione.</strong> AMT non è affiliata alla Federazione, non ne è licenziataria, e non agisce in suo nome o per suo conto. Ogni riferimento a competizioni, a graduatorie, e a denominazioni federali ha finalità meramente descrittiva.</p><p><strong>Esattezza dei dati.</strong> AMT non garantisce l'esattezza, la completezza, e l'attualità delle informazioni di fonte federale, né risponde delle conseguenze derivanti da eventuali difformità rispetto ai dati ufficiali. In caso di discordanza prevalgono le risultanze pubblicate dalla Federazione.</p><h2>23. Limitazioni di responsabilità</h2><p>AMT eroga i servizi con la diligenza professionale richiesta dalla natura dell'attività e adotta le misure ragionevolmente esigibili per assicurare la continuità e la sicurezza del Portale.</p><p><strong>Disponibilità del servizio.</strong> Non è garantita la disponibilità ininterrotta e priva di errori. Gli interventi di manutenzione programmata sono comunicati con preavviso non inferiore a quarantotto ore, salvo che ragioni di sicurezza impongano l'intervento immediato.</p><p><strong>Esclusioni.</strong> AMT non risponde dei danni derivanti da: uso del Portale non conforme alle presenti Condizioni; malfunzionamenti dei dispositivi, delle reti, e dei programmi dell'Utente; condotte di terzi non imputabili ad AMT; contenuto delle prestazioni erogate dai Tecnici; esattezza dei dati di fonte federale; contratti conclusi fra Utenti nell'ambito del mercatino dell'usato; correttezza delle registrazioni contabili inserite dalle Società.</p><p><strong>Limite quantitativo.</strong> Nei rapporti con Utenti che non rivestano la qualità di consumatore, la responsabilità di AMT per i danni derivanti dall'esecuzione del contratto è complessivamente limitata, per ciascun anno solare, a un importo pari ai corrispettivi versati dall'Utente nei dodici mesi precedenti l'evento.</p><p><strong>Salvezza.</strong> Nessuna disposizione del presente articolo opera in caso di dolo o colpa grave, né limita la responsabilità per morte o lesioni personali, né deroga alle disposizioni inderogabili poste a tutela del consumatore. Restano in particolare impregiudicati l'articolo 33, comma 2, lettere a) e b), e l'articolo 36, comma 2, del Codice del Consumo, che sanziona con la nullità, anche in caso di trattativa individuale, le clausole che escludono o limitano la responsabilità del professionista per morte o danno alla persona del consumatore, ovvero le azioni e i diritti del consumatore in caso di inadempimento.</p><h2>24. Modifiche delle Condizioni</h2><p>AMT può modificare le presenti Condizioni per adeguarle a sopravvenienze normative, a mutamenti delle funzionalità, o a esigenze organizzative.</p><p>Le modifiche sono comunicate agli Utenti registrati all'indirizzo di posta elettronica associato all'account, con preavviso non inferiore a quindici giorni rispetto alla decorrenza. Il preavviso è elevato a trenta giorni per gli Utenti che rivestano la qualità di utente commerciale ai sensi del Regolamento (UE) 2019/1150.</p><p>L'Utente che non intenda accettare le modifiche può recedere entro la data di decorrenza, mediante comunicazione all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, con diritto al rimborso della quota di abbonamento relativa al periodo non fruito. La prosecuzione nell'utilizzo del Portale successivamente alla decorrenza vale quale accettazione.</p><p>Le modifiche imposte da disposizioni di legge o da provvedimenti dell'autorità possono avere efficacia immediata, con comunicazione contestuale agli Utenti.</p><h2>25. Rapporti con gli utenti commerciali</h2><p>Nella misura in cui il Portale integri un servizio di intermediazione online ai sensi del Regolamento (UE) 2019/1150 del 20 giugno 2019, che promuove equità e trasparenza per gli utenti commerciali dei servizi di intermediazione online, trovano applicazione le disposizioni del presente articolo nei confronti dei Tecnici, degli operatori commerciali, e delle Società che offrano beni o servizi attraverso il Portale.</p><p><strong>Termini e condizioni.</strong> Le presenti Condizioni sono redatte in linguaggio semplice e comprensibile, sono accessibili in ogni fase del rapporto, e sono conservate in versione storica a disposizione degli utenti commerciali.</p><p><strong>Motivi di sospensione.</strong> I motivi che possono determinare la limitazione, la sospensione, o la cessazione del servizio sono indicati agli articoli 16 e 19. La comunicazione della misura è resa con l'esposizione dei relativi motivi.</p><p><strong>Criteri di posizionamento.</strong> L'ordine di presentazione dei Tecnici nell'elenco nazionale e delle inserzioni all'interno del Portale è determinato secondo criteri di pertinenza rispetto alla ricerca effettuata, di prossimità territoriale, e di completezza del profilo. Nessun corrispettivo aggiuntivo consente di alterare il posizionamento; l'eventuale introduzione di forme di posizionamento a pagamento sarà espressamente indicata e distintamente segnalata all'Utente.</p><p><strong>Trattamento differenziato.</strong> AMT non riserva a beni o servizi propri un trattamento differenziato rispetto a quelli offerti dagli utenti commerciali, fatta eccezione per i Videocorsi prodotti da AMT, ai quali si applicano i medesimi criteri di posizionamento sopra indicati.</p><p><strong>Accesso ai dati.</strong> Ciascun utente commerciale accede ai dati relativi alla propria attività secondo quanto previsto agli articoli 13 e 14. L'accesso ai dati personali degli Arcieri è escluso nei termini ivi precisati.</p><p><strong>Reclami e mediazione.</strong> AMT integra la nozione di piccola impresa ai sensi dell'allegato alla Raccomandazione 2003/361/CE, ed è pertanto esonerata, in forza degli articoli 11, paragrafo 5, e 12, paragrafo 5, del Regolamento richiamato, dall'obbligo di istituire un sistema interno di gestione dei reclami e di indicare i mediatori. I reclami degli utenti commerciali sono comunque ricevuti e trattati all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, con riscontro motivato entro trenta giorni.</p><h2>26. Accessibilità</h2><p>Il Decreto Legislativo 27 maggio 2022, n. 82, di attuazione della Direttiva (UE) 2019/882 in materia di requisiti di accessibilità dei prodotti e dei servizi, trova applicazione dal 28 giugno 2025.</p><p>L'articolo 3 del decreto richiamato esclude dagli obblighi relativi ai servizi le microimprese, individuate nelle imprese che occupano meno di dieci persone e realizzano un fatturato annuo ovvero un totale di bilancio annuo non superiore a due milioni di euro. AMT rientra allo stato in tale categoria.</p><p>Ferma l'esclusione, AMT persegue in via volontaria l'adeguamento progressivo del Portale ai criteri di successo di livello AA delle Linee guida per l'accessibilità dei contenuti web nella versione 2.1, richiamate dalla norma armonizzata EN 301 549. Le segnalazioni relative a difficoltà di accesso possono essere indirizzate ad <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>.</p><h2>27. Legge applicabile e foro competente</h2><p>Le presenti Condizioni sono regolate dalla legge italiana.</p><p><strong>Utenti consumatori.</strong> Per le controversie con Utenti che rivestano la qualità di consumatore è competente in via esclusiva e inderogabile il giudice del luogo di residenza o di domicilio elettivo del consumatore, ai sensi dell'articolo 66-bis del Codice del Consumo. Resta ferma l'applicazione delle disposizioni imperative dell'ordinamento dello Stato membro di residenza abituale del consumatore, secondo l'articolo 6 del Regolamento (CE) n. 593/2008.</p><p><strong>Altri Utenti.</strong> Per le controversie con Utenti che non rivestano la qualità di consumatore è competente in via esclusiva il Foro di Milano.</p><h2>28. Risoluzione alternativa delle controversie</h2><p>Il consumatore può ricorrere alle procedure di risoluzione extragiudiziale disciplinate dalla Parte V, Titolo II-bis, del Codice del Consumo, rivolgendosi agli organismi iscritti nell'elenco tenuto dalle autorità competenti ai sensi dell'articolo 141-decies del medesimo Codice.</p><p>Alla data del presente documento AMT non aderisce ad alcun organismo di risoluzione extragiudiziale delle controversie, e ne dà atto in adempimento dell'obbligo informativo previsto dall'articolo 49, comma 1, lettera v), del Codice del Consumo. La circostanza non preclude al consumatore la facoltà di adire gli organismi iscritti nell'elenco.</p><p>Il consumatore residente in uno Stato membro diverso dall'Italia può rivolgersi alla rete dei Centri europei dei consumatori. Si segnala che la piattaforma europea per la risoluzione delle controversie online, istituita dal Regolamento (UE) n. 524/2013, è stata dismessa e che il predetto regolamento è stato abrogato dal Regolamento (UE) 2024/3228 con effetto dal 20 luglio 2025; ogni riferimento a tale piattaforma è pertanto privo di attualità.</p><p>In ogni caso il reclamo può essere previamente indirizzato ad AMT all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, con riscontro entro trenta giorni.</p><h2>29. Disposizioni finali</h2><p><strong>Nullità parziale.</strong> L'invalidità o l'inefficacia di una singola clausola non si estende alle restanti disposizioni, che conservano piena efficacia. La clausola invalida è sostituita di diritto dalla disciplina legale applicabile.</p><p><strong>Tolleranza.</strong> L'eventuale inerzia di AMT nell'esercizio di un diritto o di una facoltà non costituisce rinuncia al medesimo, né preclude il successivo esercizio.</p><p><strong>Cessione del contratto.</strong> L'Utente non può cedere il contratto o i diritti da esso derivanti senza il preventivo consenso scritto di AMT. AMT può cedere il contratto nell'ambito di operazioni di trasferimento d'azienda o di ramo d'azienda, dandone comunicazione con preavviso di trenta giorni e riconoscendo all'Utente la facoltà di recedere senza oneri.</p><p><strong>Comunicazioni.</strong> Le comunicazioni ad AMT sono validamente effettuate all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>. Le comunicazioni all'Utente sono effettuate all'indirizzo di posta elettronica associato all'account, ovvero mediante notifica all'interno del Portale.</p><p><strong>Lingua.</strong> Le presenti Condizioni sono redatte in lingua italiana. Le eventuali traduzioni sono fornite a fini di mera cortesia; in caso di difformità prevale il testo italiano.</p><p><strong>Versione.</strong> Le versioni precedenti delle presenti Condizioni sono conservate da AMT e possono essere richieste all'indirizzo sopra indicato.</p><h2>30. Clausole oggetto di specifica approvazione</h2><p>Ai sensi e per gli effetti degli articoli 1341 e 1342 del Codice civile, l'Utente che non rivesta la qualità di consumatore dichiara di approvare specificamente le clausole di seguito indicate:</p><p>Articolo 8 (variazione dei corrispettivi e rinnovo automatico), Articolo 14.2 (risoluzione di diritto per tentativo di reidentificazione), Articolo 19 (sospensione cautelare e risoluzione), Articolo 23 (limitazioni di responsabilità e limite quantitativo), Articolo 24 (facoltà di modifica unilaterale), Articolo 27 (foro competente esclusivo), Articolo 29 (divieto di cessione e facoltà di cessione in capo ad AMT).</p><p>L'approvazione è manifestata mediante apposizione della seconda spunta, distinta e non preselezionata, presentata al termine della procedura di registrazione.</p><p>*  *  *</p><p>Documento aggiornato al 6 agosto 2026</p><p>AMT di Francesco Toso</p>
+  </div>
+</section>
+<footer class="ah-footer" data-afai-block="footer-section" data-gjs-name="Footer">
+  <div class="ah-shell ah-footer__inner" data-afai-block="features-section" data-gjs-name="Sezione Features">
+    <div class="ah-footer__brand"><strong>CustomArchery</strong><span>La piattaforma per società, istruttori e arcieri.</span></div>
+    <nav class="ah-footer__legal" aria-label="Informazioni legali">
+      <a href="https://archeryhub.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="./termini-e-condizioni">Termini e Condizioni</a>
+      <a href="./cookie-policy">Cookie Policy</a>
+    </nav>
+  </div>
+</footer>
+</main>
+</body>
+</html>
