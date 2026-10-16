@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CustomArchery | Per societa</title>
+<title>Archery Hub | Per le società</title>
+<meta name="description" content="Meno burocrazia, più tiro con l'arco: la piattaforma che gestisce soci, quote, visite mediche e gare della tua società.">
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400..800&family=Nunito+Sans:wght@400..800&display=swap");
+
 :root {
   color-scheme: light;
 }
@@ -19,10 +22,12 @@ html {
 
 body {
   margin: 0;
+  background: #f6f6fb;
 }
 
 img,
-iframe {
+iframe,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -32,28 +37,46 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 .ah-page {
-  --brand: #342877;
-  --brand-dark: #251c54;
-  --accent: #e00074;
-  --accent-dark: #a30055;
-  --accent-soft: #ff5cb8;
-  --ink: #1f1f1f;
-  --muted: #5e5e5e;
-  --bg: #ffffff;
-  --bg-alt: #f6f5fb;
-  --panel: #ffffff;
-  --line: #e3e1ec;
-  --blue: #1d4ed8;
-  --green: #1f9d57;
-  --shadow: 0 20px 60px rgba(37, 28, 84, 0.16);
-  --radius: 14px;
-  --maxw: 1180px;
+  --navy: #1b1b3a;
+  --indigo: #302f82;
+  --indigo-2: #3b3a93;
+  --indigo-line: #5554ae;
+  --magenta: #e6057f;
+  --magenta-text: #c8046f;
+  --magenta-dark: #a3035a;
+  --pink: #ff5cb8;
+  --pink-soft: #fce4f1;
+  --pink-wash: #fff0f7;
+  --bg: #f6f6fb;
+  --card: #fdfdff;
+  --line: #e0e1f0;
+  --ink: #1b1b3a;
+  --muted: #4e4f73;
+  --on-dark: #f6f6fb;
+  --on-dark-muted: #c9c9e8;
+  --ok: #0b6b4f;
+  --ok-bg: #ddf5ec;
+  --warn: #7a4a00;
+  --warn-bg: #fdf0d5;
+  --shadow: 0 24px 64px rgba(27, 27, 58, 0.12);
+  --radius: 16px;
+  --maxw: 1200px;
+  --font-display: Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   min-height: 100vh;
   overflow-x: clip;
   color: var(--ink);
   background: var(--bg);
-  font-family: Lato, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
   line-height: 1.6;
 }
 
@@ -62,702 +85,1807 @@ a {
   margin-inline: auto;
 }
 
+/* ---------- Tipografia ---------- */
+
 .ah-kicker {
   margin: 0 0 14px;
-  color: var(--accent);
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.ah-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.ah-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.ah-lead {
+  max-width: 620px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  line-height: 1.5;
+}
+
+.ah-hl {
+  color: var(--magenta-text);
+}
+
+.ah-dark .ah-hl,
+.ah-indigo .ah-hl {
+  color: var(--pink);
+}
+
+.ah-dark .ah-kicker,
+.ah-indigo .ah-kicker {
+  color: var(--pink);
+}
+
+.ah-dark .ah-lead,
+.ah-indigo .ah-lead {
+  color: var(--on-dark-muted);
+}
+
+.ah-note {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.ah-dark .ah-note,
+.ah-indigo .ah-note {
+  color: var(--on-dark-muted);
+}
+
+/* ---------- Bottoni ---------- */
+
+.ah-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
 }
 
 .ah-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
-  border: 1px solid transparent;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 2px solid transparent;
   border-radius: 999px;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 0.92rem;
-  font-weight: 800;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
   transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
 .ah-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+}
+
+.ah-button svg {
+  width: 18px;
+  height: 18px;
 }
 
 .ah-button--primary {
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  box-shadow: 0 18px 38px rgba(224, 0, 116, 0.27);
+  color: #fdfdff;
+  background: var(--magenta);
+}
+
+.ah-button--primary:hover {
+  background: var(--magenta-dark);
 }
 
 .ah-button--ghost {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.09);
+  color: var(--indigo);
+  border-color: var(--indigo);
 }
 
-.ah-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.ah-button--ghost:hover {
+  background: #e8e8f6;
 }
+
+.ah-dark .ah-button--ghost,
+.ah-indigo .ah-button--ghost,
+.ah-magenta .ah-button--ghost {
+  color: var(--on-dark);
+  border-color: rgba(246, 246, 251, 0.5);
+}
+
+.ah-dark .ah-button--ghost:hover,
+.ah-indigo .ah-button--ghost:hover,
+.ah-magenta .ah-button--ghost:hover {
+  background: rgba(246, 246, 251, 0.1);
+}
+
+.ah-magenta .ah-button--primary {
+  color: var(--magenta-dark);
+  background: #fdfdff;
+}
+
+/* ---------- Navigazione ---------- */
 
 .ah-nav {
   position: sticky;
   top: 0;
-  z-index: 30;
-  color: #fff;
-  background: rgba(37, 28, 84, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(16px);
+  z-index: 20;
+  background: rgba(253, 253, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
 }
 
 .ah-nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 74px;
   gap: 24px;
+  min-height: 72px;
 }
 
 .ah-brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-height: 48px;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-weight: 900;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-.ah-brand__mark {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 6px var(--accent), inset 0 0 0 13px #fff;
-  background: var(--brand);
+.ah-brand__wordmark {
+  display: block;
+  width: 168px;
 }
 
-.ah-brand__mark::after {
-  content: "";
-  position: absolute;
-  top: 17px;
-  left: 36px;
-  width: 24px;
-  height: 3px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  transform: rotate(-14deg);
+.ah-brand__wordmark svg {
+  width: 100%;
+  height: auto;
+}
+
+.ah-brand__wordmark--lg {
+  width: min(100%, 240px);
 }
 
 .ah-menu {
   display: none;
   min-height: 44px;
-  padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 0 18px;
+  color: var(--indigo);
+  background: transparent;
+  border: 2px solid var(--indigo);
   border-radius: 999px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  font: inherit;
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .ah-nav__links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
   gap: 6px;
-  color: rgba(255, 255, 255, 0.82);
-  font-weight: 700;
 }
 
 .ah-nav__links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 10px;
+  padding: 10px 14px;
+  color: var(--muted);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 500;
 }
 
 .ah-nav__links a:hover {
-  color: #fff;
+  color: var(--navy);
+  background: #eeeef7;
 }
 
-.ah-nav__cta {
-  margin-left: 4px;
-  border-radius: 999px;
-  color: #fff;
-  background: var(--accent);
+.ah-nav__links [aria-current="page"] {
+  color: var(--indigo);
+  background: #e8e8f6;
 }
+
+.ah-nav__links .ah-nav__cta {
+  margin-left: 8px;
+  padding: 10px 20px;
+  color: #fdfdff;
+  background: var(--magenta);
+  font-weight: 600;
+}
+
+.ah-nav__links .ah-nav__cta:hover {
+  color: #fdfdff;
+  background: var(--magenta-dark);
+}
+
+/* ---------- Sezioni ---------- */
+
+.ah-section {
+  padding: clamp(72px, 10vw, 128px) 0;
+}
+
+.ah-section--tight {
+  padding-top: 0;
+}
+
+.ah-light {
+  background: var(--bg);
+}
+
+.ah-white {
+  background: var(--card);
+}
+
+.ah-indigo {
+  color: var(--on-dark);
+  background: var(--indigo);
+}
+
+.ah-dark {
+  color: var(--on-dark);
+  background: var(--navy);
+}
+
+.ah-magenta {
+  color: #fdfdff;
+  background: linear-gradient(135deg, #e6057f 0%, #a3035a 100%);
+}
+
+.ah-section__header {
+  max-width: 760px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.ah-section__header--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.ah-section__header--center .ah-lead {
+  margin-inline: auto;
+}
+
+/* ---------- Hero ---------- */
 
 .ah-hero {
   position: relative;
-  min-height: 88vh;
-  display: grid;
-  align-items: end;
+  padding: clamp(64px, 9vw, 120px) 0 clamp(72px, 10vw, 128px);
+  color: var(--on-dark);
+  background: radial-gradient(circle at 85% 60%, #302f82 0%, #1b1b3a 62%);
   overflow: hidden;
-  color: #fff;
-  background:
-    linear-gradient(135deg, rgba(37, 28, 84, 0.97), rgba(52, 40, 119, 0.9) 52%, rgba(163, 0, 85, 0.78)),
-    url("https://ichef.bbci.co.uk/news/976/cpsprodpb/0CDB/production/_119419230_312ac4f3-5b56-4d6c-9346-c94c3ee49e45.jpg") center / cover;
 }
 
 .ah-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.52fr);
-  gap: 48px;
-  align-items: end;
-  padding: 118px 0 72px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
 }
 
-.ah-hero h1,
-.ah-section h2 {
-  margin: 0;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-weight: 900;
-  line-height: 0.98;
-  letter-spacing: 0;
+.ah-hero .ah-lead {
+  color: var(--on-dark-muted);
 }
 
-.ah-hero h1 {
-  max-width: 900px;
-  font-size: clamp(3.4rem, 7vw, 6.8rem);
-}
-
-.ah-hero__copy > p:not(.ah-kicker) {
-  max-width: 700px;
-  margin: 24px 0 30px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 1.18rem;
-}
-
-.ah-product-card {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
-}
-
-.ah-product-card__image {
-  min-height: 250px;
-  background:
-    linear-gradient(180deg, transparent, rgba(37, 28, 84, 0.38)),
-    url("https://www.sandwellresidentials.co.uk/_webedit/cached-images/128-0-556-0-8889-10000-1707.jpg") center / cover;
-}
-
-.ah-product-card__body {
-  padding: 24px;
-}
-
-.ah-product-card h2 {
-  margin: 12px 0 10px;
-  font-size: 1.55rem;
-  line-height: 1.12;
-}
-
-.ah-product-card p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.ah-chip {
+.ah-hero-qr {
   display: inline-flex;
   align-items: center;
-  min-height: 30px;
-  padding: 0 10px;
-  border-radius: 999px;
-  color: #fff;
-  background: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 900;
-}
-
-.ah-product-card__stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.ah-product-card__stats span {
-  min-height: 82px;
-  padding: 16px;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.86rem;
-}
-
-.ah-product-card__stats span:last-child {
-  border-right: 0;
-}
-
-.ah-product-card__stats strong {
-  display: block;
-  color: var(--accent-soft);
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 1.4rem;
-}
-
-.ah-section {
-  padding: 92px 0;
-}
-
-.ah-section__grid,
-.ah-dashboard-grid,
-.ah-video-grid,
-.ah-flow__grid,
-.ah-faq-grid,
-.ah-cta__box {
-  display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.52fr);
-  gap: 42px;
-  align-items: start;
-}
-
-.ah-section__header {
-  max-width: 780px;
-  margin-bottom: 36px;
-}
-
-.ah-section h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
-}
-
-.ah-section__text,
-.ah-section p {
-  color: var(--muted);
-}
-
-.ah-workspace {
-  background: var(--bg-alt);
-}
-
-.ah-module-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 42px;
-}
-
-.ah-module-grid--3col {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.ah-module,
-.ah-feature,
-.ah-program,
-.ah-solution,
-.ah-dashboard {
-  border: 1px solid var(--line);
+  gap: 16px;
+  margin-top: 36px;
+  padding: 12px 20px 12px 12px;
+  background: rgba(246, 246, 251, 0.06);
+  border: 1px solid rgba(246, 246, 251, 0.16);
   border-radius: var(--radius);
-  background: var(--panel);
-  box-shadow: 0 14px 38px rgba(37, 28, 84, 0.06);
 }
 
-.ah-module {
-  min-height: 260px;
-  padding: 26px;
+.ah-hero-qr__code {
+  flex: none;
+  width: 84px;
+  height: 84px;
+  padding: 4px;
+  background: #ffffff;
+  border-radius: 10px;
 }
 
-.ah-module span,
-.ah-program span,
-.ah-solution span {
-  color: var(--accent);
-  font-family: Montserrat, system-ui, sans-serif;
-  font-weight: 900;
-}
-
-.ah-module h3,
-.ah-feature h3,
-.ah-program h3,
-.ah-flow-step h3 {
-  margin: 16px 0 8px;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 1.18rem;
-  line-height: 1.2;
-}
-
-.ah-module p,
-.ah-feature p,
-.ah-program p,
-.ah-flow-step p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.ah-feature-board {
+.ah-hero-qr__text {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 2px;
 }
 
-.ah-feature {
-  min-height: 250px;
-  padding: 26px;
+.ah-hero-qr__text strong {
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
-.ah-feature--large {
-  grid-column: span 2;
-  grid-row: span 2;
-  color: #fff;
-  background:
-    linear-gradient(135deg, rgba(52, 40, 119, 0.94), rgba(224, 0, 116, 0.78)),
-    url("https://gdb.voanews.com/5157767E-EF76-4E7D-BFAA-6F4C9DFB74E5_w1080_h608.jpg") center / cover;
+.ah-hero-qr__text span {
+  color: var(--on-dark-muted);
+  font-size: 0.92rem;
 }
 
-.ah-feature--large h3 {
-  max-width: 420px;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-}
-
-.ah-feature--large p {
-  max-width: 520px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.ah-flow,
-.ah-video-band,
-.ah-cta {
-  color: #fff;
-  background: var(--brand-dark);
-}
-
-.ah-flow .ah-kicker,
-.ah-video-band .ah-kicker,
-.ah-cta .ah-kicker {
-  color: var(--accent-soft);
-}
-
-.ah-flow p,
-.ah-video-band p,
-.ah-cta p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.ah-flow__steps {
-  display: grid;
-  gap: 14px;
-}
-
-.ah-flow-step {
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  gap: 18px;
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.ah-flow-step b {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: #fff;
-  background: var(--accent);
-}
-
-.ah-flow-step h3 {
-  color: #fff;
-  margin-top: 0;
-}
-
-.ah-dashboard-band {
-  background: linear-gradient(180deg, var(--bg-alt), #fff);
-}
-
-.ah-dashboard-grid {
+.ah-hero__visual {
+  position: relative;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  min-height: 520px;
 }
 
-.ah-dashboard {
+.ah-float {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 280px;
+  padding: 14px 18px;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(10, 10, 40, 0.35);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.ah-float small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.ah-float--top {
+  top: 36px;
+  left: -8px;
+  transform: rotate(-3deg);
+}
+
+.ah-float--bottom {
+  right: -8px;
+  bottom: 48px;
+  transform: rotate(2deg);
+}
+
+/* ---------- Icone ---------- */
+
+.ah-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  color: var(--magenta-text);
+  background: var(--pink-soft);
+  border-radius: 50%;
+}
+
+.ah-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ah-icon--solid {
+  color: #fdfdff;
+  background: var(--magenta);
+}
+
+.ah-icon--indigo {
+  color: var(--indigo);
+  background: #e8e8f6;
+}
+
+.ah-icon--sm {
+  width: 40px;
+  height: 40px;
+}
+
+.ah-icon--sm svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Mockup: finestra ---------- */
+
+.ah-window {
   overflow: hidden;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
   box-shadow: var(--shadow);
 }
 
-.ah-dashboard__top {
+.ah-window__bar {
   display: flex;
   gap: 8px;
-  padding: 16px;
-  background: var(--brand);
+  padding: 12px 16px;
+  background: #eeeef7;
 }
 
-.ah-dashboard__top span {
+.ah-window__bar i {
   width: 12px;
   height: 12px;
+  background: #c9cad9;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
 }
 
-.ah-dashboard__body {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  min-height: 360px;
+.ah-window__bar i:first-child {
+  background: var(--magenta);
 }
 
-.ah-dashboard aside {
+.ah-window__body {
   display: grid;
-  align-content: start;
   gap: 12px;
-  padding: 22px;
-  color: #fff;
-  background: var(--brand-dark);
+  padding: clamp(20px, 3vw, 32px);
 }
 
-.ah-dashboard aside strong {
-  margin-bottom: 12px;
-  font-family: Montserrat, system-ui, sans-serif;
-}
-
-.ah-dashboard aside a {
-  min-height: 38px;
-  padding: 8px 10px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-.ah-dashboard__body section {
-  display: grid;
-  place-items: center;
-  gap: 22px;
-  padding: 28px;
-  background: #fff;
-}
-
-.ah-target {
-  position: relative;
-  width: min(250px, 70vw);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow:
-    0 0 0 24px #e7ebf3,
-    0 0 0 48px var(--blue),
-    0 0 0 72px #d23b3b,
-    0 0 0 96px var(--accent);
-}
-
-.ah-target i {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--brand-dark);
-}
-
-.ah-target i:nth-child(1) { top: 42%; left: 48%; }
-.ah-target i:nth-child(2) { top: 50%; left: 54%; }
-.ah-target i:nth-child(3) { top: 47%; left: 42%; }
-.ah-target i:nth-child(4) { top: 56%; left: 49%; }
-
-.ah-dashboard__rows {
-  display: grid;
-  width: min(100%, 420px);
-  gap: 10px;
-}
-
-.ah-dashboard__rows span {
-  height: 12px;
-  border-radius: 999px;
-  background: var(--line);
-}
-
-.ah-dashboard__rows span:nth-child(2) {
-  width: 78%;
-}
-
-.ah-dashboard__rows span:nth-child(3) {
-  width: 58%;
-}
-
-.ah-programs {
-  background: var(--bg-alt);
-}
-
-.ah-program-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.ah-program {
-  overflow: hidden;
-}
-
-.ah-program img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
-
-.ah-program div {
-  padding: 24px;
-}
-
-.ah-program h3 {
-  margin-top: 8px;
-  font-size: 1.35rem;
-}
-
-.ah-video-grid {
-  grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.38fr);
-  align-items: center;
-}
-
-.ah-video {
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-  background: #000;
-  box-shadow: var(--shadow);
-}
-
-.ah-video iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-}
-
-.ah-solution-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.ah-solution {
-  display: grid;
-  gap: 8px;
-  min-height: 168px;
-  padding: 24px;
-}
-
-.ah-solution strong {
-  font-family: Montserrat, system-ui, sans-serif;
+.ah-window__title {
+  font-family: var(--font-display);
   font-size: 1.3rem;
+  font-weight: 600;
 }
 
-.ah-solution em {
-  color: var(--muted);
-  font-style: normal;
-}
-
-.ah-faq {
-  background: var(--bg-alt);
-}
-
-.ah-faq-grid {
-  grid-template-columns: minmax(260px, 0.48fr) 1fr;
-}
-
-details {
-  border-bottom: 1px solid var(--line);
-}
-
-summary {
-  cursor: pointer;
+.ah-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  min-height: 68px;
-  font-family: Montserrat, system-ui, sans-serif;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.ah-row--focus {
+  background: var(--pink-wash);
+  border: 3px solid var(--magenta);
+}
+
+.ah-row small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.ah-alert {
+  padding: 12px 16px;
+  color: var(--warn);
+  background: var(--warn-bg);
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.ah-badge {
+  flex: none;
+  padding: 3px 14px;
+  color: var(--ok);
+  background: var(--ok-bg);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ah-badge--alert {
+  color: #fdfdff;
+  background: var(--magenta-text);
+}
+
+.ah-badge--info {
+  color: var(--indigo);
+  background: #e8e8f6;
+}
+
+/* ---------- Mockup: telefono ---------- */
+
+.ah-phone {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  align-content: center;
+  width: min(100%, 300px);
+  min-height: 520px;
+  padding: 36px 24px;
+  color: var(--ink);
+  background: var(--card);
+  border: 10px solid var(--indigo-2);
+  border-radius: 44px;
+  box-shadow: 0 30px 70px rgba(10, 10, 40, 0.4);
+  text-align: center;
+}
+
+.ah-phone--dark {
+  color: var(--on-dark);
+  background: var(--navy);
+  border-color: #3d3c9a;
+}
+
+.ah-phone__eyebrow {
+  color: var(--muted);
+  font-size: 0.8rem;
   font-weight: 800;
-  list-style: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-summary::-webkit-details-marker {
-  display: none;
+.ah-phone--dark .ah-phone__eyebrow,
+.ah-phone--dark .ah-phone__sub {
+  color: #dcdcf2;
 }
 
-summary::after {
-  content: "+";
+.ah-phone__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.ah-phone__sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.ah-phone__btn {
+  padding: 13px 0;
+  color: #fdfdff;
+  background: var(--magenta);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ah-phone__btn--ghost {
+  color: var(--muted);
+  background: transparent;
+  border: 2px solid var(--line);
+}
+
+.ah-avatar {
   display: grid;
   place-items: center;
-  flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
+  width: 84px;
+  height: 84px;
+  margin-inline: auto;
+  color: var(--indigo);
+  background: #e8e8f6;
   border-radius: 50%;
-  color: #fff;
-  background: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
-details[open] summary::after {
-  content: "-";
+/* Segnapunti */
+
+.ah-score__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: var(--muted);
+  font-weight: 700;
 }
 
-details p {
-  margin: 0;
-  padding: 0 54px 24px 0;
+.ah-score__total strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 2rem;
 }
 
-.ah-cta__box {
+.ah-score {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ah-score span {
+  padding: 12px 0;
+  color: var(--navy);
+  background: #f5c518;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ah-score .is-red {
+  color: #fdfdff;
+  background: #d42a35;
+}
+
+.ah-score .is-blue {
+  color: #fdfdff;
+  background: #1a6fc4;
+}
+
+.ah-score .is-black {
+  color: #fdfdff;
+  background: var(--navy);
+}
+
+.ah-score .is-white {
+  background: #fdfdff;
+  border: 2px solid #c9cad9;
+}
+
+.ah-score .is-miss {
+  background: #c9cad9;
+}
+
+/* Chat */
+
+.ah-chat {
+  display: grid;
+  gap: 12px;
+  background: var(--bg);
+}
+
+.ah-bubble {
+  max-width: 82%;
+  padding: 12px 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ah-bubble small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.ah-bubble--me {
+  justify-self: end;
+  color: #fdfdff;
+  background: var(--indigo);
+  border-color: var(--indigo);
+}
+
+.ah-chat__notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--pink-wash);
+  border: 3px solid var(--magenta);
+  border-radius: 14px;
+  font-weight: 700;
+}
+
+/* ---------- Problema: le carte sparse ---------- */
+
+.ah-mess {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ah-mess__card {
+  display: grid;
+  gap: 6px;
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(27, 27, 58, 0.1);
+}
+
+.ah-mess__card:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.ah-mess__card:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.ah-mess__card:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+.ah-mess__card:nth-child(4) {
+  transform: rotate(2deg);
+}
+
+.ah-mess__art {
+  height: 130px;
+  margin-bottom: 12px;
+  padding: 14px;
+  background: var(--bg);
+  border-radius: 12px;
+}
+
+.ah-mess__card h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.ah-mess__card p {
+  color: var(--muted);
+}
+
+.ah-mess__claim {
+  margin-top: 56px;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.ah-art-sheet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.ah-art-sheet i {
+  height: 22px;
+  background: #fdfdff;
+  border: 1px solid #d5d6ea;
+}
+
+.ah-art-sheet i:nth-child(-n + 4) {
+  background: #2e8b57;
+  border-color: #2e8b57;
+}
+
+.ah-art-sheet .is-pink {
+  background: var(--pink-soft);
+}
+
+.ah-art-sheet .is-yellow {
+  background: var(--warn-bg);
+}
+
+.ah-art-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  background: #ece5dd;
+}
+
+.ah-art-chat span {
+  align-self: flex-start;
+  padding: 2px 12px;
+  background: #fdfdff;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ah-art-chat span:nth-child(2) {
+  align-self: flex-end;
+  background: #d9fdd3;
+}
+
+.ah-art-money {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ah-art-money b {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  color: var(--indigo);
+  background: #e8e8f6;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+}
+
+.ah-art-money span {
+  display: grid;
+  flex: 1;
+  gap: 10px;
+}
+
+.ah-art-money i {
+  height: 10px;
+  background: #c9cad9;
+  border-radius: 6px;
+}
+
+.ah-art-money i:nth-child(2) {
+  width: 70%;
+}
+
+.ah-art-money i:nth-child(4) {
+  width: 50%;
+}
+
+.ah-art-paper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background: #fffbea;
+}
+
+.ah-art-paper span {
+  color: var(--indigo);
+  border-bottom: 2px solid #e9dfa8;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ah-art-paper span:last-child {
+  color: #9a9bb5;
+}
+
+/* ---------- Rete: una piattaforma per tutti ---------- */
+
+.ah-hub {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 260px 1fr;
+  grid-template-areas:
+    "a hub b"
+    "c hub d";
+  gap: 40px 64px;
   align-items: center;
 }
 
+.ah-hub__center {
+  grid-area: hub;
+  display: grid;
+  place-items: center;
+  width: 240px;
+  height: 240px;
+  margin-inline: auto;
+  background: var(--card);
+  border: 8px solid var(--magenta);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(230, 5, 127, 0.18),
+    0 0 0 44px rgba(230, 5, 127, 0.07);
+}
+
+.ah-hub__center svg {
+  width: 110px;
+  height: auto;
+}
+
+.ah-role {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 24px;
+  background: var(--indigo-2);
+  border: 1px solid var(--indigo-line);
+  border-radius: 20px;
+}
+
+.ah-role:nth-of-type(1) {
+  grid-area: a;
+}
+
+.ah-role:nth-of-type(2) {
+  grid-area: b;
+}
+
+.ah-role:nth-of-type(3) {
+  grid-area: c;
+}
+
+.ah-role:nth-of-type(4) {
+  grid-area: d;
+}
+
+.ah-role h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.ah-role p {
+  color: #dcdcf2;
+}
+
+.ah-role .ah-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.ah-hub__claim {
+  margin-top: 56px;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  text-align: center;
+}
+
+/* ---------- Funzionalità in evidenza ---------- */
+
+.ah-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+
+.ah-feature + .ah-feature {
+  margin-top: clamp(80px, 11vw, 140px);
+}
+
+.ah-feature--flip .ah-feature__copy {
+  order: 2;
+}
+
+.ah-feature__copy .ah-lead {
+  margin-top: 16px;
+}
+
+.ah-feature__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ah-feature__visual .ah-window {
+  flex: 1;
+  min-width: 0;
+}
+
+.ah-points {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-points li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-weight: 600;
+}
+
+.ah-points li::before {
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  background: var(--magenta) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fdfdff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 14px no-repeat;
+  border-radius: 50%;
+}
+
+.ah-mini-phone {
+  display: grid;
+  flex: none;
+  gap: 10px;
+  width: 210px;
+  padding: 26px 18px;
+  color: var(--on-dark);
+  background: var(--navy);
+  border: 8px solid #3d3c9a;
+  border-radius: 36px;
+  box-shadow: 0 24px 56px rgba(10, 10, 40, 0.3);
+  text-align: center;
+}
+
+.ah-mini-phone p {
+  color: #dcdcf2;
+  font-size: 0.9rem;
+}
+
+.ah-mini-phone strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+/* Modalità di allenamento */
+
+.ah-modes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.ah-mode {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #26255c;
+  border: 1px solid #3d3c9a;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.ah-mode .ah-icon {
+  color: var(--pink);
+  background: rgba(255, 92, 184, 0.14);
+}
+
+/* ---------- Griglie di schede ---------- */
+
+.ah-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ah-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ah-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ah-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.ah-card .ah-icon {
+  margin-bottom: 12px;
+}
+
+.ah-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.ah-card p {
+  color: var(--muted);
+}
+
+a.ah-card {
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+a.ah-card:hover {
+  border-color: var(--magenta);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.ah-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.ah-card__link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- Minori ---------- */
+
+.ah-ages {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-ages__bands {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ah-age {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.ah-age b {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--magenta-text);
+}
+
+.ah-age i {
+  height: 20px;
+  background: var(--magenta);
+  border-radius: 10px;
+}
+
+.ah-age p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ah-age:nth-child(2) b {
+  color: #7a4fa8;
+}
+
+.ah-age:nth-child(2) i {
+  background: #9b6bc9;
+}
+
+.ah-age:nth-child(3) b {
+  color: var(--indigo);
+}
+
+.ah-age:nth-child(3) i {
+  background: var(--indigo);
+}
+
+.ah-ages .ah-phone {
+  min-height: 0;
+  border-color: var(--indigo);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Facile da usare ---------- */
+
+.ah-easy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-checks {
+  display: grid;
+  gap: 22px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-checks li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 600;
+}
+
+.ah-devices {
+  position: relative;
+  min-height: 400px;
+}
+
+.ah-laptop {
+  width: 88%;
+}
+
+.ah-laptop__screen {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  padding: 44px 18%;
+  background: var(--card);
+  border: 12px solid var(--navy);
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.ah-laptop__base {
+  height: 22px;
+  margin-inline: -5%;
+  background: #c9cad9;
+  border-radius: 0 0 16px 16px;
+}
+
+.ah-field {
+  width: 100%;
+  padding: 9px 14px;
+  color: #626385;
+  background: var(--bg);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.ah-enter {
+  width: 100%;
+  padding: 9px 0;
+  color: #fdfdff;
+  background: var(--indigo);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-align: center;
+}
+
+.ah-devices .ah-mini-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 180px;
+  color: var(--ink);
+  background: var(--card);
+  border-color: var(--navy);
+}
+
+.ah-devices .ah-mini-phone .ah-enter {
+  background: var(--magenta);
+}
+
+.ah-mini-phone__mark {
+  display: block;
+  width: 56px;
+  margin: 0 auto 4px;
+}
+
+.ah-mini-phone__mark--lg {
+  width: 72px;
+}
+
+.ah-mini-phone__mark svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Prima e dopo ---------- */
+
+.ah-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+  align-items: center;
+}
+
+.ah-compare__col {
+  display: grid;
+  gap: 22px;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: 20px;
+}
+
+.ah-compare__col h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ah-compare__col ul {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-compare__col li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.15rem;
+}
+
+.ah-compare__before {
+  color: var(--muted);
+  background: #ececf4;
+}
+
+.ah-compare__before li::before {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 12px;
+  background: #9a9bb5;
+  border-radius: 50%;
+}
+
+.ah-compare__after {
+  color: var(--on-dark);
+  background: var(--indigo);
+  box-shadow: 0 24px 64px rgba(48, 47, 130, 0.25);
+}
+
+.ah-compare__after h3 {
+  color: #ff8fcb;
+}
+
+.ah-compare__after li {
+  font-weight: 700;
+}
+
+.ah-compare__after li svg {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  color: #ff8fcb;
+}
+
+.ah-compare__arrow {
+  display: grid;
+  place-items: center;
+  color: var(--magenta);
+}
+
+.ah-compare__arrow svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---------- Frase manifesto ---------- */
+
+.ah-statement {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-statement__less {
+  color: #ffb8dc;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.ah-statement__less s {
+  text-decoration-color: #fdfdff;
+  text-decoration-thickness: 4px;
+}
+
+.ah-statement h2 {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.ah-statement__badge {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 16px 24px;
+  background: #8a034d;
+  border-radius: var(--radius);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ah-statement__mark {
+  display: grid;
+  place-items: center;
+  width: clamp(200px, 26vw, 320px);
+  aspect-ratio: 1;
+  background: #fdfdff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 24px rgba(253, 253, 255, 0.18),
+    0 0 0 54px rgba(253, 253, 255, 0.08);
+}
+
+.ah-statement__mark svg {
+  width: 50%;
+  height: auto;
+}
+
+/* ---------- Come si parte ---------- */
+
+.ah-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.ah-step {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  text-align: center;
+  counter-increment: step;
+}
+
+.ah-step::before {
+  content: counter(step);
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 16px;
+  color: #fdfdff;
+  background: var(--indigo);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.ah-step:last-child::before {
+  background: var(--magenta);
+}
+
+.ah-step::after {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  width: 100%;
+  height: 6px;
+  background: #d5d6ea;
+}
+
+.ah-step:last-child::after {
+  display: none;
+}
+
+.ah-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.ah-step:last-child h3 {
+  color: var(--magenta-text);
+}
+
+.ah-step p {
+  color: var(--muted);
+}
+
+.ah-plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: clamp(48px, 7vw, 80px);
+}
+
+.ah-plan {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+}
+
+.ah-plan strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.ah-plan span {
+  color: var(--muted);
+}
+
+/* ---------- FAQ ---------- */
+
+.ah-faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.ah-faq details {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ah-faq details:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.ah-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.ah-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.ah-faq summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--magenta-text);
+  background: var(--pink-soft);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.ah-faq details[open] summary::after {
+  content: "−";
+}
+
+.ah-faq details p {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+/* ---------- CTA finale e form ---------- */
+
+.ah-cta {
+  position: relative;
+  overflow: hidden;
+  color: var(--on-dark);
+  background: radial-gradient(circle at 85% 60%, #302f82 0%, #1b1b3a 62%);
+}
+
+.ah-cta__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-cta .ah-lead {
+  color: var(--on-dark-muted);
+}
+
+.ah-contacts {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-contacts a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(246, 246, 251, 0.06);
+  border: 1px solid rgba(246, 246, 251, 0.16);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background 180ms ease;
+}
+
+.ah-contacts a:hover {
+  background: rgba(246, 246, 251, 0.12);
+}
+
+.ah-contacts .ah-icon {
+  color: var(--pink);
+  background: rgba(255, 92, 184, 0.14);
+}
+
+.ah-form-box {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Footer ---------- */
+
 .ah-footer {
-  padding: 34px 0;
-  color: rgba(255, 255, 255, 0.72);
-  background: #14182b;
+  padding: 40px 0;
+  color: var(--on-dark-muted);
+  background: var(--navy);
+  border-top: 1px solid rgba(246, 246, 251, 0.1);
 }
 
 .ah-footer__inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 24px;
+}
+
+.ah-footer__brand {
+  display: grid;
+  gap: 2px;
+}
+
+.ah-footer__brand strong {
+  color: var(--on-dark);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.ah-footer__legal {
+  display: flex;
   flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
-.ah-footer strong {
-  color: #fff;
-  font-family: Montserrat, system-ui, sans-serif;
+.ah-footer__legal a:hover {
+  color: #fdfdff;
 }
 
-.ah-reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition:
-    opacity 520ms ease,
-    transform 520ms ease;
+/* ---------- Pagine legali ---------- */
+
+.ah-legal {
+  padding: 56px 0 96px;
+  background: var(--card);
 }
 
-.ah-reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.ah-legal .ah-shell {
+  max-width: 780px;
 }
+
+.ah-legal__back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.ah-legal h1 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.ah-legal__meta {
+  margin: 0 0 40px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.ah-legal h2 {
+  margin: 38px 0 14px;
+  padding-top: 26px;
+  color: var(--navy);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ah-legal h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.ah-legal p,
+.ah-legal li {
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.ah-legal p {
+  margin: 0 0 16px;
+}
+
+.ah-legal ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.ah-legal li {
+  margin-bottom: 8px;
+}
+
+.ah-legal a {
+  color: var(--indigo);
+  text-decoration: underline;
+}
+
+.ah-legal strong {
+  color: var(--navy);
+}
+
+.ah-legal table {
+  display: block;
+  width: 100%;
+  margin: 0 0 20px;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.ah-legal th,
+.ah-legal td {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+/* ---------- Responsive ---------- */
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .ah-reveal,
-  .ah-button {
+  .ah-button,
+  a.ah-card {
     transition: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .ah-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ah-mess {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 980px) {
   .ah-shell {
-    width: min(100% - 28px, var(--maxw));
-  }
-
-  .ah-nav__inner {
-    min-height: auto;
-    padding: 12px 0;
+    width: min(100% - 32px, var(--maxw));
   }
 
   .ah-menu {
@@ -765,290 +1893,194 @@ details p {
     align-items: center;
   }
 
+  .ah-nav__inner {
+    flex-wrap: wrap;
+    gap: 0 16px;
+    min-height: 64px;
+  }
+
   .ah-nav__links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
     display: none;
-    padding: 10px 14px 16px;
-    background: rgba(37, 28, 84, 0.97);
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 8px 0 16px;
   }
 
   .ah-nav.is-open .ah-nav__links {
-    display: grid;
+    display: flex;
   }
 
-  .ah-nav__links a {
-    width: 100%;
-    justify-content: center;
+  .ah-nav__links .ah-nav__cta {
+    margin: 8px 0 0;
+    text-align: center;
   }
 
   .ah-hero__grid,
-  .ah-section__grid,
-  .ah-dashboard-grid,
-  .ah-video-grid,
-  .ah-flow__grid,
+  .ah-feature,
+  .ah-easy,
+  .ah-ages,
+  .ah-statement,
   .ah-faq-grid,
-  .ah-cta__box {
-    grid-template-columns: 1fr;
+  .ah-cta__grid,
+  .ah-form-box {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .ah-hero {
-    min-height: auto;
+  .ah-feature--flip .ah-feature__copy {
+    order: 0;
   }
 
-  .ah-hero__grid {
-    padding: 78px 0 54px;
+  .ah-hero__visual {
+    min-height: 0;
   }
 
-  .ah-module-grid,
-  .ah-program-grid,
-  .ah-solution-list {
-    grid-template-columns: repeat(2, 1fr);
+  .ah-float--top {
+    left: 0;
   }
 
-  .ah-feature-board {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .ah-hero h1 {
-    font-size: 2.75rem;
+  .ah-float--bottom {
+    right: 0;
   }
 
-  .ah-section {
-    padding: 68px 0;
+  .ah-hub {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "hub hub"
+      "a b"
+      "c d";
+    gap: 20px;
   }
 
-  .ah-module-grid,
-  .ah-program-grid,
-  .ah-solution-list,
-  .ah-feature-board {
-    grid-template-columns: 1fr;
+  .ah-hub__center {
+    margin-bottom: 40px;
   }
 
-  .ah-feature--large {
-    grid-column: auto;
-    grid-row: auto;
+  .ah-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .ah-product-card__stats {
-    grid-template-columns: 1fr;
+  .ah-compare {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
 
-  .ah-product-card__stats span {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  .ah-compare__arrow {
+    transform: rotate(90deg);
   }
 
-  .ah-product-card__stats span:last-child {
-    border-bottom: 0;
+  .ah-statement__mark {
+    display: none;
   }
 
-  .ah-dashboard__body {
-    grid-template-columns: 1fr;
+  .ah-ages .ah-phone {
+    justify-self: center;
   }
 
-  .ah-dashboard aside {
-    grid-template-columns: repeat(3, 1fr);
-    overflow-x: auto;
+  .ah-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 0;
   }
 
-  .ah-dashboard aside strong {
-    grid-column: 1 / -1;
-  }
-}
-
-
-.ah-brand__logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 4px;
-}
-
-.ah-reveal,
-.ah-reveal.is-visible {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-.ah-nav__links [aria-current="page"] {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-}
-
-.ah-platform-pill {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 10px;
-  border-radius: 999px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.14);
-  font-weight: 900;
-}
-
-/* CustomArchery hero layout tuning — foto in alto, testo sotto, meno distanza dalla nav */
-.ah-hero {
-  min-height: 0;
-  align-items: stretch;
-}
-
-.ah-hero__grid {
-  grid-template-columns: 1fr;
-  justify-items: center;
-  gap: 36px;
-  padding: 56px 0 64px;
-}
-
-.ah-product-card {
-  order: 1;
-  width: min(100%, 640px);
-  justify-self: center;
-}
-
-.ah-product-card__image {
-  min-height: 260px;
-}
-
-.ah-product-card h2 {
-  font-size: clamp(1.18rem, 1.55vw, 1.45rem);
-}
-
-.ah-hero__copy {
-  order: 2;
-  min-width: 0;
-  max-width: 720px;
-  text-align: center;
-}
-
-.ah-hero__copy .ah-actions {
-  justify-content: center;
-}
-
-.ah-hero h1 {
-  max-width: 720px;
-  font-size: clamp(2.75rem, 4.2vw, 4.6rem);
-  line-height: 1.06;
-  overflow-wrap: break-word;
-  text-wrap: balance;
-}
-
-.ah-hero__copy > p:not(.ah-kicker) {
-  max-width: 600px;
-  margin: 20px auto 28px;
-  font-size: 1.08rem;
-}
-
-/* Badge QR "Iscriviti da mobile" */
-.ah-hero-qr {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 20px auto 0;
-  padding: 6px 16px 6px 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  text-align: left;
-  opacity: 0.85;
-  transition: opacity 180ms ease;
-}
-
-.ah-hero-qr:hover {
-  opacity: 1;
-}
-
-.ah-hero-qr__code {
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.ah-hero-qr__code svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.ah-hero-qr__text strong {
-  display: block;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 0.76rem;
-  color: #fff;
-}
-
-.ah-hero-qr__text span {
-  display: block;
-  margin-top: 2px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.7rem;
-}
-
-@media (max-width: 980px) {
-  .ah-hero-qr {
+  .ah-step:nth-child(2)::after {
     display: none;
   }
 }
 
-@media (max-width: 980px) {
-  .ah-hero__grid {
-    gap: 26px;
-    padding: 36px 0 44px;
-  }
-
-  .ah-product-card {
-    max-width: 560px;
-  }
-}
-
 @media (max-width: 640px) {
-  .ah-hero__grid {
-    padding: 26px 0 36px;
+  .ah-page {
+    font-size: 1rem;
   }
 
-  .ah-hero h1 {
-    font-size: clamp(2.1rem, 9vw, 3.1rem);
+  .ah-actions .ah-button {
+    width: 100%;
   }
 
   .ah-hero-qr {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
+    display: none;
   }
-}
 
-.ah-footer__inner {
-  align-items: flex-start;
-}
+  .ah-float {
+    position: static;
+    margin-top: 16px;
+    max-width: none;
+    transform: none;
+  }
 
-.ah-footer__brand {
-  display: grid;
-  gap: 4px;
-}
+  .ah-hero__visual {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.ah-footer__legal {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
+  .ah-hero__visual .ah-phone {
+    order: -1;
+    min-height: 0;
+  }
 
-.ah-footer__legal a:hover {
-  color: #fff;
-}
+  .ah-mess,
+  .ah-grid,
+  .ah-grid--2,
+  .ah-grid--4,
+  .ah-modes,
+  .ah-plans,
+  .ah-hub {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-@media (max-width: 640px) {
+  .ah-hub {
+    grid-template-areas:
+      "hub"
+      "a"
+      "b"
+      "c"
+      "d";
+  }
+
+  .ah-mess__card:nth-child(n) {
+    transform: none;
+  }
+
+  .ah-ages__bands {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .ah-feature__visual {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ah-feature__visual .ah-mini-phone {
+    align-self: center;
+  }
+
+  .ah-devices {
+    min-height: 0;
+  }
+
+  .ah-laptop {
+    width: 100%;
+  }
+
+  .ah-devices .ah-mini-phone {
+    display: none;
+  }
+
+  .ah-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ah-step::after {
+    display: none;
+  }
+
+  .ah-card {
+    padding: 26px;
+  }
+
   .ah-footer__inner {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -1058,9 +2090,8 @@ details p {
 <main class="ah-page" id="top">
 <nav class="ah-nav" data-afai-block="hero-section" data-gjs-name="Navigazione">
   <div class="ah-shell ah-nav__inner">
-    <a class="ah-brand" href="./home" aria-label="CustomArchery">
-      <img class="ah-brand__logo" src="/api/public/company/cmpph5b1e004v9jfe7rgqp6iq/logo" alt="CustomArchery" />
-      <span>CustomArchery</span>
+    <a class="ah-brand" href="./home" aria-label="Archery Hub, torna alla home">
+      <span class="ah-brand__wordmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2835.95 497.892" fill="none" aria-hidden="true" focusable="false"><defs><clipPath id="ahlogo1"><path d="M 2646 203 L 2835.617188 203 L 2835.617188 481 L 2646 481 Z M 2646 203 "/></clipPath><clipPath id="ahlogo2"><path d="M 0.28125 0 L 415 0 L 415 497.785156 L 0.28125 497.785156 Z M 0.28125 0 "/></clipPath></defs><path style="fill-rule:nonzero;fill:#302F82;" d="M 570.039062 399.398438 C 570.433594 399.796875 570.890625 399.992188 571.421875 399.992188 L 662.363281 399.992188 C 662.890625 399.992188 663.351562 399.796875 663.75 399.398438 C 664.140625 399.003906 664.203125 398.550781 663.945312 398.015625 L 618.078125 251.324219 C 617.8125 250.796875 617.417969 250.535156 616.890625 250.535156 C 616.359375 250.535156 615.964844 250.796875 615.707031 251.324219 L 569.839844 398.015625 C 569.574219 398.550781 569.640625 399.003906 570.039062 399.398438 M 688.460938 477.492188 L 674.226562 431.230469 C 673.957031 430.4375 673.433594 430.042969 672.644531 430.042969 L 561.539062 430.042969 C 560.746094 430.042969 560.214844 430.4375 559.957031 431.230469 L 545.722656 477.492188 C 544.929688 479.601562 543.347656 480.652344 540.976562 480.652344 L 508.949219 480.652344 C 506.046875 480.652344 504.996094 479.210938 505.789062 476.300781 L 592.378906 207.039062 C 593.167969 204.933594 594.75 203.878906 597.121094 203.878906 L 636.664062 203.878906 C 639.03125 203.878906 640.617188 204.933594 641.40625 207.039062 L 728.789062 476.300781 L 729.1875 477.882812 C 729.1875 479.730469 727.996094 480.652344 725.625 480.652344 L 693.207031 480.652344 C 690.828125 480.652344 689.246094 479.601562 688.460938 477.492188 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 806.320312 238.277344 L 806.320312 326.847656 C 806.320312 327.902344 806.847656 328.425781 807.902344 328.425781 L 873.933594 328.425781 C 887.898438 328.425781 899.101562 324.277344 907.539062 315.972656 C 915.972656 307.667969 920.195312 296.664062 920.195312 282.953125 C 920.195312 268.988281 915.972656 257.785156 907.539062 249.347656 C 899.101562 240.914062 887.898438 236.695312 873.933594 236.695312 L 807.902344 236.695312 C 806.847656 236.695312 806.320312 237.226562 806.320312 238.277344 M 921.773438 477.886719 L 866.421875 359.660156 C 866.152344 358.871094 865.628906 358.476562 864.839844 358.476562 L 807.902344 358.476562 C 806.847656 358.476562 806.320312 359.007812 806.320312 360.058594 L 806.320312 476.699219 C 806.320312 479.339844 805 480.652344 802.367188 480.652344 L 772.316406 480.652344 C 769.679688 480.652344 768.363281 479.339844 768.363281 476.699219 L 768.363281 207.832031 C 768.363281 205.199219 769.679688 203.878906 772.316406 203.878906 L 878.679688 203.878906 C 894.492188 203.878906 908.394531 207.175781 920.390625 213.761719 C 932.382812 220.351562 941.675781 229.578125 948.265625 241.4375 C 954.851562 253.300781 958.152344 267.011719 958.152344 282.5625 C 958.152344 301.011719 953.335938 316.632812 943.71875 329.414062 C 934.09375 342.203125 920.71875 350.832031 903.585938 355.316406 C 902.53125 355.84375 902.261719 356.5 902.796875 357.292969 L 960.128906 475.910156 C 960.390625 476.441406 960.523438 477.09375 960.523438 477.886719 C 960.523438 479.730469 959.46875 480.652344 957.363281 480.652344 L 926.125 480.652344 C 924.011719 480.652344 922.566406 479.730469 921.773438 477.886719 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1043.394531 472.945312 C 1028.761719 465.429688 1017.425781 454.757812 1009.390625 440.914062 C 1001.34375 427.074219 997.328125 411.199219 997.328125 393.273438 L 997.328125 290.867188 C 997.328125 272.941406 1001.34375 257.191406 1009.390625 243.617188 C 1017.425781 230.039062 1028.761719 219.496094 1043.394531 211.980469 C 1058.023438 204.46875 1074.828125 200.710938 1093.808594 200.710938 C 1112.785156 200.710938 1129.523438 204.339844 1144.019531 211.589844 C 1158.515625 218.839844 1169.785156 229.050781 1177.828125 242.230469 C 1185.863281 255.414062 1189.890625 270.699219 1189.890625 288.097656 L 1189.890625 288.492188 C 1189.890625 289.816406 1189.492188 290.867188 1188.699219 291.652344 C 1187.914062 292.445312 1186.984375 292.84375 1185.933594 292.84375 L 1155.886719 294.421875 C 1153.246094 294.421875 1151.933594 293.234375 1151.933594 290.867188 L 1151.933594 289.675781 C 1151.933594 272.8125 1146.65625 259.230469 1136.113281 248.949219 C 1125.570312 238.675781 1111.464844 233.53125 1093.808594 233.53125 C 1076.144531 233.53125 1061.980469 238.675781 1051.300781 248.949219 C 1040.625 259.230469 1035.289062 272.8125 1035.289062 289.675781 L 1035.289062 394.851562 C 1035.289062 411.722656 1040.625 425.300781 1051.300781 435.578125 C 1061.980469 445.855469 1076.144531 451 1093.808594 451 C 1111.464844 451 1125.570312 445.855469 1136.113281 435.578125 C 1146.65625 425.300781 1151.933594 411.722656 1151.933594 394.851562 L 1151.933594 394.0625 C 1151.933594 391.6875 1153.246094 390.503906 1155.886719 390.503906 L 1185.933594 392.082031 C 1188.566406 392.082031 1189.890625 393.40625 1189.890625 396.039062 C 1189.890625 413.4375 1185.863281 428.792969 1177.828125 442.101562 C 1169.785156 455.414062 1158.515625 465.761719 1144.019531 473.140625 C 1129.523438 480.523438 1112.785156 484.214844 1093.808594 484.214844 C 1074.828125 484.214844 1058.023438 480.457031 1043.394531 472.945312 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1391.066406 203.878906 L 1421.117188 203.878906 C 1423.746094 203.878906 1425.070312 205.199219 1425.070312 207.832031 L 1425.070312 476.699219 C 1425.070312 479.339844 1423.746094 480.652344 1421.117188 480.652344 L 1391.066406 480.652344 C 1388.425781 480.652344 1387.113281 479.339844 1387.113281 476.699219 L 1387.113281 359.269531 C 1387.113281 358.21875 1386.578125 357.683594 1385.53125 357.683594 L 1272.84375 357.683594 C 1271.785156 357.683594 1271.257812 358.21875 1271.257812 359.269531 L 1271.257812 476.699219 C 1271.257812 479.339844 1269.941406 480.652344 1267.304688 480.652344 L 1237.253906 480.652344 C 1234.621094 480.652344 1233.300781 479.339844 1233.300781 476.699219 L 1233.300781 207.832031 C 1233.300781 205.199219 1234.621094 203.878906 1237.253906 203.878906 L 1267.304688 203.878906 C 1269.941406 203.878906 1271.257812 205.199219 1271.257812 207.832031 L 1271.257812 323.285156 C 1271.257812 324.34375 1271.785156 324.871094 1272.84375 324.871094 L 1385.53125 324.871094 C 1386.578125 324.871094 1387.113281 324.34375 1387.113281 323.285156 L 1387.113281 207.832031 C 1387.113281 205.199219 1388.425781 203.878906 1391.066406 203.878906 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1657.238281 236.691406 L 1516.875 236.691406 C 1515.820312 236.691406 1515.289062 237.226562 1515.289062 238.277344 L 1515.289062 323.289062 C 1515.289062 324.34375 1515.820312 324.871094 1516.875 324.871094 L 1613.351562 324.871094 C 1615.980469 324.871094 1617.304688 326.191406 1617.304688 328.824219 L 1617.304688 353.730469 C 1617.304688 356.371094 1615.980469 357.683594 1613.351562 357.683594 L 1516.875 357.683594 C 1515.820312 357.683594 1515.289062 358.21875 1515.289062 359.265625 L 1515.289062 446.253906 C 1515.289062 447.308594 1515.820312 447.832031 1516.875 447.832031 L 1657.238281 447.832031 C 1659.871094 447.832031 1661.191406 449.15625 1661.191406 451.792969 L 1661.191406 476.699219 C 1661.191406 479.339844 1659.871094 480.652344 1657.238281 480.652344 L 1481.285156 480.652344 C 1478.652344 480.652344 1477.332031 479.339844 1477.332031 476.699219 L 1477.332031 207.832031 C 1477.332031 205.199219 1478.652344 203.878906 1481.285156 203.878906 L 1657.238281 203.878906 C 1659.871094 203.878906 1661.191406 205.199219 1661.191406 207.832031 L 1661.191406 232.738281 C 1661.191406 235.378906 1659.871094 236.691406 1657.238281 236.691406 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1741.6875 238.277344 L 1741.6875 326.847656 C 1741.6875 327.902344 1742.214844 328.425781 1743.269531 328.425781 L 1809.304688 328.425781 C 1823.269531 328.425781 1834.46875 324.277344 1842.910156 315.972656 C 1851.34375 307.667969 1855.566406 296.664062 1855.566406 282.953125 C 1855.566406 268.988281 1851.34375 257.785156 1842.910156 249.347656 C 1834.46875 240.914062 1823.269531 236.695312 1809.304688 236.695312 L 1743.269531 236.695312 C 1742.214844 236.695312 1741.6875 237.226562 1741.6875 238.277344 M 1857.140625 477.886719 L 1801.789062 359.660156 C 1801.523438 358.871094 1801 358.476562 1800.207031 358.476562 L 1743.269531 358.476562 C 1742.214844 358.476562 1741.6875 359.007812 1741.6875 360.058594 L 1741.6875 476.699219 C 1741.6875 479.339844 1740.367188 480.652344 1737.734375 480.652344 L 1707.683594 480.652344 C 1705.050781 480.652344 1703.730469 479.339844 1703.730469 476.699219 L 1703.730469 207.832031 C 1703.730469 205.199219 1705.050781 203.878906 1707.683594 203.878906 L 1814.046875 203.878906 C 1829.859375 203.878906 1843.761719 207.175781 1855.761719 213.761719 C 1867.75 220.351562 1877.042969 229.578125 1883.632812 241.4375 C 1890.222656 253.300781 1893.523438 267.011719 1893.523438 282.5625 C 1893.523438 301.011719 1888.707031 316.632812 1879.085938 329.414062 C 1869.460938 342.203125 1856.085938 350.832031 1838.957031 355.316406 C 1837.902344 355.84375 1837.632812 356.5 1838.164062 357.292969 L 1895.5 475.910156 C 1895.757812 476.441406 1895.890625 477.09375 1895.890625 477.886719 C 1895.890625 479.730469 1894.835938 480.652344 1892.730469 480.652344 L 1861.496094 480.652344 C 1859.378906 480.652344 1857.933594 479.730469 1857.140625 477.886719 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1997.746094 476.300781 L 1997.746094 365.199219 C 1997.746094 364.148438 1997.613281 363.484375 1997.347656 363.222656 L 1915.109375 208.621094 C 1914.839844 208.097656 1914.710938 207.4375 1914.710938 206.644531 C 1914.710938 204.804688 1915.761719 203.878906 1917.878906 203.878906 L 1950.300781 203.878906 C 1952.667969 203.878906 1954.253906 204.804688 1955.042969 206.644531 L 2015.539062 322.496094 C 2015.800781 323.027344 2016.191406 323.285156 2016.726562 323.285156 C 2017.25 323.285156 2017.644531 323.027344 2017.910156 322.496094 L 2078.40625 206.644531 C 2079.199219 204.804688 2080.78125 203.878906 2083.152344 203.878906 L 2115.96875 203.878906 C 2117.28125 203.878906 2118.269531 204.339844 2118.933594 205.261719 C 2119.585938 206.1875 2119.523438 207.304688 2118.734375 208.621094 L 2036.097656 363.222656 C 2035.832031 363.484375 2035.703125 364.148438 2035.703125 365.199219 L 2035.703125 476.300781 C 2035.703125 478.941406 2034.378906 480.261719 2031.75 480.261719 L 2001.699219 480.261719 C 1999.0625 480.261719 1997.746094 478.941406 1997.746094 476.300781 "/><path style="fill-rule:nonzero;fill:#E6057F;" d="M 2316.4375 203.859375 L 2346.488281 203.859375 C 2349.117188 203.859375 2350.441406 205.179688 2350.441406 207.8125 L 2350.441406 476.699219 C 2350.441406 479.339844 2349.117188 480.652344 2346.488281 480.652344 L 2316.4375 480.652344 C 2313.800781 480.652344 2312.480469 479.339844 2312.480469 476.699219 L 2312.480469 359.257812 C 2312.480469 358.207031 2311.953125 357.675781 2310.902344 357.675781 L 2198.207031 357.675781 C 2197.148438 357.675781 2196.621094 358.207031 2196.621094 359.257812 L 2196.621094 476.699219 C 2196.621094 479.339844 2195.304688 480.652344 2192.667969 480.652344 L 2162.617188 480.652344 C 2159.980469 480.652344 2158.664062 479.339844 2158.664062 476.699219 L 2158.664062 207.8125 C 2158.664062 205.179688 2159.980469 203.859375 2162.617188 203.859375 L 2192.667969 203.859375 C 2195.304688 203.859375 2196.621094 205.179688 2196.621094 207.8125 L 2196.621094 323.277344 C 2196.621094 324.332031 2197.148438 324.855469 2198.207031 324.855469 L 2310.902344 324.855469 C 2311.953125 324.855469 2312.480469 324.332031 2312.480469 323.277344 L 2312.480469 207.8125 C 2312.480469 205.179688 2313.800781 203.859375 2316.4375 203.859375 "/><path style="fill-rule:nonzero;fill:#E6057F;" d="M 2447.355469 472.546875 C 2432.726562 465.03125 2421.320312 454.359375 2413.15625 440.515625 C 2404.980469 426.675781 2400.898438 410.796875 2400.898438 392.871094 L 2400.898438 207.8125 C 2400.898438 205.179688 2402.210938 203.859375 2404.851562 203.859375 L 2434.902344 203.859375 C 2437.535156 203.859375 2438.855469 205.179688 2438.855469 207.8125 L 2438.855469 393.660156 C 2438.855469 410.796875 2444.324219 424.636719 2455.265625 435.179688 C 2466.199219 445.726562 2480.507812 450.996094 2498.171875 450.996094 C 2515.832031 450.996094 2530.0625 445.726562 2540.878906 435.179688 C 2551.679688 424.636719 2557.089844 410.796875 2557.089844 393.660156 L 2557.089844 207.8125 C 2557.089844 205.179688 2558.402344 203.859375 2561.042969 203.859375 L 2591.09375 203.859375 C 2593.726562 203.859375 2595.050781 205.179688 2595.050781 207.8125 L 2595.050781 392.871094 C 2595.050781 410.796875 2591.023438 426.675781 2582.988281 440.515625 C 2574.945312 454.359375 2563.613281 465.03125 2548.980469 472.546875 C 2534.351562 480.058594 2517.410156 483.816406 2498.171875 483.816406 C 2478.921875 483.816406 2461.988281 480.058594 2447.355469 472.546875 "/><g clip-path="url(#ahlogo1)" clip-rule="nonzero"><path style="fill-rule:nonzero;fill:#E6057F;" d="M 2784.414062 434.980469 C 2793.242188 426.675781 2797.660156 415.40625 2797.660156 401.171875 C 2797.660156 386.941406 2793.175781 375.671875 2784.214844 367.367188 C 2775.253906 359.0625 2762.996094 354.90625 2747.441406 354.90625 L 2685.753906 354.90625 C 2684.699219 354.90625 2684.171875 355.441406 2684.171875 356.492188 L 2684.171875 445.855469 C 2684.171875 446.914062 2684.699219 447.433594 2685.753906 447.433594 L 2748.625 447.433594 C 2763.652344 447.433594 2775.578125 443.285156 2784.414062 434.980469 M 2684.171875 238.261719 L 2684.171875 321.695312 C 2684.171875 322.75 2684.699219 323.277344 2685.753906 323.277344 L 2745.464844 323.277344 C 2760.75 323.277344 2772.808594 319.457031 2781.648438 311.808594 C 2790.472656 304.164062 2794.894531 293.753906 2794.894531 280.570312 C 2794.894531 267.125 2790.472656 256.449219 2781.648438 248.542969 C 2772.808594 240.632812 2760.75 236.679688 2745.464844 236.679688 L 2685.753906 236.679688 C 2684.699219 236.679688 2684.171875 237.210938 2684.171875 238.261719 M 2793.707031 338.695312 C 2821.644531 350.5625 2835.617188 372.570312 2835.617188 404.734375 C 2835.617188 428.988281 2827.578125 447.703125 2811.5 460.882812 C 2795.414062 474.066406 2774.460938 480.652344 2748.625 480.652344 L 2650.167969 480.652344 C 2647.53125 480.652344 2646.214844 479.339844 2646.214844 476.699219 L 2646.214844 207.8125 C 2646.214844 205.179688 2647.53125 203.859375 2650.167969 203.859375 L 2745.464844 203.859375 C 2772.875 203.859375 2794.164062 210.125 2809.324219 222.640625 C 2824.480469 235.164062 2832.0625 253.421875 2832.0625 277.40625 C 2832.0625 305.878906 2819.273438 325.519531 2793.707031 336.320312 C 2792.382812 337.113281 2792.382812 337.90625 2793.707031 338.695312 "/></g><path style="fill-rule:nonzero;fill:#302F82;" d="M 327.675781 365.449219 C 327.210938 362.871094 325.332031 360.773438 322.828125 360.011719 L 209.535156 325.621094 L 190.207031 320.367188 C 190.125 318.089844 188.945312 316 187.039062 314.753906 C 185.128906 313.511719 182.738281 313.28125 180.621094 314.121094 L 175.210938 316.292969 L 54.484375 283.492188 C 52.085938 282.84375 49.496094 283.523438 47.71875 285.28125 C 45.949219 287.046875 45.257812 289.625 45.902344 292.039062 L 65.832031 366.726562 C 66.347656 368.65625 67.664062 370.277344 69.453125 371.171875 C 71.246094 372.066406 73.328125 372.152344 75.183594 371.414062 L 176.058594 331.011719 L 176.597656 331.152344 L 181.425781 468.28125 C 181.519531 470.894531 183.0625 473.242188 185.429688 474.355469 C 186.375 474.804688 187.398438 475.023438 188.410156 475.023438 C 189.917969 475.023438 191.417969 474.539062 192.660156 473.585938 L 325.042969 372.25 C 327.128906 370.65625 328.144531 368.03125 327.675781 365.449219 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 180.285156 177.050781 C 174.714844 169.328125 166.464844 164.234375 157.066406 162.714844 C 137.679688 159.589844 119.320312 172.8125 116.179688 192.214844 C 114.660156 201.617188 116.894531 211.046875 122.464844 218.769531 C 128.035156 226.492188 136.277344 231.582031 145.679688 233.105469 C 147.609375 233.414062 149.535156 233.570312 151.449219 233.570312 C 158.875 233.570312 166.09375 231.25 172.234375 226.820312 C 179.957031 221.25 185.050781 213 186.570312 203.601562 C 188.085938 194.203125 185.855469 184.773438 180.285156 177.050781 "/><g clip-path="url(#ahlogo2)" clip-rule="nonzero"><path style="fill-rule:nonzero;fill:#E6057F;" d="M 277.78125 25.773438 C 234.957031 4.519531 188.925781 -3.140625 144.585938 1.144531 C 136.132812 1.960938 136.277344 14.484375 144.742188 15.152344 C 175.269531 17.558594 205.863281 25.730469 234.984375 40.179688 C 294.449219 69.691406 336.714844 119.96875 357.503906 177.863281 L 50.640625 283.539062 C 48.0625 284.429688 46.234375 286.734375 45.960938 289.445312 C 45.683594 292.15625 47.011719 294.78125 49.355469 296.171875 L 162.035156 362.796875 L 3.007812 485.257812 C 0.242188 487.382812 -0.527344 491.226562 1.203125 494.257812 C 2.480469 496.496094 4.828125 497.785156 7.277344 497.785156 C 8.140625 497.785156 9.023438 497.621094 9.871094 497.285156 L 324.773438 371.308594 C 327.21875 370.332031 328.90625 368.0625 329.140625 365.4375 C 329.371094 362.816406 328.113281 360.285156 325.878906 358.890625 L 221.851562 293.949219 L 362.355469 192.695312 C 378.933594 249.953125 374.960938 313.332031 346.378906 370.929688 C 331.910156 400.082031 312.460938 425.117188 289.566406 445.519531 C 283.226562 451.167969 290.691406 461.230469 297.914062 456.773438 C 335.847656 433.363281 367.898438 399.398438 389.175781 356.523438 C 449.753906 234.449219 399.898438 86.371094 277.78125 25.773438 "/></g></svg></span>
     </a>
     <button class="ah-menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
     <div class="ah-nav__links" id="site-menu">
@@ -1097,51 +2128,161 @@ details p {
   });
 })();
 </script>
-<header class="ah-hero" data-afai-block="hero-section" data-gjs-name="Hero Società">
-  <div class="ah-shell ah-hero__grid" data-afai-block="hero-section" data-gjs-name="Hero Section">
-    <section class="ah-hero__copy ah-reveal" data-afai-block="hero-section" data-gjs-name="Hero Section"><p class="ah-kicker">Per società sportive</p><h1>Gestione più ordinata per la tua società.</h1><p>Promuovi corsi, raccogli richieste e coordina staff e segreteria.</p><div class="ah-actions"><a class="ah-button ah-button--primary" href="https://archeryhub.it/login" target="_blank" rel="noopener">Accedi</a><a class="ah-button ah-button--ghost" href="#richiedi-info">Richiedi info</a></div></section>
-    <aside class="ah-product-card ah-reveal"><div class="ah-product-card__image"></div><div class="ah-product-card__body"><span class="ah-chip">Gestione società</span><h2>Meno strumenti separati, più controllo.</h2><p>Corsi, iscrizioni, documenti e comunicazioni in un unico hub.</p></div></aside>
+<header class="ah-hero ah-dark" data-afai-block="hero-section" data-gjs-name="Hero Società">
+  <div class="ah-shell ah-hero__grid">
+    <section class="ah-hero__copy">
+      <p class="ah-kicker">Per le società sportive</p>
+      <h1 class="ah-h1">Meno burocrazia, <span class="ah-hl">più tiro con l'arco.</span></h1>
+      <p class="ah-lead">Archery Hub toglie lavoro manuale alla dirigenza e ai volontari: soci, quote, visite mediche, avvisi e gare in un posto solo, così il tempo torna allo sport.</p>
+      <div class="ah-actions"><a class="ah-button ah-button--primary" href="#richiedi-info">Richiedi info</a><a class="ah-button ah-button--ghost" href="https://archeryhub.it/login" target="_blank" rel="noopener">Accedi</a></div>
+    </section>
+    <div class="ah-hero__visual">
+      <div class="ah-window" aria-label="Esempio: quote dei soci" style="width:100%;max-width:440px">
+        <div class="ah-window__bar"><i></i><i></i><i></i></div>
+        <div class="ah-window__body">
+          <p class="ah-window__title">Quote dei soci</p>
+          <div class="ah-row">Giulia Rossi<span class="ah-badge">Pagata</span></div>
+          <div class="ah-row ah-row--focus">Marco Bianchi<span class="ah-badge ah-badge--info">Avviso inviato</span></div>
+          <div class="ah-row">Sara Testa<span class="ah-badge">Pagata</span></div>
+          <div class="ah-row">Luca Pini<span class="ah-badge">Pagata</span></div>
+        </div>
+      </div>
+      <p class="ah-float ah-float--bottom"><span class="ah-icon ah-icon--sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span><span><small>Elenco soci</small>1 visita medica scaduta</span></p>
+    </div>
   </div>
 </header>
-<section class="ah-section" data-afai-block="features-section" data-gjs-name="Punti di Pena">
+
+<section class="ah-section ah-light" id="problema" data-afai-block="features-section" data-gjs-name="Come lavora oggi una società">
   <div class="ah-shell">
-    <div class="ah-section__header ah-reveal"><p class="ah-kicker">Cosa conosciamo bene</p><h2>I problemi con cui la segreteria convive ogni giorno.</h2></div>
-    <div class="ah-module-grid ah-module-grid--3col">
-      <article class="ah-module ah-reveal"><span>01</span><h3>Ancora su Excel</h3><p>Fogli di calcolo sparsi tra iscrizioni, pagamenti e presenze, aggiornati a mano e mai davvero allineati tra loro.</p></article>
-      <article class="ah-module ah-reveal"><span>02</span><h3>Moduli e firme di carta</h3><p>Cartaceo che si stampa, si perde, si fotocopia e spesso non torna mai in segreteria.</p></article>
-      <article class="ah-module ah-reveal"><span>03</span><h3>La normativa sportiva è un mistero</h3><p>Certificati, scadenze e requisiti federali difficili da tenere sotto controllo senza qualcosa che li ricordi al posto tuo.</p></article>
+    <div class="ah-section__header ah-section__header--center"><p class="ah-kicker">Il problema</p><h2 class="ah-h2">Come lavora oggi una società</h2><p class="ah-lead">Elenchi, scadenze, avvisi e pagamenti sparsi tra strumenti diversi, controllati a mano da dirigenti e volontari.</p></div>
+    <div class="ah-mess">
+      <article class="ah-mess__card"><div class="ah-mess__art ah-art-sheet" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i class="is-pink"></i><i></i><i></i><i></i><i></i><i class="is-yellow"></i><i></i><i class="is-yellow"></i><i></i><i></i></div><h3>Excel</h3><p>per soci, visite mediche e scadenze</p></article>
+      <article class="ah-mess__card"><div class="ah-mess__art ah-art-chat" aria-hidden="true"><span>Domani si tira?</span><span>Chi c'è?</span><span>Non ho letto…</span></div><h3>WhatsApp</h3><p>per gli avvisi, con i numeri personali</p></article>
+      <article class="ah-mess__card"><div class="ah-mess__art ah-art-money" aria-hidden="true"><b>€</b><span><i></i><i></i><i></i><i></i></span></div><h3>Bonifici</h3><p>da controllare e archiviare uno per uno</p></article>
+      <article class="ah-mess__card"><div class="ah-mess__art ah-art-paper" aria-hidden="true"><span>10 · 9 · 9 · 8</span><span>X · 10 · 7 · 9</span><span>? · 8 · …</span></div><h3>Carta</h3><p>per i punteggi di allenamenti e gare</p></article>
+    </div>
+    <p class="ah-mess__claim">Tutto sparso, tutto a mano.</p>
+  </div>
+</section>
+
+<section class="ah-section ah-light" id="prima-dopo" data-afai-block="features-section" data-gjs-name="Prima e dopo Archery Hub">
+  <div class="ah-shell">
+    <div class="ah-section__header ah-section__header--center"><p class="ah-kicker">Cosa cambia</p><h2 class="ah-h2">Prima e dopo Archery Hub</h2></div>
+    <div class="ah-compare">
+      <div class="ah-compare__col ah-compare__before"><h3>Prima</h3><ul><li>Bonifici da controllare</li><li>Visite segnate a mano</li><li>Elenco soci da ricomporre</li><li>Avvisi su WhatsApp</li><li>Punteggi su carta</li></ul></div>
+      <div class="ah-compare__arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="ah-compare__col ah-compare__after"><h3>Con Archery Hub</h3><ul><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Quote pagate dal telefono</li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Visite con avviso automatico</li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Elenco soci pronto da stampare</li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Chat della società</li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Statistiche e medaglie</li></ul></div>
     </div>
   </div>
 </section>
-<section class="ah-section ah-workspace" id="funzionalita" data-afai-block="features-section" data-gjs-name="Funzionalità Società">
+
+<section class="ah-section ah-white" id="funzionalita" data-afai-block="features-section" data-gjs-name="Funzionalità Società">
   <div class="ah-shell">
-    <div class="ah-section__header ah-reveal"><p class="ah-kicker">Cosa trovi nella piattaforma</p><h2>Tutto quello che serve per gestire la società, in un posto solo.</h2></div>
-    <div class="ah-module-grid ah-module-grid--3col">
-      <article class="ah-module ah-reveal"><span>01</span><h3>Database arcieri e tecnici</h3><p>Tutti i dati di arcieri e tecnici della società, sempre aggiornati e in un unico posto.</p></article>
-      <article class="ah-module ah-reveal"><span>02</span><h3>Account dirigenziali</h3><p>Organizza la tua società con gli account dirigenziali, assegna compiti e permessi a chi lavora con te.</p></article>
-      <article class="ah-module ah-reveal"><span>03</span><h3>Comunicazioni</h3><p>Mail, notifiche e chat a disposizione per comunicare con tutta la tua società, senza cambiare strumento.</p></article>
-      <article class="ah-module ah-reveal"><span>04</span><h3>Iscrizione alle gare</h3><p>Gestisci l'iscrizione alle gare dei tuoi atleti: ricevi le richieste e aggiorna lo stato per ogni atleta.</p></article>
-      <article class="ah-module ah-reveal"><span>05</span><h3>Squadre sportive</h3><p>Controlla la situazione delle tue squadre sportive in ogni momento.</p></article>
-      <article class="ah-module ah-reveal"><span>06</span><h3>Contabilità semplificata</h3><p>Dimentica Excel e documenti cartacei: contabilità semplificata e pronta da consegnare al commercialista.</p></article>
+    <div class="ah-section__header"><p class="ah-kicker">Cosa trovi nella piattaforma</p><h2 class="ah-h2">Tutto quello che serve per gestire la società</h2></div>
+    <div class="ah-grid ah-grid--4">
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Soci e tesserati</h3><p>Schede complete con scadenza della visita medica e avviso 30 giorni prima. Elenco di fine anno da stampare o aprire in Excel.</p></article>
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg></span><h3>Quote e contabilità</h3><p>Promemoria automatici, pagamento con carta dal telefono e contabilità semplice: entrate, uscite e fatture.</p></article>
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></span><h3>Consiglio direttivo</h3><p>Ogni carica ha i suoi permessi. Quando cambia il consiglio, gli incarichi si passano in pochi minuti, senza scambiarsi password.</p></article>
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><h3>Comunicazioni</h3><p>Chat di squadra senza numeri personali, email a tutti gli iscritti e notifiche automatiche.</p></article>
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3>Gare FITARCO</h3><p>Calendario federale nella piattaforma: consigli le gare alle squadre, raccogli le iscrizioni, consulti le classifiche.</p></article>
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><h3>Squadre e allenatori</h3><p>Controlla la situazione delle squadre e lascia agli allenatori gli strumenti per seguire gli atleti.</p></article>
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><h3>Documenti e verbali</h3><p>Un archivio unico della società, visibile solo a chi deve vederlo.</p></article>
+      <article class="ah-card"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg></span><h3>Medaglie e record</h3><p>Il medagliere del club raccoglie risultati e record dei vostri arcieri.</p></article>
     </div>
   </div>
 </section>
-<section class="ah-section ah-cta" data-afai-block="cta-section" data-gjs-name="CTA Funzionalità">
-  <div class="ah-shell ah-cta__box ah-reveal" data-afai-block="cta-section" data-gjs-name="CTA Section">
-    <div><p class="ah-kicker">Vuoi vedere tutto?</p><h2>Scopri come CustomArchery si adatta alla tua società.</h2><p>Guarda tutte le funzionalità della piattaforma, oppure prenota una call: te le mostriamo noi.</p></div>
-    <div class="ah-actions"><a class="ah-button ah-button--ghost" href="./home#workspace">Scopri tutte le funzionalità</a><a class="ah-button ah-button--primary" href="#richiedi-info">Prenota una call</a></div>
+
+<section class="ah-section ah-white" id="minori" data-afai-block="features-section" data-gjs-name="I ragazzi sono protetti">
+  <div class="ah-shell ah-ages">
+    <div>
+      <div class="ah-section__header"><p class="ah-kicker">Settore giovanile</p><h2 class="ah-h2">I ragazzi sono protetti</h2><p class="ah-lead">Il genitore segue l'attività dei figli dalla sua area «I miei figli». Ogni consenso è registrato con data e ora, e i dati dei ragazzi li vede solo chi è autorizzato.</p></div>
+      <div class="ah-ages__bands">
+        <div class="ah-age"><b>Sotto i 14</b><i></i><p>Il genitore approva l'iscrizione</p></div>
+        <div class="ah-age"><b>14 – 17</b><i></i><p>Pagamenti e collegamenti passano dal genitore</p></div>
+        <div class="ah-age"><b>Dai 18</b><i></i><p>L'arciere fa tutto da solo</p></div>
+      </div>
+    </div>
+    <div class="ah-phone" aria-label="Esempio: richiesta da approvare">
+      <p class="ah-phone__eyebrow">I miei figli</p>
+      <span class="ah-avatar">LP</span>
+      <p class="ah-phone__title">Luca, 12 anni</p>
+      <p class="ah-phone__sub">chiede di iscriversi alla società</p>
+      <span class="ah-phone__btn">Approva</span>
+      <span class="ah-phone__btn ah-phone__btn--ghost">Non ora</span>
+    </div>
   </div>
 </section>
-<section class="ah-section" id="richiedi-info" data-afai-block="cta-section" data-gjs-name="Richiedi Info">
-  <div class="ah-shell ah-cta__box ah-reveal">
-    <div><p class="ah-kicker">Richiedi informazioni</p><h2>Raccontaci la tua società, ti ricontattiamo noi.</h2><p>Lascia i tuoi dati: ti mostriamo come CustomArchery si adatta alla tua realtà, senza impegno.</p></div>
+
+<section class="ah-section ah-indigo" id="facile" data-afai-block="features-section" data-gjs-name="Facile da usare">
+  <div class="ah-shell ah-easy">
+    <div>
+      <p class="ah-kicker">Per tutti</p>
+      <h2 class="ah-h2">Facile da usare, sicuro per tutti</h2>
+      <ul class="ah-checks">
+        <li><span class="ah-icon ah-icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Dal telefono o dal computer</li>
+        <li><span class="ah-icon ah-icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Niente da installare</li>
+        <li><span class="ah-icon ah-icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Assistenza e video guide</li>
+        <li><span class="ah-icon ah-icon--solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Ognuno vede solo la sua parte</li>
+      </ul>
+    </div>
+    <div class="ah-devices" aria-hidden="true">
+      <div class="ah-laptop">
+        <div class="ah-laptop__screen"><span class="ah-mini-phone__mark ah-mini-phone__mark--lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 497.892" fill="none" aria-hidden="true" focusable="false"><defs><clipPath id="ahsym1-2"><path d="M 0.28125 0 L 415 0 L 415 497.785156 L 0.28125 497.785156 Z M 0.28125 0 "/></clipPath></defs><path style="fill-rule:nonzero;fill:#302F82;" d="M 327.675781 365.449219 C 327.210938 362.871094 325.332031 360.773438 322.828125 360.011719 L 209.535156 325.621094 L 190.207031 320.367188 C 190.125 318.089844 188.945312 316 187.039062 314.753906 C 185.128906 313.511719 182.738281 313.28125 180.621094 314.121094 L 175.210938 316.292969 L 54.484375 283.492188 C 52.085938 282.84375 49.496094 283.523438 47.71875 285.28125 C 45.949219 287.046875 45.257812 289.625 45.902344 292.039062 L 65.832031 366.726562 C 66.347656 368.65625 67.664062 370.277344 69.453125 371.171875 C 71.246094 372.066406 73.328125 372.152344 75.183594 371.414062 L 176.058594 331.011719 L 176.597656 331.152344 L 181.425781 468.28125 C 181.519531 470.894531 183.0625 473.242188 185.429688 474.355469 C 186.375 474.804688 187.398438 475.023438 188.410156 475.023438 C 189.917969 475.023438 191.417969 474.539062 192.660156 473.585938 L 325.042969 372.25 C 327.128906 370.65625 328.144531 368.03125 327.675781 365.449219 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 180.285156 177.050781 C 174.714844 169.328125 166.464844 164.234375 157.066406 162.714844 C 137.679688 159.589844 119.320312 172.8125 116.179688 192.214844 C 114.660156 201.617188 116.894531 211.046875 122.464844 218.769531 C 128.035156 226.492188 136.277344 231.582031 145.679688 233.105469 C 147.609375 233.414062 149.535156 233.570312 151.449219 233.570312 C 158.875 233.570312 166.09375 231.25 172.234375 226.820312 C 179.957031 221.25 185.050781 213 186.570312 203.601562 C 188.085938 194.203125 185.855469 184.773438 180.285156 177.050781 "/><g clip-path="url(#ahsym1-2)" clip-rule="nonzero"><path style="fill-rule:nonzero;fill:#E6057F;" d="M 277.78125 25.773438 C 234.957031 4.519531 188.925781 -3.140625 144.585938 1.144531 C 136.132812 1.960938 136.277344 14.484375 144.742188 15.152344 C 175.269531 17.558594 205.863281 25.730469 234.984375 40.179688 C 294.449219 69.691406 336.714844 119.96875 357.503906 177.863281 L 50.640625 283.539062 C 48.0625 284.429688 46.234375 286.734375 45.960938 289.445312 C 45.683594 292.15625 47.011719 294.78125 49.355469 296.171875 L 162.035156 362.796875 L 3.007812 485.257812 C 0.242188 487.382812 -0.527344 491.226562 1.203125 494.257812 C 2.480469 496.496094 4.828125 497.785156 7.277344 497.785156 C 8.140625 497.785156 9.023438 497.621094 9.871094 497.285156 L 324.773438 371.308594 C 327.21875 370.332031 328.90625 368.0625 329.140625 365.4375 C 329.371094 362.816406 328.113281 360.285156 325.878906 358.890625 L 221.851562 293.949219 L 362.355469 192.695312 C 378.933594 249.953125 374.960938 313.332031 346.378906 370.929688 C 331.910156 400.082031 312.460938 425.117188 289.566406 445.519531 C 283.226562 451.167969 290.691406 461.230469 297.914062 456.773438 C 335.847656 433.363281 367.898438 399.398438 389.175781 356.523438 C 449.753906 234.449219 399.898438 86.371094 277.78125 25.773438 "/></g></svg></span><span class="ah-field">Email</span><span class="ah-field">Password</span><span class="ah-enter">Entra</span></div>
+        <div class="ah-laptop__base"></div>
+      </div>
+      <div class="ah-mini-phone"><span class="ah-mini-phone__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 497.892" fill="none" aria-hidden="true" focusable="false"><defs><clipPath id="ahsym2-2"><path d="M 0.28125 0 L 415 0 L 415 497.785156 L 0.28125 497.785156 Z M 0.28125 0 "/></clipPath></defs><path style="fill-rule:nonzero;fill:#302F82;" d="M 327.675781 365.449219 C 327.210938 362.871094 325.332031 360.773438 322.828125 360.011719 L 209.535156 325.621094 L 190.207031 320.367188 C 190.125 318.089844 188.945312 316 187.039062 314.753906 C 185.128906 313.511719 182.738281 313.28125 180.621094 314.121094 L 175.210938 316.292969 L 54.484375 283.492188 C 52.085938 282.84375 49.496094 283.523438 47.71875 285.28125 C 45.949219 287.046875 45.257812 289.625 45.902344 292.039062 L 65.832031 366.726562 C 66.347656 368.65625 67.664062 370.277344 69.453125 371.171875 C 71.246094 372.066406 73.328125 372.152344 75.183594 371.414062 L 176.058594 331.011719 L 176.597656 331.152344 L 181.425781 468.28125 C 181.519531 470.894531 183.0625 473.242188 185.429688 474.355469 C 186.375 474.804688 187.398438 475.023438 188.410156 475.023438 C 189.917969 475.023438 191.417969 474.539062 192.660156 473.585938 L 325.042969 372.25 C 327.128906 370.65625 328.144531 368.03125 327.675781 365.449219 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 180.285156 177.050781 C 174.714844 169.328125 166.464844 164.234375 157.066406 162.714844 C 137.679688 159.589844 119.320312 172.8125 116.179688 192.214844 C 114.660156 201.617188 116.894531 211.046875 122.464844 218.769531 C 128.035156 226.492188 136.277344 231.582031 145.679688 233.105469 C 147.609375 233.414062 149.535156 233.570312 151.449219 233.570312 C 158.875 233.570312 166.09375 231.25 172.234375 226.820312 C 179.957031 221.25 185.050781 213 186.570312 203.601562 C 188.085938 194.203125 185.855469 184.773438 180.285156 177.050781 "/><g clip-path="url(#ahsym2-2)" clip-rule="nonzero"><path style="fill-rule:nonzero;fill:#E6057F;" d="M 277.78125 25.773438 C 234.957031 4.519531 188.925781 -3.140625 144.585938 1.144531 C 136.132812 1.960938 136.277344 14.484375 144.742188 15.152344 C 175.269531 17.558594 205.863281 25.730469 234.984375 40.179688 C 294.449219 69.691406 336.714844 119.96875 357.503906 177.863281 L 50.640625 283.539062 C 48.0625 284.429688 46.234375 286.734375 45.960938 289.445312 C 45.683594 292.15625 47.011719 294.78125 49.355469 296.171875 L 162.035156 362.796875 L 3.007812 485.257812 C 0.242188 487.382812 -0.527344 491.226562 1.203125 494.257812 C 2.480469 496.496094 4.828125 497.785156 7.277344 497.785156 C 8.140625 497.785156 9.023438 497.621094 9.871094 497.285156 L 324.773438 371.308594 C 327.21875 370.332031 328.90625 368.0625 329.140625 365.4375 C 329.371094 362.816406 328.113281 360.285156 325.878906 358.890625 L 221.851562 293.949219 L 362.355469 192.695312 C 378.933594 249.953125 374.960938 313.332031 346.378906 370.929688 C 331.910156 400.082031 312.460938 425.117188 289.566406 445.519531 C 283.226562 451.167969 290.691406 461.230469 297.914062 456.773438 C 335.847656 433.363281 367.898438 399.398438 389.175781 356.523438 C 449.753906 234.449219 399.898438 86.371094 277.78125 25.773438 "/></g></svg></span><span class="ah-field">Email</span><span class="ah-enter">Entra</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="ah-section ah-white" id="come-si-parte" data-afai-block="steps-section" data-gjs-name="Come si parte">
+  <div class="ah-shell">
+    <div class="ah-section__header ah-section__header--center"><p class="ah-kicker">Come si parte</p><h2 class="ah-h2">Si fa tutto online, in quattro passi</h2></div>
+    <ol class="ah-steps">
+      <li class="ah-step"><h3>Iscrivi la società</h3><p>sul sito, da soli</p></li>
+      <li class="ah-step"><h3>Conferma l'email</h3><p>basta un clic sul link</p></li>
+      <li class="ah-step"><h3>Scegli come pagare</h3><p>carta subito attiva, o bonifico</p></li>
+      <li class="ah-step"><h3>Si comincia!</h3><p>tutto pronto</p></li>
+    </ol>
+    <div class="ah-plans">
+      <div class="ah-plan"><span class="ah-icon ah-icon--indigo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><p><strong>Per la società</strong><span>un abbonamento mensile o annuale</span></p></div>
+      <div class="ah-plan"><span class="ah-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><p><strong>Per arcieri e tecnici</strong><span>iscrizione gratuita</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ah-section ah-light" id="richiedi-info" data-afai-block="cta-section" data-gjs-name="Richiedi Info">
+  <div class="ah-shell ah-form-box">
+    <div>
+      <p class="ah-kicker">Richiedi informazioni</p>
+      <h2 class="ah-h2">Raccontaci la tua società, ti ricontattiamo noi.</h2>
+      <p class="ah-lead">Lascia i tuoi dati: ti mostriamo Archery Hub dal vivo con i dati della tua realtà, senza impegno.</p>
+      <ul class="ah-points"><li>Demo con quote, visite e avvisi della tua società</li><li>Prezzo dell'abbonamento su misura</li><li>Aiuto nel caricare soci e tesserati</li></ul>
+    </div>
     <section id="richiedi-info-embed" data-component-type="FORM" data-afai-block="form-embed" data-gjs-name="Form Richiedi Info" style="min-height:320px;border:1px dashed var(--line);border-radius:var(--radius);display:grid;place-items:center;color:var(--muted)">Form "Richiedi info"</section>
   </div>
 </section>
+
+<section class="ah-section ah-cta ah-dark" id="contatti" data-afai-block="cta-section" data-gjs-name="Contatti">
+  <div class="ah-shell ah-cta__grid">
+    <div>
+      <p class="ah-kicker">Parliamone</p>
+      <h2 class="ah-h2">Portiamo la tua società su <span class="ah-hl">Archery Hub</span></h2>
+      <p class="ah-lead">Ti mostriamo la piattaforma dal vivo con i dati della tua società: quote, visite mediche, avvisi e allenamenti.</p>
+      <div class="ah-actions"><a class="ah-button ah-button--primary" href="./societa#richiedi-info">Richiedi una demo</a><a class="ah-button ah-button--ghost" href="https://archeryhub.it/login" target="_blank" rel="noopener">Accedi</a></div>
+    </div>
+    <ul class="ah-contacts">
+      <li><a href="mailto:info@archeryhub.it"><span class="ah-icon ah-icon--sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>info@archeryhub.it</a></li>
+      <li><a href="tel:+393383991869"><span class="ah-icon ah-icon--sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>338 3991869</a></li>
+      <li><a href="https://www.archeryhub.it" target="_blank" rel="noopener"><span class="ah-icon ah-icon--sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>www.archeryhub.it</a></li>
+    </ul>
+  </div>
+</section>
 <footer class="ah-footer" data-afai-block="footer-section" data-gjs-name="Footer">
-  <div class="ah-shell ah-footer__inner" data-afai-block="features-section" data-gjs-name="Sezione Features">
-    <div class="ah-footer__brand"><strong>CustomArchery</strong><span>La piattaforma per società, istruttori e arcieri.</span></div>
+  <div class="ah-shell ah-footer__inner">
+    <div class="ah-footer__brand"><strong>Archery Hub</strong><span>La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.</span></div>
     <nav class="ah-footer__legal" aria-label="Informazioni legali">
+      <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>
       <a href="https://archeryhub.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
       <a href="./termini-e-condizioni">Termini e Condizioni</a>
       <a href="./cookie-policy">Cookie Policy</a>

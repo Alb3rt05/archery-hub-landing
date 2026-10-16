@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>termini-e-condizioni</title>
+<title>Archery Hub | Termini e Condizioni</title>
+<meta name="description" content="Documento legale del portale Archery Hub.">
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400..800&family=Nunito+Sans:wght@400..800&display=swap");
+
 :root {
   color-scheme: light;
 }
@@ -19,10 +22,12 @@ html {
 
 body {
   margin: 0;
+  background: #f6f6fb;
 }
 
 img,
-iframe {
+iframe,
+svg {
   display: block;
   max-width: 100%;
 }
@@ -32,28 +37,46 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
 .ah-page {
-  --brand: #342877;
-  --brand-dark: #251c54;
-  --accent: #e00074;
-  --accent-dark: #a30055;
-  --accent-soft: #ff5cb8;
-  --ink: #1f1f1f;
-  --muted: #5e5e5e;
-  --bg: #ffffff;
-  --bg-alt: #f6f5fb;
-  --panel: #ffffff;
-  --line: #e3e1ec;
-  --blue: #1d4ed8;
-  --green: #1f9d57;
-  --shadow: 0 20px 60px rgba(37, 28, 84, 0.16);
-  --radius: 14px;
-  --maxw: 1180px;
+  --navy: #1b1b3a;
+  --indigo: #302f82;
+  --indigo-2: #3b3a93;
+  --indigo-line: #5554ae;
+  --magenta: #e6057f;
+  --magenta-text: #c8046f;
+  --magenta-dark: #a3035a;
+  --pink: #ff5cb8;
+  --pink-soft: #fce4f1;
+  --pink-wash: #fff0f7;
+  --bg: #f6f6fb;
+  --card: #fdfdff;
+  --line: #e0e1f0;
+  --ink: #1b1b3a;
+  --muted: #4e4f73;
+  --on-dark: #f6f6fb;
+  --on-dark-muted: #c9c9e8;
+  --ok: #0b6b4f;
+  --ok-bg: #ddf5ec;
+  --warn: #7a4a00;
+  --warn-bg: #fdf0d5;
+  --shadow: 0 24px 64px rgba(27, 27, 58, 0.12);
+  --radius: 16px;
+  --maxw: 1200px;
+  --font-display: Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   min-height: 100vh;
   overflow-x: clip;
   color: var(--ink);
   background: var(--bg);
-  font-family: Lato, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
   line-height: 1.6;
 }
 
@@ -62,1031 +85,1728 @@ a {
   margin-inline: auto;
 }
 
+/* ---------- Tipografia ---------- */
+
 .ah-kicker {
   margin: 0 0 14px;
-  color: var(--accent);
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.ah-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.ah-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.ah-lead {
+  max-width: 620px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  line-height: 1.5;
+}
+
+.ah-hl {
+  color: var(--magenta-text);
+}
+
+.ah-dark .ah-hl,
+.ah-indigo .ah-hl {
+  color: var(--pink);
+}
+
+.ah-dark .ah-kicker,
+.ah-indigo .ah-kicker {
+  color: var(--pink);
+}
+
+.ah-dark .ah-lead,
+.ah-indigo .ah-lead {
+  color: var(--on-dark-muted);
+}
+
+.ah-note {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.ah-dark .ah-note,
+.ah-indigo .ah-note {
+  color: var(--on-dark-muted);
+}
+
+/* ---------- Bottoni ---------- */
+
+.ah-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
 }
 
 .ah-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
-  border: 1px solid transparent;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 2px solid transparent;
   border-radius: 999px;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 0.92rem;
-  font-weight: 800;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
   transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
 .ah-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+}
+
+.ah-button svg {
+  width: 18px;
+  height: 18px;
 }
 
 .ah-button--primary {
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  box-shadow: 0 18px 38px rgba(224, 0, 116, 0.27);
+  color: #fdfdff;
+  background: var(--magenta);
+}
+
+.ah-button--primary:hover {
+  background: var(--magenta-dark);
 }
 
 .ah-button--ghost {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.09);
+  color: var(--indigo);
+  border-color: var(--indigo);
 }
 
-.ah-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.ah-button--ghost:hover {
+  background: #e8e8f6;
 }
+
+.ah-dark .ah-button--ghost,
+.ah-indigo .ah-button--ghost,
+.ah-magenta .ah-button--ghost {
+  color: var(--on-dark);
+  border-color: rgba(246, 246, 251, 0.5);
+}
+
+.ah-dark .ah-button--ghost:hover,
+.ah-indigo .ah-button--ghost:hover,
+.ah-magenta .ah-button--ghost:hover {
+  background: rgba(246, 246, 251, 0.1);
+}
+
+.ah-magenta .ah-button--primary {
+  color: var(--magenta-dark);
+  background: #fdfdff;
+}
+
+/* ---------- Navigazione ---------- */
 
 .ah-nav {
   position: sticky;
   top: 0;
-  z-index: 30;
-  color: #fff;
-  background: rgba(37, 28, 84, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(16px);
+  z-index: 20;
+  background: rgba(253, 253, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
 }
 
 .ah-nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 74px;
   gap: 24px;
+  min-height: 72px;
 }
 
 .ah-brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-height: 48px;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-weight: 900;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-.ah-brand__mark {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 6px var(--accent), inset 0 0 0 13px #fff;
-  background: var(--brand);
+.ah-brand__wordmark {
+  display: block;
+  width: 168px;
 }
 
-.ah-brand__mark::after {
-  content: "";
-  position: absolute;
-  top: 17px;
-  left: 36px;
-  width: 24px;
-  height: 3px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  transform: rotate(-14deg);
+.ah-brand__wordmark svg {
+  width: 100%;
+  height: auto;
+}
+
+.ah-brand__wordmark--lg {
+  width: min(100%, 240px);
 }
 
 .ah-menu {
   display: none;
   min-height: 44px;
-  padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 0 18px;
+  color: var(--indigo);
+  background: transparent;
+  border: 2px solid var(--indigo);
   border-radius: 999px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  font: inherit;
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .ah-nav__links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
   gap: 6px;
-  color: rgba(255, 255, 255, 0.82);
-  font-weight: 700;
 }
 
 .ah-nav__links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 10px;
+  padding: 10px 14px;
+  color: var(--muted);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 500;
 }
 
 .ah-nav__links a:hover {
-  color: #fff;
-}
-
-.ah-nav__cta {
-  margin-left: 4px;
-  border-radius: 999px;
-  color: #fff;
-  background: var(--accent);
-}
-
-.ah-hero {
-  position: relative;
-  min-height: 88vh;
-  display: grid;
-  align-items: end;
-  overflow: hidden;
-  color: #fff;
-  background:
-    linear-gradient(135deg, rgba(37, 28, 84, 0.97), rgba(52, 40, 119, 0.9) 52%, rgba(163, 0, 85, 0.78)),
-    url("https://ichef.bbci.co.uk/news/976/cpsprodpb/0CDB/production/_119419230_312ac4f3-5b56-4d6c-9346-c94c3ee49e45.jpg") center / cover;
-}
-
-.ah-hero__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.52fr);
-  gap: 48px;
-  align-items: end;
-  padding: 118px 0 72px;
-}
-
-.ah-hero h1,
-.ah-section h2 {
-  margin: 0;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-weight: 900;
-  line-height: 0.98;
-  letter-spacing: 0;
-}
-
-.ah-hero h1 {
-  max-width: 900px;
-  font-size: clamp(3.4rem, 7vw, 6.8rem);
-}
-
-.ah-hero__copy > p:not(.ah-kicker) {
-  max-width: 700px;
-  margin: 24px 0 30px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 1.18rem;
-}
-
-.ah-product-card {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
-}
-
-.ah-product-card__image {
-  min-height: 250px;
-  background:
-    linear-gradient(180deg, transparent, rgba(37, 28, 84, 0.38)),
-    url("https://www.sandwellresidentials.co.uk/_webedit/cached-images/128-0-556-0-8889-10000-1707.jpg") center / cover;
-}
-
-.ah-product-card__body {
-  padding: 24px;
-}
-
-.ah-product-card h2 {
-  margin: 12px 0 10px;
-  font-size: 1.55rem;
-  line-height: 1.12;
-}
-
-.ah-product-card p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.ah-chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 10px;
-  border-radius: 999px;
-  color: #fff;
-  background: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 900;
-}
-
-.ah-product-card__stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.ah-product-card__stats span {
-  min-height: 82px;
-  padding: 16px;
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.86rem;
-}
-
-.ah-product-card__stats span:last-child {
-  border-right: 0;
-}
-
-.ah-product-card__stats strong {
-  display: block;
-  color: var(--accent-soft);
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 1.4rem;
-}
-
-.ah-section {
-  padding: 92px 0;
-}
-
-.ah-section__grid,
-.ah-dashboard-grid,
-.ah-video-grid,
-.ah-flow__grid,
-.ah-faq-grid,
-.ah-cta__box {
-  display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.52fr);
-  gap: 42px;
-  align-items: start;
-}
-
-.ah-section__header {
-  max-width: 780px;
-  margin-bottom: 36px;
-}
-
-.ah-section h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
-}
-
-.ah-section__text,
-.ah-section p {
-  color: var(--muted);
-}
-
-.ah-workspace {
-  background: var(--bg-alt);
-}
-
-.ah-module-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 42px;
-}
-
-.ah-module-grid--3col {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.ah-module,
-.ah-feature,
-.ah-program,
-.ah-solution,
-.ah-dashboard {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--panel);
-  box-shadow: 0 14px 38px rgba(37, 28, 84, 0.06);
-}
-
-.ah-module {
-  min-height: 260px;
-  padding: 26px;
-}
-
-.ah-module span,
-.ah-program span,
-.ah-solution span {
-  color: var(--accent);
-  font-family: Montserrat, system-ui, sans-serif;
-  font-weight: 900;
-}
-
-.ah-module h3,
-.ah-feature h3,
-.ah-program h3,
-.ah-flow-step h3 {
-  margin: 16px 0 8px;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 1.18rem;
-  line-height: 1.2;
-}
-
-.ah-module p,
-.ah-feature p,
-.ah-program p,
-.ah-flow-step p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.ah-feature-board {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.ah-feature {
-  min-height: 250px;
-  padding: 26px;
-}
-
-.ah-feature--large {
-  grid-column: span 2;
-  grid-row: span 2;
-  color: #fff;
-  background:
-    linear-gradient(135deg, rgba(52, 40, 119, 0.94), rgba(224, 0, 116, 0.78)),
-    url("https://gdb.voanews.com/5157767E-EF76-4E7D-BFAA-6F4C9DFB74E5_w1080_h608.jpg") center / cover;
-}
-
-.ah-feature--large h3 {
-  max-width: 420px;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-}
-
-.ah-feature--large p {
-  max-width: 520px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.ah-flow,
-.ah-video-band,
-.ah-cta {
-  color: #fff;
-  background: var(--brand-dark);
-}
-
-.ah-flow .ah-kicker,
-.ah-video-band .ah-kicker,
-.ah-cta .ah-kicker {
-  color: var(--accent-soft);
-}
-
-.ah-flow p,
-.ah-video-band p,
-.ah-cta p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.ah-flow__steps {
-  display: grid;
-  gap: 14px;
-}
-
-.ah-flow-step {
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  gap: 18px;
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.ah-flow-step b {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: #fff;
-  background: var(--accent);
-}
-
-.ah-flow-step h3 {
-  color: #fff;
-  margin-top: 0;
-}
-
-.ah-dashboard-band {
-  background: linear-gradient(180deg, var(--bg-alt), #fff);
-}
-
-.ah-dashboard-grid {
-  align-items: center;
-}
-
-.ah-dashboard {
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-.ah-dashboard__top {
-  display: flex;
-  gap: 8px;
-  padding: 16px;
-  background: var(--brand);
-}
-
-.ah-dashboard__top span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.ah-dashboard__body {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  min-height: 360px;
-}
-
-.ah-dashboard aside {
-  display: grid;
-  align-content: start;
-  gap: 12px;
-  padding: 22px;
-  color: #fff;
-  background: var(--brand-dark);
-}
-
-.ah-dashboard aside strong {
-  margin-bottom: 12px;
-  font-family: Montserrat, system-ui, sans-serif;
-}
-
-.ah-dashboard aside a {
-  min-height: 38px;
-  padding: 8px 10px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-.ah-dashboard__body section {
-  display: grid;
-  place-items: center;
-  gap: 22px;
-  padding: 28px;
-  background: #fff;
-}
-
-.ah-target {
-  position: relative;
-  width: min(250px, 70vw);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow:
-    0 0 0 24px #e7ebf3,
-    0 0 0 48px var(--blue),
-    0 0 0 72px #d23b3b,
-    0 0 0 96px var(--accent);
-}
-
-.ah-target i {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--brand-dark);
-}
-
-.ah-target i:nth-child(1) { top: 42%; left: 48%; }
-.ah-target i:nth-child(2) { top: 50%; left: 54%; }
-.ah-target i:nth-child(3) { top: 47%; left: 42%; }
-.ah-target i:nth-child(4) { top: 56%; left: 49%; }
-
-.ah-dashboard__rows {
-  display: grid;
-  width: min(100%, 420px);
-  gap: 10px;
-}
-
-.ah-dashboard__rows span {
-  height: 12px;
-  border-radius: 999px;
-  background: var(--line);
-}
-
-.ah-dashboard__rows span:nth-child(2) {
-  width: 78%;
-}
-
-.ah-dashboard__rows span:nth-child(3) {
-  width: 58%;
-}
-
-.ah-programs {
-  background: var(--bg-alt);
-}
-
-.ah-program-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.ah-program {
-  overflow: hidden;
-}
-
-.ah-program img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
-
-.ah-program div {
-  padding: 24px;
-}
-
-.ah-program h3 {
-  margin-top: 8px;
-  font-size: 1.35rem;
-}
-
-.ah-video-grid {
-  grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.38fr);
-  align-items: center;
-}
-
-.ah-video {
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-  background: #000;
-  box-shadow: var(--shadow);
-}
-
-.ah-video iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-}
-
-.ah-solution-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.ah-solution {
-  display: grid;
-  gap: 8px;
-  min-height: 168px;
-  padding: 24px;
-}
-
-.ah-solution strong {
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 1.3rem;
-}
-
-.ah-solution em {
-  color: var(--muted);
-  font-style: normal;
-}
-
-.ah-faq {
-  background: var(--bg-alt);
-}
-
-.ah-faq-grid {
-  grid-template-columns: minmax(260px, 0.48fr) 1fr;
-}
-
-details {
-  border-bottom: 1px solid var(--line);
-}
-
-summary {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  min-height: 68px;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-weight: 800;
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::after {
-  content: "+";
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  color: #fff;
-  background: var(--accent);
-}
-
-details[open] summary::after {
-  content: "-";
-}
-
-details p {
-  margin: 0;
-  padding: 0 54px 24px 0;
-}
-
-.ah-cta__box {
-  align-items: center;
-}
-
-.ah-footer {
-  padding: 34px 0;
-  color: rgba(255, 255, 255, 0.72);
-  background: #14182b;
-}
-
-.ah-footer__inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.ah-footer strong {
-  color: #fff;
-  font-family: Montserrat, system-ui, sans-serif;
-}
-
-.ah-reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition:
-    opacity 520ms ease,
-    transform 520ms ease;
-}
-
-.ah-reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .ah-reveal,
-  .ah-button {
-    transition: none;
-  }
-}
-
-@media (max-width: 980px) {
-  .ah-shell {
-    width: min(100% - 28px, var(--maxw));
-  }
-
-  .ah-nav__inner {
-    min-height: auto;
-    padding: 12px 0;
-  }
-
-  .ah-menu {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .ah-nav__links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-    padding: 10px 14px 16px;
-    background: rgba(37, 28, 84, 0.97);
-  }
-
-  .ah-nav.is-open .ah-nav__links {
-    display: grid;
-  }
-
-  .ah-nav__links a {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .ah-hero__grid,
-  .ah-section__grid,
-  .ah-dashboard-grid,
-  .ah-video-grid,
-  .ah-flow__grid,
-  .ah-faq-grid,
-  .ah-cta__box {
-    grid-template-columns: 1fr;
-  }
-
-  .ah-hero {
-    min-height: auto;
-  }
-
-  .ah-hero__grid {
-    padding: 78px 0 54px;
-  }
-
-  .ah-module-grid,
-  .ah-program-grid,
-  .ah-solution-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ah-feature-board {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .ah-hero h1 {
-    font-size: 2.75rem;
-  }
-
-  .ah-section {
-    padding: 68px 0;
-  }
-
-  .ah-module-grid,
-  .ah-program-grid,
-  .ah-solution-list,
-  .ah-feature-board {
-    grid-template-columns: 1fr;
-  }
-
-  .ah-feature--large {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .ah-product-card__stats {
-    grid-template-columns: 1fr;
-  }
-
-  .ah-product-card__stats span {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .ah-product-card__stats span:last-child {
-    border-bottom: 0;
-  }
-
-  .ah-dashboard__body {
-    grid-template-columns: 1fr;
-  }
-
-  .ah-dashboard aside {
-    grid-template-columns: repeat(3, 1fr);
-    overflow-x: auto;
-  }
-
-  .ah-dashboard aside strong {
-    grid-column: 1 / -1;
-  }
-}
-
-
-.ah-brand__logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 4px;
-}
-
-.ah-reveal,
-.ah-reveal.is-visible {
-  opacity: 1 !important;
-  transform: none !important;
+  color: var(--navy);
+  background: #eeeef7;
 }
 
 .ah-nav__links [aria-current="page"] {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
+  color: var(--indigo);
+  background: #e8e8f6;
 }
 
-.ah-platform-pill {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 10px;
-  border-radius: 999px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.14);
-  font-weight: 900;
+.ah-nav__links .ah-nav__cta {
+  margin-left: 8px;
+  padding: 10px 20px;
+  color: #fdfdff;
+  background: var(--magenta);
+  font-weight: 600;
 }
 
-/* CustomArchery hero layout tuning — foto in alto, testo sotto, meno distanza dalla nav */
-.ah-hero {
-  min-height: 0;
-  align-items: stretch;
+.ah-nav__links .ah-nav__cta:hover {
+  color: #fdfdff;
+  background: var(--magenta-dark);
 }
 
-.ah-hero__grid {
-  grid-template-columns: 1fr;
-  justify-items: center;
-  gap: 36px;
-  padding: 56px 0 64px;
+/* ---------- Sezioni ---------- */
+
+.ah-section {
+  padding: clamp(72px, 10vw, 128px) 0;
 }
 
-.ah-product-card {
-  order: 1;
-  width: min(100%, 640px);
-  justify-self: center;
+.ah-section--tight {
+  padding-top: 0;
 }
 
-.ah-product-card__image {
-  min-height: 260px;
+.ah-light {
+  background: var(--bg);
 }
 
-.ah-product-card h2 {
-  font-size: clamp(1.18rem, 1.55vw, 1.45rem);
+.ah-white {
+  background: var(--card);
 }
 
-.ah-hero__copy {
-  order: 2;
-  min-width: 0;
-  max-width: 720px;
+.ah-indigo {
+  color: var(--on-dark);
+  background: var(--indigo);
+}
+
+.ah-dark {
+  color: var(--on-dark);
+  background: var(--navy);
+}
+
+.ah-magenta {
+  color: #fdfdff;
+  background: linear-gradient(135deg, #e6057f 0%, #a3035a 100%);
+}
+
+.ah-section__header {
+  max-width: 760px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.ah-section__header--center {
+  margin-inline: auto;
   text-align: center;
 }
 
-.ah-hero__copy .ah-actions {
-  justify-content: center;
+.ah-section__header--center .ah-lead {
+  margin-inline: auto;
 }
 
-.ah-hero h1 {
-  max-width: 720px;
-  font-size: clamp(2.75rem, 4.2vw, 4.6rem);
-  line-height: 1.06;
-  overflow-wrap: break-word;
-  text-wrap: balance;
+/* ---------- Hero ---------- */
+
+.ah-hero {
+  position: relative;
+  padding: clamp(64px, 9vw, 120px) 0 clamp(72px, 10vw, 128px);
+  color: var(--on-dark);
+  background: radial-gradient(circle at 85% 60%, #302f82 0%, #1b1b3a 62%);
+  overflow: hidden;
 }
 
-.ah-hero__copy > p:not(.ah-kicker) {
-  max-width: 600px;
-  margin: 20px auto 28px;
-  font-size: 1.08rem;
+.ah-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
 }
 
-/* Badge QR "Iscriviti da mobile" */
+.ah-hero .ah-lead {
+  color: var(--on-dark-muted);
+}
+
 .ah-hero-qr {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin: 20px auto 0;
-  padding: 6px 16px 6px 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  text-align: left;
-  opacity: 0.85;
-  transition: opacity 180ms ease;
-}
-
-.ah-hero-qr:hover {
-  opacity: 1;
+  gap: 16px;
+  margin-top: 36px;
+  padding: 12px 20px 12px 12px;
+  background: rgba(246, 246, 251, 0.06);
+  border: 1px solid rgba(246, 246, 251, 0.16);
+  border-radius: var(--radius);
 }
 
 .ah-hero-qr__code {
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
+  flex: none;
+  width: 84px;
+  height: 84px;
+  padding: 4px;
+  background: #ffffff;
+  border-radius: 10px;
 }
 
-.ah-hero-qr__code svg {
-  display: block;
-  width: 100%;
-  height: 100%;
+.ah-hero-qr__text {
+  display: grid;
+  gap: 2px;
 }
 
 .ah-hero-qr__text strong {
-  display: block;
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 0.76rem;
-  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 .ah-hero-qr__text span {
+  color: var(--on-dark-muted);
+  font-size: 0.92rem;
+}
+
+.ah-hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+.ah-float {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 280px;
+  padding: 14px 18px;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(10, 10, 40, 0.35);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.ah-float small {
   display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.ah-float--top {
+  top: 36px;
+  left: -8px;
+  transform: rotate(-3deg);
+}
+
+.ah-float--bottom {
+  right: -8px;
+  bottom: 48px;
+  transform: rotate(2deg);
+}
+
+/* ---------- Icone ---------- */
+
+.ah-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  color: var(--magenta-text);
+  background: var(--pink-soft);
+  border-radius: 50%;
+}
+
+.ah-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ah-icon--solid {
+  color: #fdfdff;
+  background: var(--magenta);
+}
+
+.ah-icon--indigo {
+  color: var(--indigo);
+  background: #e8e8f6;
+}
+
+.ah-icon--sm {
+  width: 40px;
+  height: 40px;
+}
+
+.ah-icon--sm svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Mockup: finestra ---------- */
+
+.ah-window {
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.ah-window__bar {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #eeeef7;
+}
+
+.ah-window__bar i {
+  width: 12px;
+  height: 12px;
+  background: #c9cad9;
+  border-radius: 50%;
+}
+
+.ah-window__bar i:first-child {
+  background: var(--magenta);
+}
+
+.ah-window__body {
+  display: grid;
+  gap: 12px;
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.ah-window__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.ah-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.ah-row--focus {
+  background: var(--pink-wash);
+  border: 3px solid var(--magenta);
+}
+
+.ah-row small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.ah-alert {
+  padding: 12px 16px;
+  color: var(--warn);
+  background: var(--warn-bg);
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.ah-badge {
+  flex: none;
+  padding: 3px 14px;
+  color: var(--ok);
+  background: var(--ok-bg);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ah-badge--alert {
+  color: #fdfdff;
+  background: var(--magenta-text);
+}
+
+.ah-badge--info {
+  color: var(--indigo);
+  background: #e8e8f6;
+}
+
+/* ---------- Mockup: telefono ---------- */
+
+.ah-phone {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  align-content: center;
+  width: min(100%, 300px);
+  min-height: 520px;
+  padding: 36px 24px;
+  color: var(--ink);
+  background: var(--card);
+  border: 10px solid var(--indigo-2);
+  border-radius: 44px;
+  box-shadow: 0 30px 70px rgba(10, 10, 40, 0.4);
+  text-align: center;
+}
+
+.ah-phone--dark {
+  color: var(--on-dark);
+  background: var(--navy);
+  border-color: #3d3c9a;
+}
+
+.ah-phone__eyebrow {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ah-phone--dark .ah-phone__eyebrow,
+.ah-phone--dark .ah-phone__sub {
+  color: #dcdcf2;
+}
+
+.ah-phone__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.ah-phone__sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.ah-phone__btn {
+  padding: 13px 0;
+  color: #fdfdff;
+  background: var(--magenta);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ah-phone__btn--ghost {
+  color: var(--muted);
+  background: transparent;
+  border: 2px solid var(--line);
+}
+
+.ah-avatar {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin-inline: auto;
+  color: var(--indigo);
+  background: #e8e8f6;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Segnapunti */
+
+.ah-score__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.ah-score__total strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
+.ah-score {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ah-score span {
+  padding: 12px 0;
+  color: var(--navy);
+  background: #f5c518;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ah-score .is-red {
+  color: #fdfdff;
+  background: #d42a35;
+}
+
+.ah-score .is-blue {
+  color: #fdfdff;
+  background: #1a6fc4;
+}
+
+.ah-score .is-black {
+  color: #fdfdff;
+  background: var(--navy);
+}
+
+.ah-score .is-white {
+  background: #fdfdff;
+  border: 2px solid #c9cad9;
+}
+
+.ah-score .is-miss {
+  background: #c9cad9;
+}
+
+/* Chat */
+
+.ah-chat {
+  display: grid;
+  gap: 12px;
+  background: var(--bg);
+}
+
+.ah-bubble {
+  max-width: 82%;
+  padding: 12px 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ah-bubble small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.ah-bubble--me {
+  justify-self: end;
+  color: #fdfdff;
+  background: var(--indigo);
+  border-color: var(--indigo);
+}
+
+.ah-chat__notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--pink-wash);
+  border: 3px solid var(--magenta);
+  border-radius: 14px;
+  font-weight: 700;
+}
+
+/* ---------- Problema: le carte sparse ---------- */
+
+.ah-mess {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ah-mess__card {
+  display: grid;
+  gap: 6px;
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(27, 27, 58, 0.1);
+}
+
+.ah-mess__card:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.ah-mess__card:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.ah-mess__card:nth-child(3) {
+  transform: rotate(-1deg);
+}
+
+.ah-mess__card:nth-child(4) {
+  transform: rotate(2deg);
+}
+
+.ah-mess__art {
+  height: 130px;
+  margin-bottom: 12px;
+  padding: 14px;
+  background: var(--bg);
+  border-radius: 12px;
+}
+
+.ah-mess__card h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.ah-mess__card p {
+  color: var(--muted);
+}
+
+.ah-mess__claim {
+  margin-top: 56px;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 600;
+  text-align: center;
+}
+
+.ah-art-sheet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.ah-art-sheet i {
+  height: 22px;
+  background: #fdfdff;
+  border: 1px solid #d5d6ea;
+}
+
+.ah-art-sheet i:nth-child(-n + 4) {
+  background: #2e8b57;
+  border-color: #2e8b57;
+}
+
+.ah-art-sheet .is-pink {
+  background: var(--pink-soft);
+}
+
+.ah-art-sheet .is-yellow {
+  background: var(--warn-bg);
+}
+
+.ah-art-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  background: #ece5dd;
+}
+
+.ah-art-chat span {
+  align-self: flex-start;
+  padding: 2px 12px;
+  background: #fdfdff;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ah-art-chat span:nth-child(2) {
+  align-self: flex-end;
+  background: #d9fdd3;
+}
+
+.ah-art-money {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ah-art-money b {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  color: var(--indigo);
+  background: #e8e8f6;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+}
+
+.ah-art-money span {
+  display: grid;
+  flex: 1;
+  gap: 10px;
+}
+
+.ah-art-money i {
+  height: 10px;
+  background: #c9cad9;
+  border-radius: 6px;
+}
+
+.ah-art-money i:nth-child(2) {
+  width: 70%;
+}
+
+.ah-art-money i:nth-child(4) {
+  width: 50%;
+}
+
+.ah-art-paper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background: #fffbea;
+}
+
+.ah-art-paper span {
+  color: var(--indigo);
+  border-bottom: 2px solid #e9dfa8;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ah-art-paper span:last-child {
+  color: #9a9bb5;
+}
+
+/* ---------- Rete: una piattaforma per tutti ---------- */
+
+.ah-hub {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 260px 1fr;
+  grid-template-areas:
+    "a hub b"
+    "c hub d";
+  gap: 40px 64px;
+  align-items: center;
+}
+
+.ah-hub__center {
+  grid-area: hub;
+  display: grid;
+  place-items: center;
+  width: 240px;
+  height: 240px;
+  margin-inline: auto;
+  background: var(--card);
+  border: 8px solid var(--magenta);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(230, 5, 127, 0.18),
+    0 0 0 44px rgba(230, 5, 127, 0.07);
+}
+
+.ah-hub__center svg {
+  width: 110px;
+  height: auto;
+}
+
+.ah-role {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 24px;
+  background: var(--indigo-2);
+  border: 1px solid var(--indigo-line);
+  border-radius: 20px;
+}
+
+.ah-role:nth-of-type(1) {
+  grid-area: a;
+}
+
+.ah-role:nth-of-type(2) {
+  grid-area: b;
+}
+
+.ah-role:nth-of-type(3) {
+  grid-area: c;
+}
+
+.ah-role:nth-of-type(4) {
+  grid-area: d;
+}
+
+.ah-role h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.ah-role p {
+  color: #dcdcf2;
+}
+
+.ah-role .ah-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.ah-hub__claim {
+  margin-top: 56px;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  text-align: center;
+}
+
+/* ---------- Funzionalità in evidenza ---------- */
+
+.ah-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+
+.ah-feature + .ah-feature {
+  margin-top: clamp(80px, 11vw, 140px);
+}
+
+.ah-feature--flip .ah-feature__copy {
+  order: 2;
+}
+
+.ah-feature__copy .ah-lead {
+  margin-top: 16px;
+}
+
+.ah-feature__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ah-feature__visual .ah-window {
+  flex: 1;
+  min-width: 0;
+}
+
+.ah-points {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-points li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-weight: 600;
+}
+
+.ah-points li::before {
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 22px;
   margin-top: 2px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.7rem;
+  background: var(--magenta) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fdfdff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 14px no-repeat;
+  border-radius: 50%;
 }
 
-@media (max-width: 980px) {
-  .ah-hero-qr {
-    display: none;
-  }
+.ah-mini-phone {
+  display: grid;
+  flex: none;
+  gap: 10px;
+  width: 210px;
+  padding: 26px 18px;
+  color: var(--on-dark);
+  background: var(--navy);
+  border: 8px solid #3d3c9a;
+  border-radius: 36px;
+  box-shadow: 0 24px 56px rgba(10, 10, 40, 0.3);
+  text-align: center;
 }
 
-@media (max-width: 980px) {
-  .ah-hero__grid {
-    gap: 26px;
-    padding: 36px 0 44px;
-  }
-
-  .ah-product-card {
-    max-width: 560px;
-  }
+.ah-mini-phone p {
+  color: #dcdcf2;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 640px) {
-  .ah-hero__grid {
-    padding: 26px 0 36px;
-  }
+.ah-mini-phone strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
 
-  .ah-hero h1 {
-    font-size: clamp(2.1rem, 9vw, 3.1rem);
-  }
+/* Modalità di allenamento */
 
-  .ah-hero-qr {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
+.ah-modes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.ah-mode {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #26255c;
+  border: 1px solid #3d3c9a;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.ah-mode .ah-icon {
+  color: var(--pink);
+  background: rgba(255, 92, 184, 0.14);
+}
+
+/* ---------- Griglie di schede ---------- */
+
+.ah-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ah-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ah-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ah-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.ah-card .ah-icon {
+  margin-bottom: 12px;
+}
+
+.ah-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.ah-card p {
+  color: var(--muted);
+}
+
+a.ah-card {
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+a.ah-card:hover {
+  border-color: var(--magenta);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.ah-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.ah-card__link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- Minori ---------- */
+
+.ah-ages {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-ages__bands {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ah-age {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.ah-age b {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--magenta-text);
+}
+
+.ah-age i {
+  height: 20px;
+  background: var(--magenta);
+  border-radius: 10px;
+}
+
+.ah-age p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ah-age:nth-child(2) b {
+  color: #7a4fa8;
+}
+
+.ah-age:nth-child(2) i {
+  background: #9b6bc9;
+}
+
+.ah-age:nth-child(3) b {
+  color: var(--indigo);
+}
+
+.ah-age:nth-child(3) i {
+  background: var(--indigo);
+}
+
+.ah-ages .ah-phone {
+  min-height: 0;
+  border-color: var(--indigo);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Facile da usare ---------- */
+
+.ah-easy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-checks {
+  display: grid;
+  gap: 22px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-checks li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 600;
+}
+
+.ah-devices {
+  position: relative;
+  min-height: 400px;
+}
+
+.ah-laptop {
+  width: 88%;
+}
+
+.ah-laptop__screen {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  padding: 44px 18%;
+  background: var(--card);
+  border: 12px solid var(--navy);
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.ah-laptop__base {
+  height: 22px;
+  margin-inline: -5%;
+  background: #c9cad9;
+  border-radius: 0 0 16px 16px;
+}
+
+.ah-field {
+  width: 100%;
+  padding: 9px 14px;
+  color: #626385;
+  background: var(--bg);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.ah-enter {
+  width: 100%;
+  padding: 9px 0;
+  color: #fdfdff;
+  background: var(--indigo);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-align: center;
+}
+
+.ah-devices .ah-mini-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 180px;
+  color: var(--ink);
+  background: var(--card);
+  border-color: var(--navy);
+}
+
+.ah-devices .ah-mini-phone .ah-enter {
+  background: var(--magenta);
+}
+
+.ah-mini-phone__mark {
+  display: block;
+  width: 56px;
+  margin: 0 auto 4px;
+}
+
+.ah-mini-phone__mark--lg {
+  width: 72px;
+}
+
+.ah-mini-phone__mark svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Prima e dopo ---------- */
+
+.ah-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+  align-items: center;
+}
+
+.ah-compare__col {
+  display: grid;
+  gap: 22px;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: 20px;
+}
+
+.ah-compare__col h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ah-compare__col ul {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-compare__col li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.15rem;
+}
+
+.ah-compare__before {
+  color: var(--muted);
+  background: #ececf4;
+}
+
+.ah-compare__before li::before {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 12px;
+  background: #9a9bb5;
+  border-radius: 50%;
+}
+
+.ah-compare__after {
+  color: var(--on-dark);
+  background: var(--indigo);
+  box-shadow: 0 24px 64px rgba(48, 47, 130, 0.25);
+}
+
+.ah-compare__after h3 {
+  color: #ff8fcb;
+}
+
+.ah-compare__after li {
+  font-weight: 700;
+}
+
+.ah-compare__after li svg {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  color: #ff8fcb;
+}
+
+.ah-compare__arrow {
+  display: grid;
+  place-items: center;
+  color: var(--magenta);
+}
+
+.ah-compare__arrow svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---------- Frase manifesto ---------- */
+
+.ah-statement {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-statement__less {
+  color: #ffb8dc;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.ah-statement__less s {
+  text-decoration-color: #fdfdff;
+  text-decoration-thickness: 4px;
+}
+
+.ah-statement h2 {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.ah-statement__badge {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 16px 24px;
+  background: #8a034d;
+  border-radius: var(--radius);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ah-statement__mark {
+  display: grid;
+  place-items: center;
+  width: clamp(200px, 26vw, 320px);
+  aspect-ratio: 1;
+  background: #fdfdff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 24px rgba(253, 253, 255, 0.18),
+    0 0 0 54px rgba(253, 253, 255, 0.08);
+}
+
+.ah-statement__mark svg {
+  width: 50%;
+  height: auto;
+}
+
+/* ---------- Come si parte ---------- */
+
+.ah-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.ah-step {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  text-align: center;
+  counter-increment: step;
+}
+
+.ah-step::before {
+  content: counter(step);
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 16px;
+  color: #fdfdff;
+  background: var(--indigo);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.ah-step:last-child::before {
+  background: var(--magenta);
+}
+
+.ah-step::after {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  width: 100%;
+  height: 6px;
+  background: #d5d6ea;
+}
+
+.ah-step:last-child::after {
+  display: none;
+}
+
+.ah-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.ah-step:last-child h3 {
+  color: var(--magenta-text);
+}
+
+.ah-step p {
+  color: var(--muted);
+}
+
+.ah-plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: clamp(48px, 7vw, 80px);
+}
+
+.ah-plan {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+}
+
+.ah-plan strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.ah-plan span {
+  color: var(--muted);
+}
+
+/* ---------- FAQ ---------- */
+
+.ah-faq-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.ah-faq details {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ah-faq details:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.ah-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.ah-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.ah-faq summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--magenta-text);
+  background: var(--pink-soft);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.ah-faq details[open] summary::after {
+  content: "−";
+}
+
+.ah-faq details p {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+/* ---------- CTA finale e form ---------- */
+
+.ah-cta {
+  position: relative;
+  overflow: hidden;
+  color: var(--on-dark);
+  background: radial-gradient(circle at 85% 60%, #302f82 0%, #1b1b3a 62%);
+}
+
+.ah-cta__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.ah-cta .ah-lead {
+  color: var(--on-dark-muted);
+}
+
+.ah-contacts {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-contacts a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(246, 246, 251, 0.06);
+  border: 1px solid rgba(246, 246, 251, 0.16);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background 180ms ease;
+}
+
+.ah-contacts a:hover {
+  background: rgba(246, 246, 251, 0.12);
+}
+
+.ah-contacts .ah-icon {
+  color: var(--pink);
+  background: rgba(255, 92, 184, 0.14);
+}
+
+.ah-form-box {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Footer ---------- */
+
+.ah-footer {
+  padding: 40px 0;
+  color: var(--on-dark-muted);
+  background: var(--navy);
+  border-top: 1px solid rgba(246, 246, 251, 0.1);
 }
 
 .ah-footer__inner {
-  align-items: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .ah-footer__brand {
   display: grid;
-  gap: 4px;
+  gap: 2px;
+}
+
+.ah-footer__brand strong {
+  color: var(--on-dark);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
 }
 
 .ah-footer__legal {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px 20px;
 }
 
 .ah-footer__legal a:hover {
-  color: #fff;
+  color: #fdfdff;
 }
 
-@media (max-width: 640px) {
-  .ah-footer__inner {
-    flex-direction: column;
-  }
-}
+/* ---------- Pagine legali ---------- */
 
 .ah-legal {
   padding: 56px 0 96px;
+  background: var(--card);
 }
 
 .ah-legal .ah-shell {
-  max-width: 760px;
+  max-width: 780px;
 }
 
 .ah-legal__back {
   display: inline-block;
   margin-bottom: 28px;
-  color: var(--accent);
-  font-weight: 700;
+  color: var(--magenta-text);
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 .ah-legal h1 {
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
   margin: 0 0 10px;
-  color: var(--brand-dark);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
 }
 
 .ah-legal__meta {
-  color: var(--muted);
   margin: 0 0 40px;
+  color: var(--muted);
   font-size: 0.92rem;
 }
 
 .ah-legal h2 {
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: 1.22rem;
   margin: 38px 0 14px;
   padding-top: 26px;
+  color: var(--navy);
   border-top: 1px solid var(--line);
-  color: var(--brand-dark);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .ah-legal h2:first-of-type {
@@ -1115,27 +1835,253 @@ details p {
 }
 
 .ah-legal a {
-  color: var(--blue);
+  color: var(--indigo);
   text-decoration: underline;
 }
 
 .ah-legal strong {
-  color: var(--brand-dark);
+  color: var(--navy);
 }
 
 .ah-legal table {
+  display: block;
   width: 100%;
   margin: 0 0 20px;
+  overflow-x: auto;
   border-collapse: collapse;
   font-size: 0.88rem;
 }
 
 .ah-legal th,
 .ah-legal td {
-  border: 1px solid var(--line);
   padding: 8px 10px;
+  border: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ah-button,
+  a.ah-card {
+    transition: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .ah-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ah-mess {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .ah-shell {
+    width: min(100% - 32px, var(--maxw));
+  }
+
+  .ah-menu {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .ah-nav__inner {
+    flex-wrap: wrap;
+    gap: 0 16px;
+    min-height: 64px;
+  }
+
+  .ah-nav__links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 8px 0 16px;
+  }
+
+  .ah-nav.is-open .ah-nav__links {
+    display: flex;
+  }
+
+  .ah-nav__links .ah-nav__cta {
+    margin: 8px 0 0;
+    text-align: center;
+  }
+
+  .ah-hero__grid,
+  .ah-feature,
+  .ah-easy,
+  .ah-ages,
+  .ah-statement,
+  .ah-faq-grid,
+  .ah-cta__grid,
+  .ah-form-box {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ah-feature--flip .ah-feature__copy {
+    order: 0;
+  }
+
+  .ah-hero__visual {
+    min-height: 0;
+  }
+
+  .ah-float--top {
+    left: 0;
+  }
+
+  .ah-float--bottom {
+    right: 0;
+  }
+
+  .ah-hub {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "hub hub"
+      "a b"
+      "c d";
+    gap: 20px;
+  }
+
+  .ah-hub__center {
+    margin-bottom: 40px;
+  }
+
+  .ah-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ah-compare {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .ah-compare__arrow {
+    transform: rotate(90deg);
+  }
+
+  .ah-statement__mark {
+    display: none;
+  }
+
+  .ah-ages .ah-phone {
+    justify-self: center;
+  }
+
+  .ah-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 0;
+  }
+
+  .ah-step:nth-child(2)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .ah-page {
+    font-size: 1rem;
+  }
+
+  .ah-actions .ah-button {
+    width: 100%;
+  }
+
+  .ah-hero-qr {
+    display: none;
+  }
+
+  .ah-float {
+    position: static;
+    margin-top: 16px;
+    max-width: none;
+    transform: none;
+  }
+
+  .ah-hero__visual {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ah-hero__visual .ah-phone {
+    order: -1;
+    min-height: 0;
+  }
+
+  .ah-mess,
+  .ah-grid,
+  .ah-grid--2,
+  .ah-grid--4,
+  .ah-modes,
+  .ah-plans,
+  .ah-hub {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ah-hub {
+    grid-template-areas:
+      "hub"
+      "a"
+      "b"
+      "c"
+      "d";
+  }
+
+  .ah-mess__card:nth-child(n) {
+    transform: none;
+  }
+
+  .ah-ages__bands {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .ah-feature__visual {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ah-feature__visual .ah-mini-phone {
+    align-self: center;
+  }
+
+  .ah-devices {
+    min-height: 0;
+  }
+
+  .ah-laptop {
+    width: 100%;
+  }
+
+  .ah-devices .ah-mini-phone {
+    display: none;
+  }
+
+  .ah-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ah-step::after {
+    display: none;
+  }
+
+  .ah-card {
+    padding: 26px;
+  }
+
+  .ah-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 </style>
@@ -1144,9 +2090,8 @@ details p {
 <main class="ah-page" id="top">
 <nav class="ah-nav" data-afai-block="hero-section" data-gjs-name="Navigazione">
   <div class="ah-shell ah-nav__inner">
-    <a class="ah-brand" href="./home" aria-label="CustomArchery">
-      <img class="ah-brand__logo" src="/api/public/company/cmpph5b1e004v9jfe7rgqp6iq/logo" alt="CustomArchery" />
-      <span>CustomArchery</span>
+    <a class="ah-brand" href="./home" aria-label="Archery Hub, torna alla home">
+      <span class="ah-brand__wordmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2835.95 497.892" fill="none" aria-hidden="true" focusable="false"><defs><clipPath id="ahlogo1"><path d="M 2646 203 L 2835.617188 203 L 2835.617188 481 L 2646 481 Z M 2646 203 "/></clipPath><clipPath id="ahlogo2"><path d="M 0.28125 0 L 415 0 L 415 497.785156 L 0.28125 497.785156 Z M 0.28125 0 "/></clipPath></defs><path style="fill-rule:nonzero;fill:#302F82;" d="M 570.039062 399.398438 C 570.433594 399.796875 570.890625 399.992188 571.421875 399.992188 L 662.363281 399.992188 C 662.890625 399.992188 663.351562 399.796875 663.75 399.398438 C 664.140625 399.003906 664.203125 398.550781 663.945312 398.015625 L 618.078125 251.324219 C 617.8125 250.796875 617.417969 250.535156 616.890625 250.535156 C 616.359375 250.535156 615.964844 250.796875 615.707031 251.324219 L 569.839844 398.015625 C 569.574219 398.550781 569.640625 399.003906 570.039062 399.398438 M 688.460938 477.492188 L 674.226562 431.230469 C 673.957031 430.4375 673.433594 430.042969 672.644531 430.042969 L 561.539062 430.042969 C 560.746094 430.042969 560.214844 430.4375 559.957031 431.230469 L 545.722656 477.492188 C 544.929688 479.601562 543.347656 480.652344 540.976562 480.652344 L 508.949219 480.652344 C 506.046875 480.652344 504.996094 479.210938 505.789062 476.300781 L 592.378906 207.039062 C 593.167969 204.933594 594.75 203.878906 597.121094 203.878906 L 636.664062 203.878906 C 639.03125 203.878906 640.617188 204.933594 641.40625 207.039062 L 728.789062 476.300781 L 729.1875 477.882812 C 729.1875 479.730469 727.996094 480.652344 725.625 480.652344 L 693.207031 480.652344 C 690.828125 480.652344 689.246094 479.601562 688.460938 477.492188 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 806.320312 238.277344 L 806.320312 326.847656 C 806.320312 327.902344 806.847656 328.425781 807.902344 328.425781 L 873.933594 328.425781 C 887.898438 328.425781 899.101562 324.277344 907.539062 315.972656 C 915.972656 307.667969 920.195312 296.664062 920.195312 282.953125 C 920.195312 268.988281 915.972656 257.785156 907.539062 249.347656 C 899.101562 240.914062 887.898438 236.695312 873.933594 236.695312 L 807.902344 236.695312 C 806.847656 236.695312 806.320312 237.226562 806.320312 238.277344 M 921.773438 477.886719 L 866.421875 359.660156 C 866.152344 358.871094 865.628906 358.476562 864.839844 358.476562 L 807.902344 358.476562 C 806.847656 358.476562 806.320312 359.007812 806.320312 360.058594 L 806.320312 476.699219 C 806.320312 479.339844 805 480.652344 802.367188 480.652344 L 772.316406 480.652344 C 769.679688 480.652344 768.363281 479.339844 768.363281 476.699219 L 768.363281 207.832031 C 768.363281 205.199219 769.679688 203.878906 772.316406 203.878906 L 878.679688 203.878906 C 894.492188 203.878906 908.394531 207.175781 920.390625 213.761719 C 932.382812 220.351562 941.675781 229.578125 948.265625 241.4375 C 954.851562 253.300781 958.152344 267.011719 958.152344 282.5625 C 958.152344 301.011719 953.335938 316.632812 943.71875 329.414062 C 934.09375 342.203125 920.71875 350.832031 903.585938 355.316406 C 902.53125 355.84375 902.261719 356.5 902.796875 357.292969 L 960.128906 475.910156 C 960.390625 476.441406 960.523438 477.09375 960.523438 477.886719 C 960.523438 479.730469 959.46875 480.652344 957.363281 480.652344 L 926.125 480.652344 C 924.011719 480.652344 922.566406 479.730469 921.773438 477.886719 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1043.394531 472.945312 C 1028.761719 465.429688 1017.425781 454.757812 1009.390625 440.914062 C 1001.34375 427.074219 997.328125 411.199219 997.328125 393.273438 L 997.328125 290.867188 C 997.328125 272.941406 1001.34375 257.191406 1009.390625 243.617188 C 1017.425781 230.039062 1028.761719 219.496094 1043.394531 211.980469 C 1058.023438 204.46875 1074.828125 200.710938 1093.808594 200.710938 C 1112.785156 200.710938 1129.523438 204.339844 1144.019531 211.589844 C 1158.515625 218.839844 1169.785156 229.050781 1177.828125 242.230469 C 1185.863281 255.414062 1189.890625 270.699219 1189.890625 288.097656 L 1189.890625 288.492188 C 1189.890625 289.816406 1189.492188 290.867188 1188.699219 291.652344 C 1187.914062 292.445312 1186.984375 292.84375 1185.933594 292.84375 L 1155.886719 294.421875 C 1153.246094 294.421875 1151.933594 293.234375 1151.933594 290.867188 L 1151.933594 289.675781 C 1151.933594 272.8125 1146.65625 259.230469 1136.113281 248.949219 C 1125.570312 238.675781 1111.464844 233.53125 1093.808594 233.53125 C 1076.144531 233.53125 1061.980469 238.675781 1051.300781 248.949219 C 1040.625 259.230469 1035.289062 272.8125 1035.289062 289.675781 L 1035.289062 394.851562 C 1035.289062 411.722656 1040.625 425.300781 1051.300781 435.578125 C 1061.980469 445.855469 1076.144531 451 1093.808594 451 C 1111.464844 451 1125.570312 445.855469 1136.113281 435.578125 C 1146.65625 425.300781 1151.933594 411.722656 1151.933594 394.851562 L 1151.933594 394.0625 C 1151.933594 391.6875 1153.246094 390.503906 1155.886719 390.503906 L 1185.933594 392.082031 C 1188.566406 392.082031 1189.890625 393.40625 1189.890625 396.039062 C 1189.890625 413.4375 1185.863281 428.792969 1177.828125 442.101562 C 1169.785156 455.414062 1158.515625 465.761719 1144.019531 473.140625 C 1129.523438 480.523438 1112.785156 484.214844 1093.808594 484.214844 C 1074.828125 484.214844 1058.023438 480.457031 1043.394531 472.945312 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1391.066406 203.878906 L 1421.117188 203.878906 C 1423.746094 203.878906 1425.070312 205.199219 1425.070312 207.832031 L 1425.070312 476.699219 C 1425.070312 479.339844 1423.746094 480.652344 1421.117188 480.652344 L 1391.066406 480.652344 C 1388.425781 480.652344 1387.113281 479.339844 1387.113281 476.699219 L 1387.113281 359.269531 C 1387.113281 358.21875 1386.578125 357.683594 1385.53125 357.683594 L 1272.84375 357.683594 C 1271.785156 357.683594 1271.257812 358.21875 1271.257812 359.269531 L 1271.257812 476.699219 C 1271.257812 479.339844 1269.941406 480.652344 1267.304688 480.652344 L 1237.253906 480.652344 C 1234.621094 480.652344 1233.300781 479.339844 1233.300781 476.699219 L 1233.300781 207.832031 C 1233.300781 205.199219 1234.621094 203.878906 1237.253906 203.878906 L 1267.304688 203.878906 C 1269.941406 203.878906 1271.257812 205.199219 1271.257812 207.832031 L 1271.257812 323.285156 C 1271.257812 324.34375 1271.785156 324.871094 1272.84375 324.871094 L 1385.53125 324.871094 C 1386.578125 324.871094 1387.113281 324.34375 1387.113281 323.285156 L 1387.113281 207.832031 C 1387.113281 205.199219 1388.425781 203.878906 1391.066406 203.878906 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1657.238281 236.691406 L 1516.875 236.691406 C 1515.820312 236.691406 1515.289062 237.226562 1515.289062 238.277344 L 1515.289062 323.289062 C 1515.289062 324.34375 1515.820312 324.871094 1516.875 324.871094 L 1613.351562 324.871094 C 1615.980469 324.871094 1617.304688 326.191406 1617.304688 328.824219 L 1617.304688 353.730469 C 1617.304688 356.371094 1615.980469 357.683594 1613.351562 357.683594 L 1516.875 357.683594 C 1515.820312 357.683594 1515.289062 358.21875 1515.289062 359.265625 L 1515.289062 446.253906 C 1515.289062 447.308594 1515.820312 447.832031 1516.875 447.832031 L 1657.238281 447.832031 C 1659.871094 447.832031 1661.191406 449.15625 1661.191406 451.792969 L 1661.191406 476.699219 C 1661.191406 479.339844 1659.871094 480.652344 1657.238281 480.652344 L 1481.285156 480.652344 C 1478.652344 480.652344 1477.332031 479.339844 1477.332031 476.699219 L 1477.332031 207.832031 C 1477.332031 205.199219 1478.652344 203.878906 1481.285156 203.878906 L 1657.238281 203.878906 C 1659.871094 203.878906 1661.191406 205.199219 1661.191406 207.832031 L 1661.191406 232.738281 C 1661.191406 235.378906 1659.871094 236.691406 1657.238281 236.691406 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1741.6875 238.277344 L 1741.6875 326.847656 C 1741.6875 327.902344 1742.214844 328.425781 1743.269531 328.425781 L 1809.304688 328.425781 C 1823.269531 328.425781 1834.46875 324.277344 1842.910156 315.972656 C 1851.34375 307.667969 1855.566406 296.664062 1855.566406 282.953125 C 1855.566406 268.988281 1851.34375 257.785156 1842.910156 249.347656 C 1834.46875 240.914062 1823.269531 236.695312 1809.304688 236.695312 L 1743.269531 236.695312 C 1742.214844 236.695312 1741.6875 237.226562 1741.6875 238.277344 M 1857.140625 477.886719 L 1801.789062 359.660156 C 1801.523438 358.871094 1801 358.476562 1800.207031 358.476562 L 1743.269531 358.476562 C 1742.214844 358.476562 1741.6875 359.007812 1741.6875 360.058594 L 1741.6875 476.699219 C 1741.6875 479.339844 1740.367188 480.652344 1737.734375 480.652344 L 1707.683594 480.652344 C 1705.050781 480.652344 1703.730469 479.339844 1703.730469 476.699219 L 1703.730469 207.832031 C 1703.730469 205.199219 1705.050781 203.878906 1707.683594 203.878906 L 1814.046875 203.878906 C 1829.859375 203.878906 1843.761719 207.175781 1855.761719 213.761719 C 1867.75 220.351562 1877.042969 229.578125 1883.632812 241.4375 C 1890.222656 253.300781 1893.523438 267.011719 1893.523438 282.5625 C 1893.523438 301.011719 1888.707031 316.632812 1879.085938 329.414062 C 1869.460938 342.203125 1856.085938 350.832031 1838.957031 355.316406 C 1837.902344 355.84375 1837.632812 356.5 1838.164062 357.292969 L 1895.5 475.910156 C 1895.757812 476.441406 1895.890625 477.09375 1895.890625 477.886719 C 1895.890625 479.730469 1894.835938 480.652344 1892.730469 480.652344 L 1861.496094 480.652344 C 1859.378906 480.652344 1857.933594 479.730469 1857.140625 477.886719 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 1997.746094 476.300781 L 1997.746094 365.199219 C 1997.746094 364.148438 1997.613281 363.484375 1997.347656 363.222656 L 1915.109375 208.621094 C 1914.839844 208.097656 1914.710938 207.4375 1914.710938 206.644531 C 1914.710938 204.804688 1915.761719 203.878906 1917.878906 203.878906 L 1950.300781 203.878906 C 1952.667969 203.878906 1954.253906 204.804688 1955.042969 206.644531 L 2015.539062 322.496094 C 2015.800781 323.027344 2016.191406 323.285156 2016.726562 323.285156 C 2017.25 323.285156 2017.644531 323.027344 2017.910156 322.496094 L 2078.40625 206.644531 C 2079.199219 204.804688 2080.78125 203.878906 2083.152344 203.878906 L 2115.96875 203.878906 C 2117.28125 203.878906 2118.269531 204.339844 2118.933594 205.261719 C 2119.585938 206.1875 2119.523438 207.304688 2118.734375 208.621094 L 2036.097656 363.222656 C 2035.832031 363.484375 2035.703125 364.148438 2035.703125 365.199219 L 2035.703125 476.300781 C 2035.703125 478.941406 2034.378906 480.261719 2031.75 480.261719 L 2001.699219 480.261719 C 1999.0625 480.261719 1997.746094 478.941406 1997.746094 476.300781 "/><path style="fill-rule:nonzero;fill:#E6057F;" d="M 2316.4375 203.859375 L 2346.488281 203.859375 C 2349.117188 203.859375 2350.441406 205.179688 2350.441406 207.8125 L 2350.441406 476.699219 C 2350.441406 479.339844 2349.117188 480.652344 2346.488281 480.652344 L 2316.4375 480.652344 C 2313.800781 480.652344 2312.480469 479.339844 2312.480469 476.699219 L 2312.480469 359.257812 C 2312.480469 358.207031 2311.953125 357.675781 2310.902344 357.675781 L 2198.207031 357.675781 C 2197.148438 357.675781 2196.621094 358.207031 2196.621094 359.257812 L 2196.621094 476.699219 C 2196.621094 479.339844 2195.304688 480.652344 2192.667969 480.652344 L 2162.617188 480.652344 C 2159.980469 480.652344 2158.664062 479.339844 2158.664062 476.699219 L 2158.664062 207.8125 C 2158.664062 205.179688 2159.980469 203.859375 2162.617188 203.859375 L 2192.667969 203.859375 C 2195.304688 203.859375 2196.621094 205.179688 2196.621094 207.8125 L 2196.621094 323.277344 C 2196.621094 324.332031 2197.148438 324.855469 2198.207031 324.855469 L 2310.902344 324.855469 C 2311.953125 324.855469 2312.480469 324.332031 2312.480469 323.277344 L 2312.480469 207.8125 C 2312.480469 205.179688 2313.800781 203.859375 2316.4375 203.859375 "/><path style="fill-rule:nonzero;fill:#E6057F;" d="M 2447.355469 472.546875 C 2432.726562 465.03125 2421.320312 454.359375 2413.15625 440.515625 C 2404.980469 426.675781 2400.898438 410.796875 2400.898438 392.871094 L 2400.898438 207.8125 C 2400.898438 205.179688 2402.210938 203.859375 2404.851562 203.859375 L 2434.902344 203.859375 C 2437.535156 203.859375 2438.855469 205.179688 2438.855469 207.8125 L 2438.855469 393.660156 C 2438.855469 410.796875 2444.324219 424.636719 2455.265625 435.179688 C 2466.199219 445.726562 2480.507812 450.996094 2498.171875 450.996094 C 2515.832031 450.996094 2530.0625 445.726562 2540.878906 435.179688 C 2551.679688 424.636719 2557.089844 410.796875 2557.089844 393.660156 L 2557.089844 207.8125 C 2557.089844 205.179688 2558.402344 203.859375 2561.042969 203.859375 L 2591.09375 203.859375 C 2593.726562 203.859375 2595.050781 205.179688 2595.050781 207.8125 L 2595.050781 392.871094 C 2595.050781 410.796875 2591.023438 426.675781 2582.988281 440.515625 C 2574.945312 454.359375 2563.613281 465.03125 2548.980469 472.546875 C 2534.351562 480.058594 2517.410156 483.816406 2498.171875 483.816406 C 2478.921875 483.816406 2461.988281 480.058594 2447.355469 472.546875 "/><g clip-path="url(#ahlogo1)" clip-rule="nonzero"><path style="fill-rule:nonzero;fill:#E6057F;" d="M 2784.414062 434.980469 C 2793.242188 426.675781 2797.660156 415.40625 2797.660156 401.171875 C 2797.660156 386.941406 2793.175781 375.671875 2784.214844 367.367188 C 2775.253906 359.0625 2762.996094 354.90625 2747.441406 354.90625 L 2685.753906 354.90625 C 2684.699219 354.90625 2684.171875 355.441406 2684.171875 356.492188 L 2684.171875 445.855469 C 2684.171875 446.914062 2684.699219 447.433594 2685.753906 447.433594 L 2748.625 447.433594 C 2763.652344 447.433594 2775.578125 443.285156 2784.414062 434.980469 M 2684.171875 238.261719 L 2684.171875 321.695312 C 2684.171875 322.75 2684.699219 323.277344 2685.753906 323.277344 L 2745.464844 323.277344 C 2760.75 323.277344 2772.808594 319.457031 2781.648438 311.808594 C 2790.472656 304.164062 2794.894531 293.753906 2794.894531 280.570312 C 2794.894531 267.125 2790.472656 256.449219 2781.648438 248.542969 C 2772.808594 240.632812 2760.75 236.679688 2745.464844 236.679688 L 2685.753906 236.679688 C 2684.699219 236.679688 2684.171875 237.210938 2684.171875 238.261719 M 2793.707031 338.695312 C 2821.644531 350.5625 2835.617188 372.570312 2835.617188 404.734375 C 2835.617188 428.988281 2827.578125 447.703125 2811.5 460.882812 C 2795.414062 474.066406 2774.460938 480.652344 2748.625 480.652344 L 2650.167969 480.652344 C 2647.53125 480.652344 2646.214844 479.339844 2646.214844 476.699219 L 2646.214844 207.8125 C 2646.214844 205.179688 2647.53125 203.859375 2650.167969 203.859375 L 2745.464844 203.859375 C 2772.875 203.859375 2794.164062 210.125 2809.324219 222.640625 C 2824.480469 235.164062 2832.0625 253.421875 2832.0625 277.40625 C 2832.0625 305.878906 2819.273438 325.519531 2793.707031 336.320312 C 2792.382812 337.113281 2792.382812 337.90625 2793.707031 338.695312 "/></g><path style="fill-rule:nonzero;fill:#302F82;" d="M 327.675781 365.449219 C 327.210938 362.871094 325.332031 360.773438 322.828125 360.011719 L 209.535156 325.621094 L 190.207031 320.367188 C 190.125 318.089844 188.945312 316 187.039062 314.753906 C 185.128906 313.511719 182.738281 313.28125 180.621094 314.121094 L 175.210938 316.292969 L 54.484375 283.492188 C 52.085938 282.84375 49.496094 283.523438 47.71875 285.28125 C 45.949219 287.046875 45.257812 289.625 45.902344 292.039062 L 65.832031 366.726562 C 66.347656 368.65625 67.664062 370.277344 69.453125 371.171875 C 71.246094 372.066406 73.328125 372.152344 75.183594 371.414062 L 176.058594 331.011719 L 176.597656 331.152344 L 181.425781 468.28125 C 181.519531 470.894531 183.0625 473.242188 185.429688 474.355469 C 186.375 474.804688 187.398438 475.023438 188.410156 475.023438 C 189.917969 475.023438 191.417969 474.539062 192.660156 473.585938 L 325.042969 372.25 C 327.128906 370.65625 328.144531 368.03125 327.675781 365.449219 "/><path style="fill-rule:nonzero;fill:#302F82;" d="M 180.285156 177.050781 C 174.714844 169.328125 166.464844 164.234375 157.066406 162.714844 C 137.679688 159.589844 119.320312 172.8125 116.179688 192.214844 C 114.660156 201.617188 116.894531 211.046875 122.464844 218.769531 C 128.035156 226.492188 136.277344 231.582031 145.679688 233.105469 C 147.609375 233.414062 149.535156 233.570312 151.449219 233.570312 C 158.875 233.570312 166.09375 231.25 172.234375 226.820312 C 179.957031 221.25 185.050781 213 186.570312 203.601562 C 188.085938 194.203125 185.855469 184.773438 180.285156 177.050781 "/><g clip-path="url(#ahlogo2)" clip-rule="nonzero"><path style="fill-rule:nonzero;fill:#E6057F;" d="M 277.78125 25.773438 C 234.957031 4.519531 188.925781 -3.140625 144.585938 1.144531 C 136.132812 1.960938 136.277344 14.484375 144.742188 15.152344 C 175.269531 17.558594 205.863281 25.730469 234.984375 40.179688 C 294.449219 69.691406 336.714844 119.96875 357.503906 177.863281 L 50.640625 283.539062 C 48.0625 284.429688 46.234375 286.734375 45.960938 289.445312 C 45.683594 292.15625 47.011719 294.78125 49.355469 296.171875 L 162.035156 362.796875 L 3.007812 485.257812 C 0.242188 487.382812 -0.527344 491.226562 1.203125 494.257812 C 2.480469 496.496094 4.828125 497.785156 7.277344 497.785156 C 8.140625 497.785156 9.023438 497.621094 9.871094 497.285156 L 324.773438 371.308594 C 327.21875 370.332031 328.90625 368.0625 329.140625 365.4375 C 329.371094 362.816406 328.113281 360.285156 325.878906 358.890625 L 221.851562 293.949219 L 362.355469 192.695312 C 378.933594 249.953125 374.960938 313.332031 346.378906 370.929688 C 331.910156 400.082031 312.460938 425.117188 289.566406 445.519531 C 283.226562 451.167969 290.691406 461.230469 297.914062 456.773438 C 335.847656 433.363281 367.898438 399.398438 389.175781 356.523438 C 449.753906 234.449219 399.898438 86.371094 277.78125 25.773438 "/></g></svg></span>
     </a>
     <button class="ah-menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
     <div class="ah-nav__links" id="site-menu">
@@ -1185,16 +2130,17 @@ details p {
 </script>
 <section class="ah-section ah-legal" data-afai-block="features-section" data-gjs-name="TERMINI E CONDIZIONI GENERALI DI UTILIZZO">
   <div class="ah-shell">
-    <a class="ah-legal__back" href="./home">&larr; Torna alla struttura</a>
+    <a class="ah-legal__back" href="./home">&larr; Torna alla home</a>
     <h1>TERMINI E CONDIZIONI GENERALI DI UTILIZZO</h1>
     <p class="ah-legal__meta">Documento fornito da AMT di Francesco Toso, titolare del portale Archery Hub — pubblicato qui integralmente per trasparenza verso i visitatori del mini sito CustomArchery.</p>
     <p><strong>Portale Archery Hub</strong></p><p><a href="https://www.archeryhub.it">www.archeryhub.it</a> e <a href="https://www.archeryhub.eu">www.archeryhub.eu</a></p><p>Ultimo aggiornamento: 6 agosto 2026</p><h2>1. Identificazione del fornitore</h2><p>Il portale Archery Hub è gestito da:</p><p><strong>AMT di Francesco Toso</strong></p><p>Via San Pietro 60, 20033 Solaro (MI), Italia</p><p>Codice fiscale: TSOFNC80B22C933Z</p><p>Partita IVA: 13333860966</p><p>Numero REA: MI-2716348</p><p>Posta elettronica: <a href="mailto:info@archeryhub.it">info@archeryhub.it</a></p><p>Posta elettronica certificata: <a href="mailto:toso.francesco@pec.it">toso.francesco@pec.it</a></p><p>Le informazioni riportate assolvono agli obblighi previsti dall'articolo 7 del Decreto Legislativo 9 aprile 2003, n. 70, recante attuazione della Direttiva 2000/31/CE in materia di commercio elettronico, nonché agli obblighi informativi precontrattuali di cui all'articolo 49 del Decreto Legislativo 6 settembre 2005, n. 206, recante il Codice del Consumo.</p><h2>2. Definizioni</h2><p>Nel testo che segue le espressioni di seguito riportate assumono il significato a ciascuna attribuito:</p><ul><li><strong>AMT</strong>: AMT di Francesco Toso, quale gestore del Portale e fornitore dei servizi.</li><li><strong>Portale</strong>: l'applicativo software accessibile agli indirizzi <a href="https://www.archeryhub.it">www.archeryhub.it</a> e <a href="https://www.archeryhub.eu">www.archeryhub.eu</a>, comprensivo del sito vetrina e dell'area riservata.</li><li><strong>Condizioni</strong>: il presente documento, unitamente agli allegati e ai documenti in esso richiamati.</li><li><strong>Utente</strong>: chiunque acceda al Portale, con o senza registrazione.</li><li><strong>Account</strong>: il profilo personale che consente l'accesso all'area riservata, nelle quattro tipologie previste dall'articolo 6.</li><li><strong>Società</strong>: l'associazione o società sportiva dilettantistica titolare di un account della corrispondente tipologia.</li><li><strong>Arciere</strong>: la persona fisica titolare di un account personale destinato alla pratica del tiro con l'arco.</li><li><strong>Tecnico</strong>: la persona fisica titolare di un account destinato all'erogazione di prestazioni tecniche a favore degli arcieri.</li><li><strong>Operatore commerciale</strong>: l'esercente titolare di un account destinato alle attività di promozione commerciale.</li><li><strong>Consumatore</strong>: la persona fisica che agisce per scopi estranei all'attività imprenditoriale, commerciale, artigianale, o professionale eventualmente svolta, secondo la definizione dell'articolo 3, comma 1, lettera a), del Codice del Consumo.</li><li><strong>Contenuti dell'Utente</strong>: i materiali di qualunque natura caricati o trasmessi dagli Utenti attraverso le funzioni del Portale.</li><li><strong>Videocorso</strong>: il contenuto audiovisivo a carattere didattico posto in vendita nell'area corsi.</li></ul><h2>3. Oggetto e ambito di applicazione</h2><p>Le presenti Condizioni disciplinano l'accesso al Portale e l'utilizzo dei servizi ivi erogati, e costituiscono parte integrante di ogni contratto concluso fra AMT e l'Utente.</p><p>Il Portale mette a disposizione un insieme di strumenti destinati alla gestione dell'attività sportiva nella disciplina del tiro con l'arco. Rientrano nell'offerta la gestione dei rapporti fra società sportive, arcieri, e tecnici, la comunicazione interna, la registrazione dei risultati e delle statistiche, la consultazione dei calendari e delle graduatorie di fonte federale, la contabilità delle società, la vendita di contenuti didattici, e la pubblicazione di annunci.</p><p><strong>Rapporti con le società sportive.</strong> L'accesso della Società al Portale è regolato da autonomo contratto di utilizzo del software, sottoscritto fra AMT e l'ente, del quale le presenti Condizioni costituiscono disciplina integrativa e residuale. In caso di contrasto fra le presenti Condizioni e le pattuizioni del contratto di utilizzo, prevalgono queste ultime limitatamente al rapporto con la Società.</p><p><strong>Rapporti con arcieri, tecnici, e operatori commerciali.</strong> Per tali categorie il rapporto contrattuale si perfeziona mediante accettazione delle presenti Condizioni in sede di registrazione, senza necessità di ulteriore sottoscrizione. Le sezioni da 12 a 14 recano la disciplina specifica di ciascuna categoria.</p><h2>4. Accettazione</h2><p>L'accettazione delle presenti Condizioni avviene mediante apposizione della spunta nell'apposita casella presentata durante la procedura di registrazione, non preselezionata, distinta rispetto a ogni altra manifestazione di volontà.</p><p>AMT registra e conserva l'identificativo dell'account, la data e l'ora dell'accettazione, l'indirizzo IP di provenienza, e il numero di versione del documento accettato. La documentazione così formata costituisce prova dell'accettazione e può essere esibita in caso di contestazione.</p><p>La mancata accettazione preclude il completamento della registrazione e l'accesso all'area riservata. La semplice consultazione del sito vetrina non richiede accettazione, ma comporta l'assoggettamento alle disposizioni di cui agli articoli 21, 22, e 27.</p><h2>5. Requisiti per la registrazione</h2><p>La registrazione è consentita alle persone fisiche che abbiano compiuto i quattordici anni di età e alle persone giuridiche per il tramite dei propri rappresentanti legittimati.</p><p><strong>Minori di quattordici anni.</strong> La registrazione del minore che non abbia compiuto quattordici anni è consentita unicamente previo consenso di chi esercita la responsabilità genitoriale, prestato attraverso la procedura di collegamento dell'account genitoriale descritta all'articolo 11. La soglia di età recepisce la previsione dell'articolo 2-quinquies del Decreto Legislativo 30 giugno 2003, n. 196.</p><p><strong>Veridicità dei dati.</strong> L'Utente garantisce la veridicità, l'esattezza, e l'attualità dei dati comunicati in fase di registrazione, e si obbliga ad aggiornarli tempestivamente in caso di variazione. AMT si riserva la facoltà di sospendere l'account nel caso in cui emergano elementi che facciano ragionevolmente ritenere la non corrispondenza al vero dei dati dichiarati.</p><p><strong>Unicità dell'account.</strong> Ciascuna persona fisica può disporre di un solo account per ciascuna tipologia. La cumulabilità fra le posizioni di arciere e di tecnico è consentita secondo quanto previsto dall'articolo 13.</p><h2>6. Tipologie di account</h2><p>Il Portale prevede quattro tipologie di account, distinte per funzioni accessibili e per regime contrattuale:</p><ul><li><strong>Account Società Sportiva</strong>: riservato alle associazioni e alle società sportive dilettantistiche, regolato dal contratto di utilizzo del software di cui all'articolo 3.</li><li><strong>Account Arciere</strong>: riservato alle persone fisiche che praticano il tiro con l'arco, disciplinato dall'articolo 12.</li><li><strong>Account Tecnico</strong>: riservato agli istruttori e agli allenatori, disciplinato dall'articolo 13.</li><li><strong>Account Operatore Commerciale</strong>: riservato agli esercenti del settore, disciplinato dall'articolo 14.</li></ul><p>Ciascuna tipologia prevede un livello gratuito e uno o più livelli a pagamento, secondo il listino pubblicato nella sezione dedicata del Portale. Le funzioni comprese in ciascun livello sono indicate nella medesima sezione e possono essere oggetto di variazione secondo l'articolo 24.</p><h2>7. Credenziali e sicurezza dell'account</h2><p>Le credenziali di accesso sono personali e non cedibili. L'Utente è tenuto a custodirle con la diligenza richiesta dalla natura del rapporto, ad astenersi dal comunicarle a terzi, e a modificarle tempestivamente qualora sospetti che siano state conosciute da soggetti non autorizzati.</p><p>Le operazioni compiute mediante le credenziali si presumono riferibili all'Utente titolare, salvo che questi dimostri l'utilizzo abusivo da parte di terzi e la propria assenza di colpa nella custodia.</p><p>L'Utente è tenuto a segnalare senza ritardo all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a> ogni accesso non autorizzato di cui venga a conoscenza. AMT provvede alla sospensione cautelare dell'account e all'assistenza necessaria al ripristino.</p><p>Per gli account che dispongono di privilegi di amministrazione è resa disponibile l'autenticazione a due fattori, il cui utilizzo è raccomandato.</p><h2>8. Corrispettivi, fatturazione, e rinnovo</h2><p><strong>Determinazione del corrispettivo.</strong> I corrispettivi dovuti per i livelli a pagamento sono indicati nella sezione del Portale dedicata al listino, con evidenza dell'imposta sul valore aggiunto ove applicabile. Il prezzo applicabile è quello vigente al momento della conclusione del contratto.</p><p><strong>Modalità di pagamento.</strong> Il pagamento è eseguito mediante gli strumenti resi disponibili nella procedura di acquisto, gestiti da Stripe Payments Europe, Limited. Sono ammessi il pagamento con carta, la dilazione in tre rate offerta da Klarna Bank AB (publ), e il bonifico bancario. AMT non acquisisce i dati completi degli strumenti di pagamento.</p><p><strong>Perfezionamento.</strong> Il contratto si perfeziona con l'invio da parte di AMT della conferma d'ordine all'indirizzo di posta elettronica associato all'account. La conferma riepiloga il servizio acquistato, la durata, il corrispettivo, e le informazioni prescritte dall'articolo 51, comma 7, del Codice del Consumo.</p><p><strong>Durata e rinnovo.</strong> Gli abbonamenti hanno la durata mensile o annuale prescelta all'atto della sottoscrizione e si rinnovano automaticamente per periodi di pari durata, salvo disdetta comunicata almeno sette giorni prima della scadenza per gli abbonamenti mensili, e almeno trenta giorni prima della scadenza per quelli annuali. La disdetta si esercita mediante la funzione dedicata presente nelle impostazioni dell'account, ovvero mediante comunicazione all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>.</p><p><strong>Avviso di rinnovo.</strong> AMT trasmette all'Utente, con preavviso non inferiore a quarantacinque giorni rispetto alla data di rinnovo degli abbonamenti annuali, una comunicazione che ne ricorda la scadenza, l'importo, e le modalità di disdetta. Il termine è determinato in modo che l'avviso pervenga all'Utente prima della scadenza del termine utile per la disdetta.</p><p><strong>Variazione dei corrispettivi.</strong> AMT può modificare i corrispettivi con effetto dai rinnovi successivi, dandone comunicazione all'Utente con preavviso di almeno trenta giorni. L'Utente che non intenda accettare la variazione può recedere entro la data di efficacia, senza oneri.</p><p><strong>Mancato pagamento.</strong> Il mancato buon fine del pagamento comporta la sospensione delle funzioni a pagamento decorsi sette giorni dal sollecito, con conservazione dei dati per il periodo indicato all'articolo 20.</p><p><strong>Fatturazione.</strong> La fattura o il documento fiscale equipollente è emesso secondo la normativa applicabile e reso disponibile nell'area riservata.</p><h2>9. Diritto di recesso del consumatore</h2><p>Le disposizioni del presente articolo si applicano ai soli Utenti che rivestano la qualità di consumatore ai sensi dell'articolo 3, comma 1, lettera a), del Codice del Consumo. Sono pertanto escluse le Società, gli operatori commerciali, e i Tecnici che agiscano nell'esercizio della propria attività professionale.</p><p><strong>Termine.</strong> Il consumatore ha diritto di recedere dal contratto concluso a distanza, senza indicarne le ragioni e senza sostenere costi diversi da quelli previsti dalla legge, entro quattordici giorni decorrenti dalla conclusione del contratto, ai sensi dell'articolo 52 del Codice del Consumo.</p><p><strong>Modalità di esercizio.</strong> Il recesso si esercita mediante dichiarazione esplicita, trasmessa all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a> ovvero alla sede di AMT, contenente l'indicazione della volontà di recedere. Il consumatore può utilizzare il modulo tipo di cui all'allegato I, parte B, del Codice del Consumo, senza che il suo impiego costituisca condizione di validità.</p><p><strong>Effetti.</strong> AMT rimborsa i pagamenti ricevuti entro quattordici giorni dalla ricezione della comunicazione di recesso, utilizzando il medesimo mezzo di pagamento impiegato dal consumatore, salvo diverso accordo e comunque senza addebito di spese.</p><p><strong>Esecuzione anticipata dei servizi.</strong> Il consumatore che richieda l'attivazione immediata del servizio in abbonamento prima della scadenza del termine di recesso, e che eserciti successivamente il diritto, è tenuto a corrispondere l'importo proporzionale al servizio fruito sino alla comunicazione del recesso, secondo l'articolo 57, comma 3, del Codice del Consumo.</p><p><strong>Esclusione per i contenuti digitali.</strong> Il diritto di recesso è escluso, ai sensi dell'articolo 59, comma 1, lettera o), del Codice del Consumo, con riferimento alla fornitura di contenuto digitale mediante supporto non materiale, quale il Videocorso, qualora ricorrano congiuntamente le seguenti condizioni: l'esecuzione sia iniziata; il consumatore abbia prestato il proprio previo consenso espresso all'avvio dell'esecuzione durante il periodo di recesso; il consumatore abbia dichiarato di essere consapevole che, prestando tale consenso, perde il diritto di recesso; AMT abbia fornito la conferma prescritta dall'articolo 51, comma 7, del medesimo Codice.</p><p>La procedura di acquisto dei Videocorsi presenta all'utente due caselle di spunta distinte e non preselezionate, mediante le quali sono raccolte le due dichiarazioni sopra indicate. In difetto di entrambe le dichiarazioni la fruizione è differita alla scadenza del termine di recesso.</p><h2>10. Area corsi e Videocorsi</h2><p><strong>Struttura dell'offerta.</strong> L'area corsi ospita contenuti didattici prodotti da AMT, dalle Società, e dai Tecnici. La vendita al pubblico è effettuata in ogni caso da AMT, in nome e per conto proprio, quale unico soggetto contrattualmente obbligato verso l'acquirente.</p><p><strong>Ripartizione dei proventi.</strong> AMT incassa integralmente il corrispettivo e riconosce al produttore del contenuto la quota concordata nell'accordo di pubblicazione, secondo la periodicità ivi stabilita. Il produttore non vanta alcuna pretesa diretta nei confronti dell'acquirente.</p><p><strong>Verifica preventiva.</strong> Ogni contenuto proposto per la pubblicazione è sottoposto a verifica da parte di AMT, che ne accerta la conformità alle presenti Condizioni, l'assenza di materiale illecito, di linguaggio gravemente inappropriato, e di contenuti lesivi di diritti altrui. La verifica non comporta l'assunzione da parte di AMT di alcuna garanzia sulla qualità didattica del contenuto, né esonera il produttore dalla responsabilità per quanto pubblicato.</p><p><strong>Rifiuto e rimozione.</strong> AMT può rifiutare la pubblicazione, ovvero rimuovere un contenuto già pubblicato, dandone comunicazione motivata al produttore. Nel caso di rimozione di un contenuto già acquistato, agli acquirenti è garantita la fruizione per il periodo residuo ovvero il rimborso proporzionale.</p><p><strong>Licenza d'uso all'acquirente.</strong> L'acquisto attribuisce all'acquirente una licenza personale, non esclusiva, non trasferibile, e non sublicenziabile, limitata alla fruizione del contenuto attraverso il Portale per la durata indicata nella scheda del prodotto. Sono vietati la riproduzione, la distribuzione, la comunicazione al pubblico, la messa a disposizione, e ogni altra utilizzazione non espressamente consentita, ai sensi della Legge 22 aprile 1941, n. 633.</p><p><strong>Requisiti tecnici.</strong> La fruizione richiede una connessione a Internet e un dispositivo dotato di browser aggiornato. I requisiti puntuali sono indicati nella scheda di ciascun contenuto.</p><h2>11. Minori di età</h2><p>Il Portale è accessibile ai minori secondo il regime di seguito descritto.</p><p><strong>Account genitoriale.</strong> Chi esercita la responsabilità genitoriale può attivare un proprio account e collegarvi il profilo del minore. Il collegamento è obbligatorio per i minori di quattordici anni e facoltativo per quelli di età compresa fra quattordici e diciotto anni.</p><p><strong>Effetti del collegamento.</strong> Il genitore presta il consenso ai trattamenti che lo richiedano, accede ai dati e alle attività del minore, esercita per suo conto i diritti in materia di protezione dei dati, e autorizza le operazioni di acquisto.</p><p><strong>Acquisti.</strong> Nessuna operazione di acquisto o di attivazione di funzioni a pagamento può essere perfezionata da un account riferito a un minore in assenza della conferma dell'account genitoriale collegato.</p><p><strong>Esclusione dalla profilazione.</strong> I profili riferiti a minori non sono inclusi negli insiemi di destinatari delle inserzioni personalizzate di cui all'articolo 14, né sono sottoposti a trattamenti di profilazione a fini di marketing.</p><p><strong>Segnalazioni.</strong> Chiunque ritenga che un minore utilizzi il Portale in difformità dal presente articolo può segnalarlo all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>. AMT provvede alle verifiche e, ove necessario, alla sospensione o alla cancellazione dell'account.</p><h2>12. Disposizioni specifiche per gli Arcieri</h2><h2>12.1 Funzioni disponibili</h2><p>L'account Arciere consente di gestire il proprio profilo sportivo, di collegarsi a una Società e a uno o più Tecnici, di consultare il calendario delle competizioni e le graduatorie di fonte federale, di inoltrare alla Società la richiesta di iscrizione a una gara, di registrare i punteggi conseguiti, di annotare la configurazione dell'attrezzatura impiegata, di compilare la lista dell'attrezzatura di interesse, di accedere all'area corsi, e di utilizzare gli strumenti di calcolo e di analisi resi disponibili.</p><h2>12.2 Collegamenti con Società e Tecnici</h2><p>Il collegamento a una Società o a un Tecnico è instaurato mediante richiesta dell'Arciere accolta dalla controparte, ovvero mediante inserimento del profilo da parte della Società nell'esercizio delle proprie funzioni associative, in tal caso previa comunicazione all'Arciere.</p><p>Il collegamento determina la visibilità, in favore della Società o del Tecnico, dei dati sportivi dell'Arciere, quali i risultati, i punteggi, le indicazioni di allenamento, i filmati del gesto tecnico, e la configurazione dell'attrezzatura, nei limiti dei permessi configurati dalla Società.</p><p>L'Arciere può interrompere in qualsiasi momento il collegamento con un Tecnico mediante la funzione dedicata. L'interruzione del collegamento con la Società segue le regole dell'ordinamento sportivo in materia di tesseramento e non è rimessa alla unilaterale determinazione dell'Arciere all'interno del Portale.</p><p>Cessato il collegamento, la Società o il Tecnico non accedono ai dati generati successivamente. I dati anteriori restano nella disponibilità del titolare che li ha raccolti, secondo la disciplina descritta nell'Informativa sul trattamento dei dati personali.</p><h2>12.3 Iscrizioni alle competizioni</h2><p>La funzione di richiesta di iscrizione consente all'Arciere di manifestare alla propria Società l'intenzione di partecipare a una competizione. La richiesta non produce di per sé alcun effetto nei confronti degli organi federali o degli organizzatori.</p><p>L'iscrizione è perfezionata dalla Società secondo le procedure dell'ordinamento sportivo. AMT non assume alcuna obbligazione in ordine all'esito della richiesta, ai termini di iscrizione, al pagamento delle relative quote, e alla effettiva ammissione alla gara.</p><h2>12.4 Dati sull'attrezzatura e lista dei desideri</h2><p>L'inserimento dei dati relativi all'attrezzatura utilizzata e della lista dell'attrezzatura di interesse è facoltativo.</p><p>Tali informazioni sono rese accessibili agli operatori commerciali titolari di account attivo in forma aggregata ovvero priva degli elementi identificativi dell'Arciere. Gli operatori commerciali non ricevono elenchi nominativi, non accedono ai dati anagrafici, e non sono posti in condizione di risalire alla persona fisica cui il dato si riferisce.</p><p>La ricezione di inserzioni selezionate sulla base di tali dati richiede il consenso specifico dell'Arciere, revocabile in ogni momento dalle impostazioni del profilo. La revoca non pregiudica la fruizione delle altre funzioni.</p><h2>12.5 Livello gratuito e livello a pagamento</h2><p>L'account Arciere è attivabile a titolo gratuito. Alcune funzioni sono riservate agli abbonamenti a pagamento secondo il listino pubblicato.</p><p>AMT si riserva la facoltà di modificare la ripartizione delle funzioni fra i due livelli, dandone comunicazione con preavviso di trenta giorni. Qualora una funzione già compresa nel livello gratuito sia trasferita al livello a pagamento, gli Arcieri che ne fruivano conservano l'accesso per novanta giorni dalla comunicazione.</p><h2>13. Disposizioni specifiche per i Tecnici</h2><h2>13.1 Funzioni disponibili</h2><p>L'account Tecnico consente di collegarsi agli Arcieri seguiti, di predisporre e assegnare piani di allenamento, di consultare i dati relativi ai punteggi e all'attrezzatura degli Arcieri collegati, di comunicare con i medesimi attraverso gli strumenti del Portale, e, previa sottoscrizione dell'abbonamento dedicato, di comparire nell'elenco nazionale dei tecnici e di pubblicare Videocorsi.</p><h2>13.2 Cumulo con la posizione di Arciere</h2><p>Il Tecnico che pratichi altresì il tiro con l'arco può attivare le funzioni proprie dell'account Arciere. Le due posizioni restano distinte quanto a permessi e a visibilità dei dati; i dati sportivi personali del Tecnico non sono resi accessibili agli Arcieri da questi seguiti.</p><h2>13.3 Elenco nazionale dei tecnici</h2><p>L'inserimento nell'elenco consultabile dagli Utenti del Portale è subordinato alla sottoscrizione dell'abbonamento dedicato e comporta la pubblicazione dei soli dati che il Tecnico destini espressamente a tale finalità, quali il nome, l'ambito territoriale di operatività, le qualifiche dichiarate, e un recapito professionale.</p><p><strong>Qualifiche dichiarate.</strong> Il Tecnico garantisce la veridicità delle qualifiche indicate e si obbliga a comunicarne senza ritardo la sospensione, la revoca, o la scadenza. AMT non svolge attività di verifica sulle qualifiche dichiarate e non rilascia alcuna certificazione al riguardo; l'inserimento nell'elenco non costituisce accreditamento, abilitazione, o attestazione di idoneità professionale.</p><p><strong>Rimozione.</strong> AMT rimuove dall'elenco il Tecnico che risulti aver dichiarato qualifiche non veritiere, fatto salvo il risarcimento del danno e senza obbligo di rimborso del corrispettivo versato.</p><h2>13.4 Rapporto con gli Arcieri seguiti</h2><p>Il rapporto fra il Tecnico e l'Arciere, ivi compresi il contenuto della prestazione tecnica, il corrispettivo eventualmente pattuito, e le modalità di svolgimento, intercorre esclusivamente fra i medesimi. AMT si limita a rendere disponibili gli strumenti informatici e resta estranea a tale rapporto.</p><p>AMT non risponde della correttezza dei piani di allenamento, dell'idoneità delle indicazioni tecniche fornite, e delle conseguenze derivanti dalla loro applicazione. Ogni pretesa relativa alla prestazione tecnica va rivolta al Tecnico che l'ha erogata.</p><p><strong>Titolarità dei dati.</strong> Il Tecnico che tratti i dati degli Arcieri seguiti nell'esercizio della propria attività professionale assume la qualità di titolare del trattamento per tali operazioni, con i conseguenti obblighi. AMT opera in tal caso quale responsabile del trattamento.</p><h2>13.5 Pubblicazione di Videocorsi</h2><p>Il Tecnico abbonato può proporre ad AMT contenuti didattici destinati alla vendita nell'area corsi, secondo la procedura descritta all'articolo 10.</p><p><strong>Garanzie sul contenuto.</strong> Il Tecnico garantisce di disporre di tutti i diritti necessari alla pubblicazione, ivi compresi i diritti sulle opere dell'ingegno eventualmente incorporate e le liberatorie delle persone riprese. Il medesimo manleva AMT da ogni pretesa di terzi fondata sulla violazione di tali diritti.</p><p><strong>Quota spettante.</strong> La percentuale riconosciuta al Tecnico sul prezzo di vendita, al netto dell'imposta sul valore aggiunto e delle commissioni applicate dal prestatore di servizi di pagamento, è stabilita nell'accordo di pubblicazione. La liquidazione avviene con la periodicità ivi indicata, previa emissione del documento fiscale da parte del Tecnico ove dovuto.</p><p><strong>Rendicontazione.</strong> AMT rende disponibile nell'area riservata del Tecnico il prospetto delle vendite realizzate, con indicazione del numero, degli importi, e della quota maturata. Non sono comunicati i dati identificativi degli acquirenti.</p><h2>14. Disposizioni specifiche per gli Operatori Commerciali</h2><h2>14.1 Oggetto dell'account</h2><p>L'account riservato agli esercenti del settore consente la pubblicazione di inserzioni all'interno del Portale e la consultazione dei dati aggregati relativi all'attrezzatura utilizzata dagli Arcieri e alle liste dell'attrezzatura di interesse.</p><p>L'attivazione è subordinata alla sottoscrizione dell'abbonamento e alla dichiarazione dei dati identificativi e fiscali dell'impresa, dei quali AMT si riserva la verifica.</p><h2>14.2 Dati resi disponibili</h2><p>L'operatore commerciale accede esclusivamente a informazioni aggregate ovvero prive degli elementi identificativi degli Arcieri. È in ogni caso preclusa la conoscenza dei dati anagrafici, dei recapiti, e di ogni altro elemento che consenta la riconduzione a una persona fisica determinata.</p><p>L'operatore commerciale si obbliga ad astenersi da qualunque tentativo di reidentificazione degli Arcieri, anche mediante incrocio con dati di altra provenienza. La violazione dell'obbligo comporta la risoluzione di diritto del rapporto ai sensi dell'articolo 1456 del Codice civile, fatto salvo il risarcimento del danno.</p><h2>14.3 Inserzioni</h2><p>Le inserzioni possono essere generiche, e in tal caso mostrate indistintamente agli Utenti della sezione interessata, ovvero personalizzate, e in tal caso mostrate agli Utenti che presentino le caratteristiche selezionate.</p><p><strong>Consenso degli Arcieri.</strong> Le inserzioni personalizzate sono recapitate ai soli Arcieri che abbiano prestato il consenso specifico. L'ampiezza dell'insieme dei destinatari dipende pertanto dal numero dei consensi in essere e non è oggetto di garanzia da parte di AMT.</p><p><strong>Esclusione dei minori.</strong> I profili riferiti a minori sono in ogni caso esclusi dagli insiemi di destinatari delle inserzioni personalizzate.</p><p><strong>Contenuto dell'inserzione.</strong> L'operatore commerciale è responsabile del contenuto pubblicato e ne garantisce la conformità alla disciplina in materia di pratiche commerciali scorrette di cui agli articoli da 18 a 27-quater del Codice del Consumo, alla disciplina della pubblicità ingannevole e comparativa di cui al Decreto Legislativo 2 agosto 2007, n. 145, e a ogni altra norma applicabile.</p><p><strong>Facoltà di rifiuto.</strong> AMT può rifiutare la pubblicazione di inserzioni che risultino contrarie alla legge, lesive di diritti altrui, ovvero incompatibili con la natura del Portale, dandone comunicazione motivata.</p><p><strong>Rendicontazione.</strong> Sono resi disponibili all'operatore commerciale i soli dati statistici aggregati relativi alle visualizzazioni ottenute.</p><h2>14.4 Mercatino dell'usato</h2><p>Le disposizioni del presente paragrafo si applicano a tutti gli Utenti abilitati alla pubblicazione di annunci nella sezione dedicata all'attrezzatura usata, ivi comprese le Società, e non ai soli operatori commerciali.</p><p>La sezione destinata alla compravendita di attrezzatura usata ha natura di mera bacheca di annunci. Nessuna transazione è conclusa, eseguita, o comunque gestita attraverso il Portale.</p><p>AMT non interviene nella negoziazione, non riceve pagamenti, non presta garanzie sull'esistenza, sulla titolarità, sulla conformità, o sullo stato dei beni offerti, e non assume la posizione di intermediario, di mandatario, o di depositario.</p><p>Ogni contratto è concluso direttamente ed esclusivamente fra gli Utenti interessati, i quali ne assumono integralmente i rischi. Le contestazioni relative ai beni oggetto degli annunci vanno rivolte alla controparte contrattuale.</p><p>L'Utente che pubblichi annunci nell'esercizio di un'attività d'impresa è tenuto a dichiararlo e a rispettare la disciplina applicabile alle vendite a distanza concluse con i consumatori.</p><h2>15. Contenuti dell'Utente</h2><p><strong>Titolarità.</strong> I diritti sui Contenuti dell'Utente permangono in capo a chi li ha caricati. Nessuna disposizione delle presenti Condizioni comporta trasferimento della titolarità.</p><p><strong>Licenza ad AMT.</strong> L'Utente concede ad AMT una licenza non esclusiva, gratuita, e limitata a quanto strettamente necessario all'erogazione del servizio, avente per oggetto la memorizzazione, la riproduzione tecnica, l'adattamento dei formati, e la messa a disposizione dei Contenuti ai soli soggetti abilitati alla visualizzazione secondo la configurazione dei permessi. La licenza cessa con la rimozione del contenuto o con la chiusura dell'account, salvo il tempo tecnico necessario alla cancellazione dalle copie di sicurezza.</p><p><strong>Garanzie dell'Utente.</strong> L'Utente garantisce di disporre dei diritti necessari al caricamento e alla diffusione dei Contenuti nei limiti sopra indicati, e che i medesimi non violano diritti di terzi, né disposizioni di legge.</p><p><strong>Contenuti vietati.</strong> È vietato caricare, trasmettere, o diffondere contenuti che integrino illecito penale, che siano diffamatori, discriminatori, o comunque lesivi della dignità della persona, che violino diritti di proprietà intellettuale o industriale altrui, che contengano dati personali di terzi in assenza di idoneo fondamento, che abbiano carattere pornografico, ovvero che risultino gravemente inappropriati rispetto alla natura sportiva del Portale e alla presenza di minori fra gli Utenti.</p><p><strong>Assenza di obbligo generale di sorveglianza.</strong> AMT non è soggetta a un obbligo generale di sorveglianza sui contenuti memorizzati, ai sensi dell'articolo 8 del Regolamento (UE) 2022/2065 e dell'articolo 17 del Decreto Legislativo 9 aprile 2003, n. 70. La verifica preventiva dei Videocorsi di cui all'articolo 10 costituisce controllo volontario e circoscritto, e non determina l'assunzione di un obbligo di controllo generalizzato.</p><h2>16. Segnalazione di contenuti illeciti</h2><p><strong>Procedura di segnalazione.</strong> Chiunque può segnalare la presenza di contenuti ritenuti illeciti mediante comunicazione all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, ovvero attraverso la funzione di segnalazione presente in prossimità dei contenuti pubblicati.</p><p>La segnalazione deve contenere una motivazione sufficientemente circostanziata, l'indicazione precisa della collocazione del contenuto, i dati identificativi e di contatto del segnalante salvo che la segnalazione riguardi reati contro la libertà individuale, e una dichiarazione di buona fede circa l'esattezza delle informazioni fornite. I requisiti riprendono quelli enunciati dall'articolo 16 del Regolamento (UE) 2022/2065.</p><p><strong>Trattazione.</strong> AMT esamina le segnalazioni con tempestività, in modo diligente, non arbitrario, e obiettivo, e comunica al segnalante la decisione adottata.</p><p><strong>Motivazione.</strong> All'Utente destinatario di una misura di rimozione, di disabilitazione dell'accesso, di sospensione, o di chiusura dell'account è comunicata una motivazione chiara e specifica, con indicazione dei fatti contestati, del fondamento della misura, e delle possibilità di contestazione, secondo quanto previsto dall'articolo 17 del Regolamento richiamato.</p><p><strong>Contestazione.</strong> L'Utente può contestare la misura entro trenta giorni dalla comunicazione, mediante istanza motivata trasmessa all'indirizzo sopra indicato. AMT riesamina la decisione e comunica l'esito entro quindici giorni.</p><p><strong>Regime applicabile ad AMT.</strong> AMT integra la nozione di microimpresa e beneficia pertanto dell'esclusione prevista dall'articolo 19 del Regolamento (UE) 2022/2065 con riferimento alla Sezione 3 del Capo III del medesimo. Le procedure descritte nel presente articolo sono adottate in adempimento degli obblighi comunque applicabili ai prestatori di servizi di memorizzazione di informazioni, nonché, per la parte eccedente, in via volontaria.</p><h2>17. Condotta degli Utenti</h2><p>L'Utente si obbliga a utilizzare il Portale in conformità alla legge, alle presenti Condizioni, e alla correttezza. È in particolare vietato:</p><ul><li><strong>Accesso non autorizzato</strong>: tentare di accedere ad aree, funzioni, o dati non riservati al proprio account, ovvero eludere le misure di controllo degli accessi.</li><li><strong>Interferenza con il servizio</strong>: compiere operazioni idonee a compromettere la disponibilità, l'integrità, o la sicurezza del Portale, ivi compresi l'invio massivo di richieste automatizzate e l'introduzione di codice dannoso.</li><li><strong>Estrazione sistematica di dati</strong>: procedere all'estrazione, alla copia, o al riutilizzo sistematico di parti sostanziali delle banche dati del Portale mediante strumenti automatizzati.</li><li><strong>Uso improprio della messaggistica</strong>: impiegare la chat, le notifiche, e la posta elettronica per finalità estranee all'attività sportiva, per l'invio di comunicazioni commerciali non richieste, o per condotte moleste.</li><li><strong>Condotte lesive verso i minori</strong>: instaurare contatti con minori per finalità estranee all'attività sportiva, ovvero tenere nei loro confronti condotte inappropriate.</li><li><strong>Cessione dell'account</strong>: cedere, condividere, o rendere altrimenti disponibili a terzi le proprie credenziali.</li><li><strong>Reidentificazione</strong>: tentare di risalire all'identità degli Arcieri a partire dai dati resi disponibili in forma aggregata o priva di elementi identificativi.</li></ul><h2>18. Assistenza tecnica</h2><p>Le richieste di assistenza sono inoltrate mediante la funzione di apertura dei ticket disponibile nell'area riservata, accessibile a tutte le tipologie di account.</p><p>AMT presta l'assistenza nei giorni lavorativi, dal lunedì al venerdì, con esclusione delle festività. I tempi di riscontro sono determinati in funzione della gravità della segnalazione secondo i seguenti criteri indicativi: dodici ore lavorative per le anomalie che impediscono integralmente l'accesso al Portale; due giorni lavorativi per le anomalie che limitano in modo significativo l'utilizzo di una funzione essenziale; cinque giorni lavorativi per le restanti segnalazioni.</p><p>I termini indicati si riferiscono alla presa in carico e non alla risoluzione, la cui tempistica dipende dalla natura dell'anomalia. Livelli di servizio distinti e vincolanti possono essere pattuiti nel contratto di utilizzo del software sottoscritto dalle Società.</p><h2>19. Sospensione e chiusura dell'account</h2><p><strong>Recesso dell'Utente.</strong> L'Utente può in qualsiasi momento chiudere il proprio account mediante la funzione dedicata. La chiusura ha effetto dalla scadenza del periodo di abbonamento in corso, senza diritto al rimborso dei corrispettivi già versati per il periodo non fruito, salvo quanto previsto dall'articolo 9.</p><p><strong>Sospensione cautelare.</strong> AMT può sospendere l'account in presenza di fondati indizi di violazione delle presenti Condizioni, di utilizzo abusivo delle credenziali, di rischio per la sicurezza del Portale, ovvero di mancato pagamento secondo l'articolo 8. La sospensione è comunicata all'Utente con l'indicazione dei motivi.</p><p><strong>Risoluzione.</strong> AMT può risolvere il contratto, previa diffida ad adempiere con termine non inferiore a quindici giorni, in caso di violazione grave delle presenti Condizioni. La diffida non è richiesta quando la violazione integri illecito penale, riguardi la tutela dei minori, ovvero comprometta la sicurezza del Portale.</p><p><strong>Effetti.</strong> La chiusura comporta la cessazione dell'accesso e il trattamento dei dati secondo quanto previsto dall'articolo 20 e dall'Informativa sul trattamento dei dati personali.</p><h2>20. Portabilità ed esportazione dei dati</h2><p>Prima della chiusura dell'account, e comunque entro trenta giorni successivi, l'Utente può esportare i dati da lui inseriti mediante la funzione dedicata, in formato strutturato e di uso comune.</p><p>Decorsi trenta giorni dalla chiusura, i contenuti caricati e i dati sportivi inseriti dall'Utente sono cancellati ovvero resi anonimi. I dati identificativi e quelli relativi allo svolgimento del rapporto contrattuale sono conservati per i dodici mesi successivi alla chiusura, secondo quanto indicato nell'Informativa sul trattamento dei dati personali. Resta ferma la conservazione dei dati imposta dalla legge o necessaria all'accertamento, all'esercizio, o alla difesa di un diritto in sede giudiziaria.</p><p>I dati inseriti da una Società nell'esercizio della propria titolarità non sono oggetto di esportazione da parte dell'Arciere o del Tecnico, e restano soggetti alle determinazioni dell'ente, secondo la ripartizione dei ruoli descritta nell'Informativa sul trattamento dei dati personali.</p><p>Per le Società trovano applicazione le previsioni del contratto di utilizzo del software in materia di restituzione dei dati alla cessazione del rapporto, nonché, per quanto compatibili, le disposizioni del Regolamento (UE) 2023/2854 in materia di passaggio fra servizi di trattamento dei dati, le cui previsioni relative al Capo III trovano applicazione a decorrere dal 12 settembre 2026 e quelle di cui al Capo IV a decorrere dal 12 settembre 2027.</p><h2>21. Proprietà intellettuale</h2><p>Il software, l'interfaccia, la struttura delle banche dati, i marchi, i loghi, la documentazione, e ogni altro elemento del Portale sono di titolarità di AMT ovvero dei rispettivi aventi diritto, e sono protetti dalla Legge 22 aprile 1941, n. 633, dal Decreto Legislativo 10 febbraio 2005, n. 30, e dalle convenzioni internazionali applicabili.</p><p>L'accesso al Portale non trasferisce alcun diritto di proprietà intellettuale e attribuisce all'Utente una licenza d'uso personale, non esclusiva, non trasferibile, e limitata alla durata del rapporto, funzionale alla sola fruizione dei servizi.</p><p>Sono in particolare vietati la decompilazione, la disassemblazione, e la retroingegneria del software, salvi i casi consentiti dalle disposizioni inderogabili di legge, nonché la riproduzione, la modifica, e la distribuzione degli elementi del Portale al di fuori di quanto strettamente necessario alla fruizione.</p><h2>22. Dati di fonte federale</h2><p>Il Portale rielabora e rende consultabili informazioni pubblicate in area ad accesso libero dal sito istituzionale della Federazione Italiana di Tiro con l'Arco, quali i calendari delle competizioni, le graduatorie, e i risultati ufficiali.</p><p><strong>Nessun accesso ad aree riservate.</strong> Il Portale non acquisisce credenziali di accesso degli Arcieri all'area riservata del portale federale e non preleva dati da sezioni protette.</p><p><strong>Assenza di rapporti con la Federazione.</strong> AMT non è affiliata alla Federazione, non ne è licenziataria, e non agisce in suo nome o per suo conto. Ogni riferimento a competizioni, a graduatorie, e a denominazioni federali ha finalità meramente descrittiva.</p><p><strong>Esattezza dei dati.</strong> AMT non garantisce l'esattezza, la completezza, e l'attualità delle informazioni di fonte federale, né risponde delle conseguenze derivanti da eventuali difformità rispetto ai dati ufficiali. In caso di discordanza prevalgono le risultanze pubblicate dalla Federazione.</p><h2>23. Limitazioni di responsabilità</h2><p>AMT eroga i servizi con la diligenza professionale richiesta dalla natura dell'attività e adotta le misure ragionevolmente esigibili per assicurare la continuità e la sicurezza del Portale.</p><p><strong>Disponibilità del servizio.</strong> Non è garantita la disponibilità ininterrotta e priva di errori. Gli interventi di manutenzione programmata sono comunicati con preavviso non inferiore a quarantotto ore, salvo che ragioni di sicurezza impongano l'intervento immediato.</p><p><strong>Esclusioni.</strong> AMT non risponde dei danni derivanti da: uso del Portale non conforme alle presenti Condizioni; malfunzionamenti dei dispositivi, delle reti, e dei programmi dell'Utente; condotte di terzi non imputabili ad AMT; contenuto delle prestazioni erogate dai Tecnici; esattezza dei dati di fonte federale; contratti conclusi fra Utenti nell'ambito del mercatino dell'usato; correttezza delle registrazioni contabili inserite dalle Società.</p><p><strong>Limite quantitativo.</strong> Nei rapporti con Utenti che non rivestano la qualità di consumatore, la responsabilità di AMT per i danni derivanti dall'esecuzione del contratto è complessivamente limitata, per ciascun anno solare, a un importo pari ai corrispettivi versati dall'Utente nei dodici mesi precedenti l'evento.</p><p><strong>Salvezza.</strong> Nessuna disposizione del presente articolo opera in caso di dolo o colpa grave, né limita la responsabilità per morte o lesioni personali, né deroga alle disposizioni inderogabili poste a tutela del consumatore. Restano in particolare impregiudicati l'articolo 33, comma 2, lettere a) e b), e l'articolo 36, comma 2, del Codice del Consumo, che sanziona con la nullità, anche in caso di trattativa individuale, le clausole che escludono o limitano la responsabilità del professionista per morte o danno alla persona del consumatore, ovvero le azioni e i diritti del consumatore in caso di inadempimento.</p><h2>24. Modifiche delle Condizioni</h2><p>AMT può modificare le presenti Condizioni per adeguarle a sopravvenienze normative, a mutamenti delle funzionalità, o a esigenze organizzative.</p><p>Le modifiche sono comunicate agli Utenti registrati all'indirizzo di posta elettronica associato all'account, con preavviso non inferiore a quindici giorni rispetto alla decorrenza. Il preavviso è elevato a trenta giorni per gli Utenti che rivestano la qualità di utente commerciale ai sensi del Regolamento (UE) 2019/1150.</p><p>L'Utente che non intenda accettare le modifiche può recedere entro la data di decorrenza, mediante comunicazione all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, con diritto al rimborso della quota di abbonamento relativa al periodo non fruito. La prosecuzione nell'utilizzo del Portale successivamente alla decorrenza vale quale accettazione.</p><p>Le modifiche imposte da disposizioni di legge o da provvedimenti dell'autorità possono avere efficacia immediata, con comunicazione contestuale agli Utenti.</p><h2>25. Rapporti con gli utenti commerciali</h2><p>Nella misura in cui il Portale integri un servizio di intermediazione online ai sensi del Regolamento (UE) 2019/1150 del 20 giugno 2019, che promuove equità e trasparenza per gli utenti commerciali dei servizi di intermediazione online, trovano applicazione le disposizioni del presente articolo nei confronti dei Tecnici, degli operatori commerciali, e delle Società che offrano beni o servizi attraverso il Portale.</p><p><strong>Termini e condizioni.</strong> Le presenti Condizioni sono redatte in linguaggio semplice e comprensibile, sono accessibili in ogni fase del rapporto, e sono conservate in versione storica a disposizione degli utenti commerciali.</p><p><strong>Motivi di sospensione.</strong> I motivi che possono determinare la limitazione, la sospensione, o la cessazione del servizio sono indicati agli articoli 16 e 19. La comunicazione della misura è resa con l'esposizione dei relativi motivi.</p><p><strong>Criteri di posizionamento.</strong> L'ordine di presentazione dei Tecnici nell'elenco nazionale e delle inserzioni all'interno del Portale è determinato secondo criteri di pertinenza rispetto alla ricerca effettuata, di prossimità territoriale, e di completezza del profilo. Nessun corrispettivo aggiuntivo consente di alterare il posizionamento; l'eventuale introduzione di forme di posizionamento a pagamento sarà espressamente indicata e distintamente segnalata all'Utente.</p><p><strong>Trattamento differenziato.</strong> AMT non riserva a beni o servizi propri un trattamento differenziato rispetto a quelli offerti dagli utenti commerciali, fatta eccezione per i Videocorsi prodotti da AMT, ai quali si applicano i medesimi criteri di posizionamento sopra indicati.</p><p><strong>Accesso ai dati.</strong> Ciascun utente commerciale accede ai dati relativi alla propria attività secondo quanto previsto agli articoli 13 e 14. L'accesso ai dati personali degli Arcieri è escluso nei termini ivi precisati.</p><p><strong>Reclami e mediazione.</strong> AMT integra la nozione di piccola impresa ai sensi dell'allegato alla Raccomandazione 2003/361/CE, ed è pertanto esonerata, in forza degli articoli 11, paragrafo 5, e 12, paragrafo 5, del Regolamento richiamato, dall'obbligo di istituire un sistema interno di gestione dei reclami e di indicare i mediatori. I reclami degli utenti commerciali sono comunque ricevuti e trattati all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, con riscontro motivato entro trenta giorni.</p><h2>26. Accessibilità</h2><p>Il Decreto Legislativo 27 maggio 2022, n. 82, di attuazione della Direttiva (UE) 2019/882 in materia di requisiti di accessibilità dei prodotti e dei servizi, trova applicazione dal 28 giugno 2025.</p><p>L'articolo 3 del decreto richiamato esclude dagli obblighi relativi ai servizi le microimprese, individuate nelle imprese che occupano meno di dieci persone e realizzano un fatturato annuo ovvero un totale di bilancio annuo non superiore a due milioni di euro. AMT rientra allo stato in tale categoria.</p><p>Ferma l'esclusione, AMT persegue in via volontaria l'adeguamento progressivo del Portale ai criteri di successo di livello AA delle Linee guida per l'accessibilità dei contenuti web nella versione 2.1, richiamate dalla norma armonizzata EN 301 549. Le segnalazioni relative a difficoltà di accesso possono essere indirizzate ad <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>.</p><h2>27. Legge applicabile e foro competente</h2><p>Le presenti Condizioni sono regolate dalla legge italiana.</p><p><strong>Utenti consumatori.</strong> Per le controversie con Utenti che rivestano la qualità di consumatore è competente in via esclusiva e inderogabile il giudice del luogo di residenza o di domicilio elettivo del consumatore, ai sensi dell'articolo 66-bis del Codice del Consumo. Resta ferma l'applicazione delle disposizioni imperative dell'ordinamento dello Stato membro di residenza abituale del consumatore, secondo l'articolo 6 del Regolamento (CE) n. 593/2008.</p><p><strong>Altri Utenti.</strong> Per le controversie con Utenti che non rivestano la qualità di consumatore è competente in via esclusiva il Foro di Milano.</p><h2>28. Risoluzione alternativa delle controversie</h2><p>Il consumatore può ricorrere alle procedure di risoluzione extragiudiziale disciplinate dalla Parte V, Titolo II-bis, del Codice del Consumo, rivolgendosi agli organismi iscritti nell'elenco tenuto dalle autorità competenti ai sensi dell'articolo 141-decies del medesimo Codice.</p><p>Alla data del presente documento AMT non aderisce ad alcun organismo di risoluzione extragiudiziale delle controversie, e ne dà atto in adempimento dell'obbligo informativo previsto dall'articolo 49, comma 1, lettera v), del Codice del Consumo. La circostanza non preclude al consumatore la facoltà di adire gli organismi iscritti nell'elenco.</p><p>Il consumatore residente in uno Stato membro diverso dall'Italia può rivolgersi alla rete dei Centri europei dei consumatori. Si segnala che la piattaforma europea per la risoluzione delle controversie online, istituita dal Regolamento (UE) n. 524/2013, è stata dismessa e che il predetto regolamento è stato abrogato dal Regolamento (UE) 2024/3228 con effetto dal 20 luglio 2025; ogni riferimento a tale piattaforma è pertanto privo di attualità.</p><p>In ogni caso il reclamo può essere previamente indirizzato ad AMT all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>, con riscontro entro trenta giorni.</p><h2>29. Disposizioni finali</h2><p><strong>Nullità parziale.</strong> L'invalidità o l'inefficacia di una singola clausola non si estende alle restanti disposizioni, che conservano piena efficacia. La clausola invalida è sostituita di diritto dalla disciplina legale applicabile.</p><p><strong>Tolleranza.</strong> L'eventuale inerzia di AMT nell'esercizio di un diritto o di una facoltà non costituisce rinuncia al medesimo, né preclude il successivo esercizio.</p><p><strong>Cessione del contratto.</strong> L'Utente non può cedere il contratto o i diritti da esso derivanti senza il preventivo consenso scritto di AMT. AMT può cedere il contratto nell'ambito di operazioni di trasferimento d'azienda o di ramo d'azienda, dandone comunicazione con preavviso di trenta giorni e riconoscendo all'Utente la facoltà di recedere senza oneri.</p><p><strong>Comunicazioni.</strong> Le comunicazioni ad AMT sono validamente effettuate all'indirizzo <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>. Le comunicazioni all'Utente sono effettuate all'indirizzo di posta elettronica associato all'account, ovvero mediante notifica all'interno del Portale.</p><p><strong>Lingua.</strong> Le presenti Condizioni sono redatte in lingua italiana. Le eventuali traduzioni sono fornite a fini di mera cortesia; in caso di difformità prevale il testo italiano.</p><p><strong>Versione.</strong> Le versioni precedenti delle presenti Condizioni sono conservate da AMT e possono essere richieste all'indirizzo sopra indicato.</p><h2>30. Clausole oggetto di specifica approvazione</h2><p>Ai sensi e per gli effetti degli articoli 1341 e 1342 del Codice civile, l'Utente che non rivesta la qualità di consumatore dichiara di approvare specificamente le clausole di seguito indicate:</p><p>Articolo 8 (variazione dei corrispettivi e rinnovo automatico), Articolo 14.2 (risoluzione di diritto per tentativo di reidentificazione), Articolo 19 (sospensione cautelare e risoluzione), Articolo 23 (limitazioni di responsabilità e limite quantitativo), Articolo 24 (facoltà di modifica unilaterale), Articolo 27 (foro competente esclusivo), Articolo 29 (divieto di cessione e facoltà di cessione in capo ad AMT).</p><p>L'approvazione è manifestata mediante apposizione della seconda spunta, distinta e non preselezionata, presentata al termine della procedura di registrazione.</p><p>*  *  *</p><p>Documento aggiornato al 6 agosto 2026</p><p>AMT di Francesco Toso</p>
   </div>
 </section>
 <footer class="ah-footer" data-afai-block="footer-section" data-gjs-name="Footer">
-  <div class="ah-shell ah-footer__inner" data-afai-block="features-section" data-gjs-name="Sezione Features">
-    <div class="ah-footer__brand"><strong>CustomArchery</strong><span>La piattaforma per società, istruttori e arcieri.</span></div>
+  <div class="ah-shell ah-footer__inner">
+    <div class="ah-footer__brand"><strong>Archery Hub</strong><span>La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.</span></div>
     <nav class="ah-footer__legal" aria-label="Informazioni legali">
+      <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>
       <a href="https://archeryhub.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
       <a href="./termini-e-condizioni">Termini e Condizioni</a>
       <a href="./cookie-policy">Cookie Policy</a>
