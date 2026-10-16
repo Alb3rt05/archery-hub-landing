@@ -1,0 +1,70 @@
+# Pubblicazione su Netlify: nessuna build, si pubblica la cartella cosi' com'e'.
+[build]
+  publish = "."
+
+# Gli indirizzi della landing sono quelli di AFAI (stepPath): /societa, /arcieri...
+[[redirects]]
+  from = "/"
+  to = "/00-home.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/home"
+  to = "/00-home.html"
+  status = 200
+
+[[redirects]]
+  from = "/societa"
+  to = "/01-societa.html"
+  status = 200
+
+[[redirects]]
+  from = "/arcieri"
+  to = "/02-arcieri.html"
+  status = 200
+
+[[redirects]]
+  from = "/tecnici"
+  to = "/05-tecnici.html"
+  status = 200
+
+[[redirects]]
+  from = "/termini-e-condizioni"
+  to = "/06-termini-e-condizioni.html"
+  status = 200
+
+[[redirects]]
+  from = "/cookie-policy"
+  to = "/07-cookie-policy.html"
+  status = 200
+
+# Moduli e Demo non esistono piu': portano al form «Richiedi info».
+[[redirects]]
+  from = "/moduli"
+  to = "/societa#richiedi-info"
+  status = 301
+
+[[redirects]]
+  from = "/demo"
+  to = "/societa#richiedi-info"
+  status = 301
+
+# Pagine fuori uso e file di esportazione AFAI: non pubblici.
+[[redirects]]
+  from = "/03-moduli-fuori-uso.html"
+  to = "/societa#richiedi-info"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/04-demo-fuori-uso.html"
+  to = "/societa#richiedi-info"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/manifest.json"
+  to = "/404.html"
+  status = 404
+  force = true
