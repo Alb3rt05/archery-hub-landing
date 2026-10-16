@@ -2935,6 +2935,183 @@ a.ah-card:hover .ah-card__link svg {
   }
 }
 
+
+
+
+/* ---------- Lingue ---------- */
+
+.ah-brand {
+  margin-right: auto;
+}
+
+.ah-nav__links {
+  order: 1;
+}
+
+.ah-lang {
+  position: relative;
+  order: 2;
+  flex: none;
+}
+
+.ah-menu {
+  order: 3;
+}
+
+.ah-lang__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 10px 0 12px;
+  color: var(--navy);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.ah-lang__button:hover,
+.ah-lang.is-open .ah-lang__button {
+  border-color: #c9cae3;
+  box-shadow: 0 6px 16px rgba(27, 27, 58, 0.08);
+}
+
+.ah-lang__flag {
+  flex: none;
+  width: 26px;
+  height: 18px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(27, 27, 58, 0.12);
+}
+
+.ah-lang__chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+  transition: transform 160ms ease;
+}
+
+.ah-lang.is-open .ah-lang__chevron {
+  transform: rotate(180deg);
+}
+
+.ah-lang__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  display: none;
+  width: 248px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 24px 56px rgba(27, 27, 58, 0.18);
+}
+
+.ah-lang.is-open .ah-lang__menu {
+  display: block;
+  animation: ah-lang-in 140ms ease-out;
+}
+
+@keyframes ah-lang-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.ah-lang__menu button {
+  display: grid;
+  grid-template-columns: 30px 30px 1fr 18px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ah-lang__menu button:hover {
+  background: #f1f1f8;
+}
+
+.ah-lang__menu .ah-lang__code {
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ah-lang__menu [aria-current] .ah-lang__name {
+  font-weight: 800;
+}
+
+.ah-lang__check {
+  width: 18px;
+  height: 18px;
+  color: var(--indigo);
+}
+
+.ah-legal__notice {
+  margin-top: 16px;
+  padding: 12px 16px;
+  color: var(--warn);
+  background: var(--warn-bg);
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .ah-nav__links {
+    order: 5;
+  }
+
+  .ah-nav__inner {
+    gap: 0 10px;
+  }
+
+  .ah-lang__button {
+    min-height: 40px;
+    padding: 0 8px 0 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ah-brand__wordmark {
+    width: 136px;
+  }
+
+  .ah-menu {
+    min-height: 40px;
+    padding: 0 14px;
+  }
+
+  .ah-lang__chevron {
+    display: none;
+  }
+
+  .ah-lang__menu {
+    width: min(248px, calc(100vw - 32px));
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3189,6 +3366,312 @@ a.ah-card:hover .ah-card__link svg {
     t.classList.add("ah-reveal");
     io.observe(t);
   }
+})();
+</script>
+<script data-ah="i18n">
+(function () {
+  if (window.__ahI18nBound) return;
+  window.__ahI18nBound = true;
+
+  var DICT = {"en":{"Archery Hub | Per i tecnici":"Archery Hub | For coaches","Segui i tuoi atleti: abbinamenti, piani di allenamento, taccuino tecnico e iscrizione alle gare.":"Follow your athletes: pairings, training plans, technical notebook and competition entries.","Menu":"Menu","Home":"Home","Società":"Clubs","Arcieri":"Archers","Tecnici":"Coaches","Accedi":"Log in","Per i tecnici e gli allenatori":"For coaches and trainers","Segui i tuoi atleti, <0>freccia dopo freccia.<\/0>":"Follow your athletes, <0>arrow by arrow.<\/0>","Allenamenti, iscrizione gare, risultati e materiale dei tuoi arcieri, sempre aggiornati. L'iscrizione è gratuita.":"Your archers' training, competition entries, results and equipment, always up to date. Sign-up is free.","Accedi / Registrati":"Log in / Sign up","Scopri gli Arcieri":"See the archers' page","I miei atleti":"My athletes","Giulia Rossi<0>Allenamento su misura · ieri<\/0>":"Giulia Rossi<0>Custom training · yesterday<\/0>","Luca Pini<0>Prova di gara · sabato<\/0>":"Luca Pini<0>Competition practice · Saturday<\/0>","Sara Testa<0>Richiesta di abbinamento<\/0>":"Sara Testa<0>Pairing request<\/0>","Accetta":"Accept","<0>Taccuino tecnico<\/0>Nuova nota di Giulia":"<0>Technical notebook<\/0>New note from Giulia","Cosa puoi fare":"What you can do","Tutto quello che serve per seguire i tuoi atleti":"Everything you need to follow your athletes","I tuoi atleti seguiti":"Your athletes","Ricevi le richieste di abbinamento dagli arcieri e decidi chi seguire: la connessione parte sempre da loro.":"Receive pairing requests from archers and decide who to coach: the connection always starts from them.","Piani di allenamento":"Training plans","Prepara gli allenamenti per i tuoi atleti e tienili aggiornati nel tempo.":"Prepare training sessions for your athletes and keep them up to date over time.","Iscrizione alle gare":"Competition entries","Iscrivi i tuoi atleti alle competizioni direttamente dalla piattaforma.":"Enter your athletes in competitions directly from the platform.","Risultati e materiale tecnico":"Results and equipment","Consulta i risultati e le schede dell'attrezzatura di chi segui.":"Check the results and equipment sheets of the athletes you coach.","Taccuino tecnico":"Technical notebook","Rivedi il taccuino di allenamento degli atleti e lascia una nota o una firma di presa visione.":"Review your athletes' training notebooks and leave a note or a sign-off that you've read them.","Comunicazioni dirette":"Direct messages","Messaggi diretti con i tuoi atleti e un canale riservato con la segreteria della società.":"Direct messages with your athletes and a private channel with the club office.","Dati veri":"Real data","Ogni freccia dei tuoi atleti, già registrata":"Every arrow your athletes shoot, already recorded","Gli arcieri segnano i punteggi dal telefono durante allenamenti e prove di gara: tu vedi i progressi reali, senza ricopiare fogli di carta.":"Archers log scores on their phone during training and competition practice: you see their real progress, without copying paper sheets.","<0/>Allenamento su misura":"<0/>Custom training","<0/>Sfida virtuale":"<0/>Virtual challenge","<0/>Set-up e tuning":"<0/>Set-up and tuning","<0/>Prova di gara":"<0/>Competition practice","Totale":"Total","X":"X","M":"M","Un tasto per ogni punteggio, con i colori del bersaglio.":"One button per score, in the colors of the target.","Atleti minorenni":"Underage athletes","Con i ragazzi, il genitore è sempre informato":"With young archers, parents are always in the loop","Per gli atleti dai 14 ai 17 anni il collegamento con un allenatore passa dal genitore; sotto i 14 anni è il genitore ad approvare l'iscrizione. Ogni consenso è registrato con data e ora.":"For athletes aged 14 to 17, connecting with a coach goes through the parent; under 14, the parent approves the registration. Every consent is recorded with date and time.","I miei figli":"My children","LP":"LP","Luca, 15 anni":"Luca, 15","vuole collegarsi al suo allenatore":"wants to connect with his coach","Approva":"Approve","Non ora":"Not now","Iscrizione gratuita":"Free sign-up","Porta i tuoi atleti su <0>Archery Hub<\/0>":"Bring your athletes to <0>Archery Hub<\/0>","Accedi se hai già un account, oppure scopri come funziona per la tua società.":"Log in if you already have an account, or see how it works for your club.","Scopri la società":"See the clubs' page","Archery <0>Hub<\/0>":"Archery <0>Hub<\/0>","La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.":"The platform for archery clubs, their coaches and their archers.","Accedi alla piattaforma":"Log in to the platform","Per chi":"Who it's for","Contatti":"Contact","Richiedi una demo":"Request a demo","Legale":"Legal","Privacy Policy":"Privacy Policy","Termini e Condizioni":"Terms and Conditions","Cookie Policy":"Cookie Policy","© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966":"© <0/> Archery Hub · AMT di Francesco Toso · VAT no. 13333860966","Torna su <0/>":"Back to top <0/>","Archery Hub, torna alla home":"Archery Hub, back to home","Esempio: i miei atleti":"Example: my athletes","Esempio: segnapunti sul telefono":"Example: scorecard on your phone","Esempio: richiesta da approvare":"Example: request to approve","Pagine del sito":"Site pages","Informazioni legali":"Legal information"},"es":{"Archery Hub | Per i tecnici":"Archery Hub | Para entrenadores","Segui i tuoi atleti: abbinamenti, piani di allenamento, taccuino tecnico e iscrizione alle gare.":"Sigue a tus deportistas: vinculaciones, planes de entrenamiento, cuaderno técnico e inscripción en competiciones.","Menu":"Menú","Home":"Inicio","Società":"Clubes","Arcieri":"Arqueros","Tecnici":"Entrenadores","Accedi":"Acceder","Per i tecnici e gli allenatori":"Para técnicos y entrenadores","Segui i tuoi atleti, <0>freccia dopo freccia.<\/0>":"Sigue a tus deportistas, <0>flecha a flecha.<\/0>","Allenamenti, iscrizione gare, risultati e materiale dei tuoi arcieri, sempre aggiornati. L'iscrizione è gratuita.":"Entrenamientos, inscripción en competiciones, resultados y material de tus arqueros, siempre actualizados. La inscripción es gratuita.","Accedi / Registrati":"Accede / Regístrate","Scopri gli Arcieri":"Descubre la versión para arqueros","I miei atleti":"Mis deportistas","Giulia Rossi<0>Allenamento su misura · ieri<\/0>":"Giulia Rossi<0>Entrenamiento a medida · ayer<\/0>","Luca Pini<0>Prova di gara · sabato<\/0>":"Luca Pini<0>Simulación de competición · sábado<\/0>","Sara Testa<0>Richiesta di abbinamento<\/0>":"Sara Testa<0>Solicitud de vinculación<\/0>","Accetta":"Aceptar","<0>Taccuino tecnico<\/0>Nuova nota di Giulia":"<0>Cuaderno técnico<\/0>Nueva nota de Giulia","Cosa puoi fare":"Qué puedes hacer","Tutto quello che serve per seguire i tuoi atleti":"Todo lo que necesitas para seguir a tus deportistas","I tuoi atleti seguiti":"Tus deportistas","Ricevi le richieste di abbinamento dagli arcieri e decidi chi seguire: la connessione parte sempre da loro.":"Recibe las solicitudes de vinculación de los arqueros y decide a quién seguir: la conexión siempre parte de ellos.","Piani di allenamento":"Planes de entrenamiento","Prepara gli allenamenti per i tuoi atleti e tienili aggiornati nel tempo.":"Prepara los entrenamientos de tus deportistas y mantenlos actualizados con el tiempo.","Iscrizione alle gare":"Inscripción en competiciones","Iscrivi i tuoi atleti alle competizioni direttamente dalla piattaforma.":"Inscribe a tus deportistas en las competiciones directamente desde la plataforma.","Risultati e materiale tecnico":"Resultados y material técnico","Consulta i risultati e le schede dell'attrezzatura di chi segui.":"Consulta los resultados y las fichas del equipo de quienes sigues.","Taccuino tecnico":"Cuaderno técnico","Rivedi il taccuino di allenamento degli atleti e lascia una nota o una firma di presa visione.":"Revisa el cuaderno de entrenamiento de tus deportistas y deja una nota o una firma de visto.","Comunicazioni dirette":"Comunicación directa","Messaggi diretti con i tuoi atleti e un canale riservato con la segreteria della società.":"Mensajes directos con tus deportistas y un canal reservado con la secretaría del club.","Dati veri":"Datos reales","Ogni freccia dei tuoi atleti, già registrata":"Cada flecha de tus deportistas, ya registrada","Gli arcieri segnano i punteggi dal telefono durante allenamenti e prove di gara: tu vedi i progressi reali, senza ricopiare fogli di carta.":"Los arqueros anotan las puntuaciones desde el móvil durante entrenamientos y simulaciones de competición: tú ves su progreso real, sin pasar hojas de papel a limpio.","<0/>Allenamento su misura":"<0/>Entrenamiento a medida","<0/>Sfida virtuale":"<0/>Reto virtual","<0/>Set-up e tuning":"<0/>Puesta a punto y tuning","<0/>Prova di gara":"<0/>Simulación de competición","Totale":"Total","X":"X","M":"M","Un tasto per ogni punteggio, con i colori del bersaglio.":"Un botón para cada puntuación, con los colores de la diana.","Atleti minorenni":"Deportistas menores de edad","Con i ragazzi, il genitore è sempre informato":"Con los chavales, la familia siempre está informada","Per gli atleti dai 14 ai 17 anni il collegamento con un allenatore passa dal genitore; sotto i 14 anni è il genitore ad approvare l'iscrizione. Ogni consenso è registrato con data e ora.":"Para deportistas de 14 a 17 años, la vinculación con un entrenador pasa por el padre o la madre; con menos de 14 años, son ellos quienes aprueban la inscripción. Cada consentimiento queda registrado con fecha y hora.","I miei figli":"Mis hijos","LP":"LP","Luca, 15 anni":"Luca, 15 años","vuole collegarsi al suo allenatore":"quiere vincularse con su entrenador","Approva":"Aprobar","Non ora":"Ahora no","Iscrizione gratuita":"Inscripción gratuita","Porta i tuoi atleti su <0>Archery Hub<\/0>":"Lleva a tus deportistas a <0>Archery Hub<\/0>","Accedi se hai già un account, oppure scopri come funziona per la tua società.":"Accede si ya tienes cuenta, o descubre cómo funciona para tu club.","Scopri la società":"Descubre la versión para clubes","Archery <0>Hub<\/0>":"Archery <0>Hub<\/0>","La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.":"La plataforma para clubes de tiro con arco, sus entrenadores y sus arqueros.","Accedi alla piattaforma":"Accede a la plataforma","Per chi":"Para quién","Contatti":"Contacto","Richiedi una demo":"Solicita una demo","Legale":"Legal","Privacy Policy":"Política de privacidad","Termini e Condizioni":"Términos y condiciones","Cookie Policy":"Política de cookies","© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966":"© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966","Torna su <0/>":"Volver arriba <0/>","Archery Hub, torna alla home":"Archery Hub, volver al inicio","Esempio: i miei atleti":"Ejemplo: mis deportistas","Esempio: segnapunti sul telefono":"Ejemplo: marcador de puntuación en el móvil","Esempio: richiesta da approvare":"Ejemplo: solicitud por aprobar","Pagine del sito":"Páginas del sitio","Informazioni legali":"Información legal"},"fr":{"Archery Hub | Per i tecnici":"Archery Hub | Pour les entraîneurs","Segui i tuoi atleti: abbinamenti, piani di allenamento, taccuino tecnico e iscrizione alle gare.":"Suivez vos athlètes : rattachements, plans d'entraînement, carnet technique et inscription aux compétitions.","Menu":"Menu","Home":"Accueil","Società":"Clubs","Arcieri":"Archers","Tecnici":"Entraîneurs","Accedi":"Se connecter","Per i tecnici e gli allenatori":"Pour les entraîneurs et les coachs","Segui i tuoi atleti, <0>freccia dopo freccia.<\/0>":"Suivez vos athlètes, <0>flèche après flèche.<\/0>","Allenamenti, iscrizione gare, risultati e materiale dei tuoi arcieri, sempre aggiornati. L'iscrizione è gratuita.":"Entraînements, inscriptions aux compétitions, résultats et matériel de vos archers, toujours à jour. L'inscription est gratuite.","Accedi / Registrati":"Connexion / Inscription","Scopri gli Arcieri":"Découvrir l'espace Archers","I miei atleti":"Mes athlètes","Giulia Rossi<0>Allenamento su misura · ieri<\/0>":"Giulia Rossi<0>Entraînement sur mesure · hier<\/0>","Luca Pini<0>Prova di gara · sabato<\/0>":"Luca Pini<0>Simulation de compétition · samedi<\/0>","Sara Testa<0>Richiesta di abbinamento<\/0>":"Sara Testa<0>Demande de suivi<\/0>","Accetta":"Accepter","<0>Taccuino tecnico<\/0>Nuova nota di Giulia":"<0>Carnet technique<\/0>Nouvelle note de Giulia","Cosa puoi fare":"Ce que vous pouvez faire","Tutto quello che serve per seguire i tuoi atleti":"Tout ce qu'il faut pour suivre vos athlètes","I tuoi atleti seguiti":"Vos athlètes suivis","Ricevi le richieste di abbinamento dagli arcieri e decidi chi seguire: la connessione parte sempre da loro.":"Recevez les demandes de suivi des archers et choisissez qui accompagner : la demande vient toujours d'eux.","Piani di allenamento":"Plans d'entraînement","Prepara gli allenamenti per i tuoi atleti e tienili aggiornati nel tempo.":"Préparez les entraînements de vos athlètes et faites-les évoluer dans le temps.","Iscrizione alle gare":"Inscription aux compétitions","Iscrivi i tuoi atleti alle competizioni direttamente dalla piattaforma.":"Inscrivez vos athlètes aux compétitions directement depuis la plateforme.","Risultati e materiale tecnico":"Résultats et matériel technique","Consulta i risultati e le schede dell'attrezzatura di chi segui.":"Consultez les résultats et les fiches matériel des archers que vous suivez.","Taccuino tecnico":"Carnet technique","Rivedi il taccuino di allenamento degli atleti e lascia una nota o una firma di presa visione.":"Relisez le carnet d'entraînement de vos athlètes et laissez une note ou un visa de lecture.","Comunicazioni dirette":"Communication directe","Messaggi diretti con i tuoi atleti e un canale riservato con la segreteria della società.":"Messages directs avec vos athlètes et un canal réservé avec le secrétariat du club.","Dati veri":"Des données réelles","Ogni freccia dei tuoi atleti, già registrata":"Chaque flèche de vos athlètes, déjà enregistrée","Gli arcieri segnano i punteggi dal telefono durante allenamenti e prove di gara: tu vedi i progressi reali, senza ricopiare fogli di carta.":"Les archers notent leurs scores sur leur téléphone pendant les entraînements et les simulations de compétition : vous voyez leurs vrais progrès, sans recopier de feuilles papier.","<0/>Allenamento su misura":"<0/>Entraînement sur mesure","<0/>Sfida virtuale":"<0/>Défi virtuel","<0/>Set-up e tuning":"<0/>Réglages et tuning","<0/>Prova di gara":"<0/>Simulation de compétition","Totale":"Total","X":"X","M":"M","Un tasto per ogni punteggio, con i colori del bersaglio.":"Une touche par score, aux couleurs de la cible.","Atleti minorenni":"Athlètes mineurs","Con i ragazzi, il genitore è sempre informato":"Avec les jeunes, le parent est toujours informé","Per gli atleti dai 14 ai 17 anni il collegamento con un allenatore passa dal genitore; sotto i 14 anni è il genitore ad approvare l'iscrizione. Ogni consenso è registrato con data e ora.":"Pour les athlètes de 14 à 17 ans, le rattachement à un entraîneur passe par le parent ; en dessous de 14 ans, c'est le parent qui approuve l'inscription. Chaque consentement est enregistré avec la date et l'heure.","I miei figli":"Mes enfants","LP":"LP","Luca, 15 anni":"Luca, 15 ans","vuole collegarsi al suo allenatore":"souhaite se rattacher à son entraîneur","Approva":"Approuver","Non ora":"Plus tard","Iscrizione gratuita":"Inscription gratuite","Porta i tuoi atleti su <0>Archery Hub<\/0>":"Amenez vos athlètes sur <0>Archery Hub<\/0>","Accedi se hai già un account, oppure scopri come funziona per la tua società.":"Connectez-vous si vous avez déjà un compte, ou découvrez comment ça marche pour votre club.","Scopri la società":"Découvrir l'espace Clubs","Archery <0>Hub<\/0>":"Archery <0>Hub<\/0>","La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.":"La plateforme des clubs de tir à l'arc, de leurs entraîneurs et de leurs archers.","Accedi alla piattaforma":"Accéder à la plateforme","Per chi":"Pour qui","Contatti":"Contact","Richiedi una demo":"Demander une démo","Legale":"Mentions légales","Privacy Policy":"Politique de confidentialité","Termini e Condizioni":"Conditions générales","Cookie Policy":"Politique de cookies","© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966":"© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966","Torna su <0/>":"Haut de page <0/>","Archery Hub, torna alla home":"Archery Hub, retour à l'accueil","Esempio: i miei atleti":"Exemple : mes athlètes","Esempio: segnapunti sul telefono":"Exemple : feuille de marque sur le téléphone","Esempio: richiesta da approvare":"Exemple : demande à approuver","Pagine del sito":"Pages du site","Informazioni legali":"Informations légales"},"de":{"Archery Hub | Per i tecnici":"Archery Hub | Für Trainer","Segui i tuoi atleti: abbinamenti, piani di allenamento, taccuino tecnico e iscrizione alle gare.":"Betreue deine Sportler: Verknüpfungen, Trainingspläne, Technik-Notizbuch und Turnieranmeldung.","Menu":"Menü","Home":"Start","Società":"Vereine","Arcieri":"Schützen","Tecnici":"Trainer","Accedi":"Anmelden","Per i tecnici e gli allenatori":"Für Trainer und Übungsleiter","Segui i tuoi atleti, <0>freccia dopo freccia.<\/0>":"Betreue deine Sportler, <0>Pfeil für Pfeil.<\/0>","Allenamenti, iscrizione gare, risultati e materiale dei tuoi arcieri, sempre aggiornati. L'iscrizione è gratuita.":"Training, Turnieranmeldung, Ergebnisse und Material deiner Schützen, immer aktuell. Die Registrierung ist kostenlos.","Accedi / Registrati":"Anmelden / Registrieren","Scopri gli Arcieri":"Mehr für Schützen","I miei atleti":"Meine Sportler","Giulia Rossi<0>Allenamento su misura · ieri<\/0>":"Giulia Rossi<0>Individuelles Training · gestern<\/0>","Luca Pini<0>Prova di gara · sabato<\/0>":"Luca Pini<0>Wettkampfsimulation · Samstag<\/0>","Sara Testa<0>Richiesta di abbinamento<\/0>":"Sara Testa<0>Verknüpfungsanfrage<\/0>","Accetta":"Annehmen","<0>Taccuino tecnico<\/0>Nuova nota di Giulia":"<0>Technik-Notizbuch<\/0>Neue Notiz von Giulia","Cosa puoi fare":"Was du tun kannst","Tutto quello che serve per seguire i tuoi atleti":"Alles, was du brauchst, um deine Sportler zu betreuen","I tuoi atleti seguiti":"Deine betreuten Sportler","Ricevi le richieste di abbinamento dagli arcieri e decidi chi seguire: la connessione parte sempre da loro.":"Du erhältst Verknüpfungsanfragen von Schützen und entscheidest, wen du betreust: Die Verbindung geht immer von ihnen aus.","Piani di allenamento":"Trainingspläne","Prepara gli allenamenti per i tuoi atleti e tienili aggiornati nel tempo.":"Erstelle Trainingseinheiten für deine Sportler und halte sie laufend aktuell.","Iscrizione alle gare":"Turnieranmeldung","Iscrivi i tuoi atleti alle competizioni direttamente dalla piattaforma.":"Melde deine Sportler direkt über die Plattform zu Wettkämpfen an.","Risultati e materiale tecnico":"Ergebnisse und Material","Consulta i risultati e le schede dell'attrezzatura di chi segui.":"Sieh dir Ergebnisse und Materialdaten deiner Sportler an.","Taccuino tecnico":"Technik-Notizbuch","Rivedi il taccuino di allenamento degli atleti e lascia una nota o una firma di presa visione.":"Lies das Trainingsnotizbuch deiner Sportler und hinterlasse eine Notiz oder ein Gesehen-Kürzel.","Comunicazioni dirette":"Direkte Kommunikation","Messaggi diretti con i tuoi atleti e un canale riservato con la segreteria della società.":"Direktnachrichten mit deinen Sportlern und ein eigener Kanal zur Geschäftsstelle des Vereins.","Dati veri":"Echte Daten","Ogni freccia dei tuoi atleti, già registrata":"Jeder Pfeil deiner Sportler, schon erfasst","Gli arcieri segnano i punteggi dal telefono durante allenamenti e prove di gara: tu vedi i progressi reali, senza ricopiare fogli di carta.":"Die Schützen erfassen ihre Ringzahlen per Handy bei Training und Wettkampfsimulation: Du siehst echte Fortschritte, ohne Zettel abzuschreiben.","<0/>Allenamento su misura":"<0/>Individuelles Training","<0/>Sfida virtuale":"<0/>Virtuelles Duell","<0/>Set-up e tuning":"<0/>Setup und Tuning","<0/>Prova di gara":"<0/>Wettkampfsimulation","Totale":"Summe","X":"X","M":"M","Un tasto per ogni punteggio, con i colori del bersaglio.":"Eine Taste pro Ringzahl, in den Farben der Auflage.","Atleti minorenni":"Minderjährige Sportler","Con i ragazzi, il genitore è sempre informato":"Bei Jugendlichen sind die Eltern immer informiert","Per gli atleti dai 14 ai 17 anni il collegamento con un allenatore passa dal genitore; sotto i 14 anni è il genitore ad approvare l'iscrizione. Ogni consenso è registrato con data e ora.":"Bei Sportlern von 14 bis 17 Jahren läuft die Verknüpfung mit einem Trainer über die Eltern; unter 14 bestätigen die Eltern die Anmeldung. Jede Einwilligung wird mit Datum und Uhrzeit gespeichert.","I miei figli":"Meine Kinder","LP":"LP","Luca, 15 anni":"Luca, 15 Jahre","vuole collegarsi al suo allenatore":"möchte sich mit seinem Trainer verknüpfen","Approva":"Bestätigen","Non ora":"Nicht jetzt","Iscrizione gratuita":"Kostenlose Registrierung","Porta i tuoi atleti su <0>Archery Hub<\/0>":"Bring deine Sportler zu <0>Archery Hub<\/0>","Accedi se hai già un account, oppure scopri come funziona per la tua società.":"Melde dich an, wenn du schon ein Konto hast, oder sieh dir an, wie es für deinen Verein funktioniert.","Scopri la società":"Mehr für Vereine","Archery <0>Hub<\/0>":"Archery <0>Hub<\/0>","La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.":"Die Plattform für Bogensportvereine, ihre Trainer und ihre Schützen.","Accedi alla piattaforma":"Zur Plattform","Per chi":"Für wen","Contatti":"Kontakt","Richiedi una demo":"Demo anfragen","Legale":"Rechtliches","Privacy Policy":"Datenschutzerklärung","Termini e Condizioni":"AGB","Cookie Policy":"Cookie-Richtlinie","© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966":"© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966","Torna su <0/>":"Nach oben <0/>","Archery Hub, torna alla home":"Archery Hub, zur Startseite","Esempio: i miei atleti":"Beispiel: meine Sportler","Esempio: segnapunti sul telefono":"Beispiel: Ergebniserfassung auf dem Handy","Esempio: richiesta da approvare":"Beispiel: Anfrage zur Bestätigung","Pagine del sito":"Seiten der Website","Informazioni legali":"Rechtliche Hinweise"},"pt":{"Archery Hub | Per i tecnici":"Archery Hub | Para treinadores","Segui i tuoi atleti: abbinamenti, piani di allenamento, taccuino tecnico e iscrizione alle gare.":"Acompanhe os seus atletas: ligações, planos de treino, caderno técnico e inscrição em provas.","Menu":"Menu","Home":"Início","Società":"Clubes","Arcieri":"Arqueiros","Tecnici":"Treinadores","Accedi":"Entrar","Per i tecnici e gli allenatori":"Para treinadores e técnicos","Segui i tuoi atleti, <0>freccia dopo freccia.<\/0>":"Acompanhe os seus atletas, <0>flecha a flecha.<\/0>","Allenamenti, iscrizione gare, risultati e materiale dei tuoi arcieri, sempre aggiornati. L'iscrizione è gratuita.":"Treinos, inscrições em provas, resultados e material dos seus arqueiros, sempre atualizados. A inscrição é gratuita.","Accedi / Registrati":"Entrar / Registar","Scopri gli Arcieri":"Descobrir Arqueiros","I miei atleti":"Os meus atletas","Giulia Rossi<0>Allenamento su misura · ieri<\/0>":"Giulia Rossi<0>Treino personalizado · ontem<\/0>","Luca Pini<0>Prova di gara · sabato<\/0>":"Luca Pini<0>Simulação de prova · sábado<\/0>","Sara Testa<0>Richiesta di abbinamento<\/0>":"Sara Testa<0>Pedido de ligação<\/0>","Accetta":"Aceitar","<0>Taccuino tecnico<\/0>Nuova nota di Giulia":"<0>Caderno técnico<\/0>Nova nota da Giulia","Cosa puoi fare":"O que pode fazer","Tutto quello che serve per seguire i tuoi atleti":"Tudo o que é preciso para acompanhar os seus atletas","I tuoi atleti seguiti":"Os seus atletas acompanhados","Ricevi le richieste di abbinamento dagli arcieri e decidi chi seguire: la connessione parte sempre da loro.":"Receba os pedidos de ligação dos arqueiros e decida quem acompanhar: a ligação parte sempre deles.","Piani di allenamento":"Planos de treino","Prepara gli allenamenti per i tuoi atleti e tienili aggiornati nel tempo.":"Prepare os treinos dos seus atletas e mantenha-os atualizados ao longo do tempo.","Iscrizione alle gare":"Inscrição em provas","Iscrivi i tuoi atleti alle competizioni direttamente dalla piattaforma.":"Inscreva os seus atletas nas competições diretamente a partir da plataforma.","Risultati e materiale tecnico":"Resultados e material técnico","Consulta i risultati e le schede dell'attrezzatura di chi segui.":"Consulte os resultados e as fichas de equipamento de quem acompanha.","Taccuino tecnico":"Caderno técnico","Rivedi il taccuino di allenamento degli atleti e lascia una nota o una firma di presa visione.":"Reveja o caderno de treino dos atletas e deixe uma nota ou uma assinatura de tomada de conhecimento.","Comunicazioni dirette":"Comunicação direta","Messaggi diretti con i tuoi atleti e un canale riservato con la segreteria della società.":"Mensagens diretas com os seus atletas e um canal reservado com a secretaria do clube.","Dati veri":"Dados reais","Ogni freccia dei tuoi atleti, già registrata":"Cada flecha dos seus atletas, já registada","Gli arcieri segnano i punteggi dal telefono durante allenamenti e prove di gara: tu vedi i progressi reali, senza ricopiare fogli di carta.":"Os arqueiros registam as pontuações no telemóvel durante treinos e simulações de prova: vê a evolução real, sem copiar folhas de papel.","<0/>Allenamento su misura":"<0/>Treino personalizado","<0/>Sfida virtuale":"<0/>Desafio virtual","<0/>Set-up e tuning":"<0/>Afinação e tuning","<0/>Prova di gara":"<0/>Simulação de prova","Totale":"Total","X":"X","M":"M","Un tasto per ogni punteggio, con i colori del bersaglio.":"Um botão para cada pontuação, com as cores do alvo.","Atleti minorenni":"Atletas menores","Con i ragazzi, il genitore è sempre informato":"Com os jovens, o encarregado de educação está sempre informado","Per gli atleti dai 14 ai 17 anni il collegamento con un allenatore passa dal genitore; sotto i 14 anni è il genitore ad approvare l'iscrizione. Ogni consenso è registrato con data e ora.":"Para atletas dos 14 aos 17 anos, a ligação a um treinador passa pelo encarregado de educação; abaixo dos 14 anos, é ele que aprova a inscrição. Cada consentimento fica registado com data e hora.","I miei figli":"Os meus filhos","LP":"LP","Luca, 15 anni":"Luca, 15 anos","vuole collegarsi al suo allenatore":"quer ligar-se ao seu treinador","Approva":"Aprovar","Non ora":"Agora não","Iscrizione gratuita":"Inscrição gratuita","Porta i tuoi atleti su <0>Archery Hub<\/0>":"Traga os seus atletas para o <0>Archery Hub<\/0>","Accedi se hai già un account, oppure scopri come funziona per la tua società.":"Entre se já tem conta, ou descubra como funciona para o seu clube.","Scopri la società":"Descobrir para clubes","Archery <0>Hub<\/0>":"Archery <0>Hub<\/0>","La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.":"A plataforma para clubes de tiro com arco, os seus treinadores e os seus arqueiros.","Accedi alla piattaforma":"Entrar na plataforma","Per chi":"Para quem","Contatti":"Contactos","Richiedi una demo":"Pedir uma demonstração","Legale":"Legal","Privacy Policy":"Política de Privacidade","Termini e Condizioni":"Termos e Condições","Cookie Policy":"Política de Cookies","© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966":"© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966","Torna su <0/>":"Voltar ao topo <0/>","Archery Hub, torna alla home":"Archery Hub, voltar ao início","Esempio: i miei atleti":"Exemplo: os meus atletas","Esempio: segnapunti sul telefono":"Exemplo: marcador de pontos no telemóvel","Esempio: richiesta da approvare":"Exemplo: pedido para aprovar","Pagine del sito":"Páginas do site","Informazioni legali":"Informações legais"},"nl":{"Archery Hub | Per i tecnici":"Archery Hub | Voor trainers","Segui i tuoi atleti: abbinamenti, piani di allenamento, taccuino tecnico e iscrizione alle gare.":"Begeleid je sporters: koppelingen, trainingsschema's, technisch notitieboek en wedstrijdinschrijvingen.","Menu":"Menu","Home":"Home","Società":"Verenigingen","Arcieri":"Schutters","Tecnici":"Trainers","Accedi":"Inloggen","Per i tecnici e gli allenatori":"Voor trainers en coaches","Segui i tuoi atleti, <0>freccia dopo freccia.<\/0>":"Begeleid je sporters, <0>pijl na pijl.<\/0>","Allenamenti, iscrizione gare, risultati e materiale dei tuoi arcieri, sempre aggiornati. L'iscrizione è gratuita.":"Trainingen, wedstrijdinschrijvingen, resultaten en materiaal van je schutters, altijd up-to-date. Inschrijven is gratis.","Accedi / Registrati":"Inloggen / Registreren","Scopri gli Arcieri":"Ontdek Schutters","I miei atleti":"Mijn sporters","Giulia Rossi<0>Allenamento su misura · ieri<\/0>":"Giulia Rossi<0>Training op maat · gisteren<\/0>","Luca Pini<0>Prova di gara · sabato<\/0>":"Luca Pini<0>Wedstrijdsimulatie · zaterdag<\/0>","Sara Testa<0>Richiesta di abbinamento<\/0>":"Sara Testa<0>Koppelingsverzoek<\/0>","Accetta":"Accepteren","<0>Taccuino tecnico<\/0>Nuova nota di Giulia":"<0>Technisch notitieboek<\/0>Nieuwe notitie van Giulia","Cosa puoi fare":"Wat je kunt doen","Tutto quello che serve per seguire i tuoi atleti":"Alles wat je nodig hebt om je sporters te begeleiden","I tuoi atleti seguiti":"Je begeleide sporters","Ricevi le richieste di abbinamento dagli arcieri e decidi chi seguire: la connessione parte sempre da loro.":"Ontvang koppelingsverzoeken van schutters en bepaal wie je begeleidt: de koppeling gaat altijd van hen uit.","Piani di allenamento":"Trainingsschema's","Prepara gli allenamenti per i tuoi atleti e tienili aggiornati nel tempo.":"Stel trainingen op voor je sporters en houd ze in de loop van de tijd actueel.","Iscrizione alle gare":"Wedstrijdinschrijvingen","Iscrivi i tuoi atleti alle competizioni direttamente dalla piattaforma.":"Schrijf je sporters rechtstreeks via het platform in voor wedstrijden.","Risultati e materiale tecnico":"Resultaten en technisch materiaal","Consulta i risultati e le schede dell'attrezzatura di chi segui.":"Bekijk de resultaten en materiaalkaarten van wie je begeleidt.","Taccuino tecnico":"Technisch notitieboek","Rivedi il taccuino di allenamento degli atleti e lascia una nota o una firma di presa visione.":"Bekijk het trainingsnotitieboek van je sporters en laat een notitie of een paraaf voor gezien achter.","Comunicazioni dirette":"Directe communicatie","Messaggi diretti con i tuoi atleti e un canale riservato con la segreteria della società.":"Directe berichten met je sporters en een apart kanaal met het secretariaat van de vereniging.","Dati veri":"Echte data","Ogni freccia dei tuoi atleti, già registrata":"Elke pijl van je sporters, al geregistreerd","Gli arcieri segnano i punteggi dal telefono durante allenamenti e prove di gara: tu vedi i progressi reali, senza ricopiare fogli di carta.":"Schutters noteren hun scores op hun telefoon tijdens trainingen en wedstrijdsimulaties: jij ziet de echte vooruitgang, zonder papieren formulieren over te tikken.","<0/>Allenamento su misura":"<0/>Training op maat","<0/>Sfida virtuale":"<0/>Virtuele uitdaging","<0/>Set-up e tuning":"<0/>Set-up en tuning","<0/>Prova di gara":"<0/>Wedstrijdsimulatie","Totale":"Totaal","X":"X","M":"M","Un tasto per ogni punteggio, con i colori del bersaglio.":"Eén knop per score, in de kleuren van de blazoen.","Atleti minorenni":"Minderjarige sporters","Con i ragazzi, il genitore è sempre informato":"Bij kinderen is de ouder altijd op de hoogte","Per gli atleti dai 14 ai 17 anni il collegamento con un allenatore passa dal genitore; sotto i 14 anni è il genitore ad approvare l'iscrizione. Ogni consenso è registrato con data e ora.":"Voor sporters van 14 tot 17 jaar loopt de koppeling met een trainer via de ouder; onder de 14 keurt de ouder de inschrijving goed. Elke toestemming wordt vastgelegd met datum en tijd.","I miei figli":"Mijn kinderen","LP":"LP","Luca, 15 anni":"Luca, 15 jaar","vuole collegarsi al suo allenatore":"wil zich koppelen aan zijn trainer","Approva":"Goedkeuren","Non ora":"Niet nu","Iscrizione gratuita":"Gratis inschrijving","Porta i tuoi atleti su <0>Archery Hub<\/0>":"Breng je sporters naar <0>Archery Hub<\/0>","Accedi se hai già un account, oppure scopri come funziona per la tua società.":"Log in als je al een account hebt, of ontdek hoe het werkt voor je vereniging.","Scopri la società":"Ontdek voor verenigingen","Archery <0>Hub<\/0>":"Archery <0>Hub<\/0>","La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.":"Het platform voor handboogverenigingen, hun trainers en hun schutters.","Accedi alla piattaforma":"Inloggen op het platform","Per chi":"Voor wie","Contatti":"Contact","Richiedi una demo":"Vraag een demo aan","Legale":"Juridisch","Privacy Policy":"Privacybeleid","Termini e Condizioni":"Algemene voorwaarden","Cookie Policy":"Cookiebeleid","© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966":"© <0/> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966","Torna su <0/>":"Terug naar boven <0/>","Archery Hub, torna alla home":"Archery Hub, terug naar de homepage","Esempio: i miei atleti":"Voorbeeld: mijn sporters","Esempio: segnapunti sul telefono":"Voorbeeld: scoreteller op je telefoon","Esempio: richiesta da approvare":"Voorbeeld: aanvraag ter goedkeuring","Pagine del sito":"Pagina's van de website","Informazioni legali":"Juridische informatie"}};
+
+  var LANGS = [
+    ["it", "Italiano"],
+    ["en", "English"],
+    ["es", "Español"],
+    ["fr", "Français"],
+    ["de", "Deutsch"],
+    ["pt", "Português"],
+    ["nl", "Nederlands"]
+  ];
+
+  var FLAGS = {
+    it: '<rect width="3" height="2" fill="#ce2b37"/><rect width="2" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/>',
+    en: '<rect width="3" height="2" fill="#012169"/><path d="M0 0l3 2M3 0L0 2" stroke="#fff" stroke-width=".4"/><path d="M0 0l3 2M3 0L0 2" stroke="#c8102e" stroke-width=".14"/><path d="M1.5 0v2M0 1h3" stroke="#fff" stroke-width=".6"/><path d="M1.5 0v2M0 1h3" stroke="#c8102e" stroke-width=".36"/>',
+    es: '<rect width="3" height="2" fill="#aa151b"/><rect y=".5" width="3" height="1" fill="#f1bf00"/>',
+    fr: '<rect width="3" height="2" fill="#ce1126"/><rect width="2" height="2" fill="#fff"/><rect width="1" height="2" fill="#002654"/>',
+    de: '<rect width="3" height="2" fill="#ffce00"/><rect width="3" height="1.333" fill="#dd0000"/><rect width="3" height=".667" fill="#000"/>',
+    pt: '<rect width="3" height="2" fill="#ff0000"/><rect width="1.2" height="2" fill="#006600"/><circle cx="1.2" cy="1" r=".42" fill="#ffcc00"/><circle cx="1.2" cy="1" r=".24" fill="#ff0000"/><circle cx="1.2" cy="1" r=".14" fill="#fff"/>',
+    nl: '<rect width="3" height="2" fill="#21468b"/><rect width="3" height="1.333" fill="#fff"/><rect width="3" height=".667" fill="#ae1c28"/>'
+  };
+
+  var UI = {
+    it: { label: "Lingua", notice: "" },
+    en: { label: "Language", notice: "Courtesy translation. Only the Italian version of this document is legally binding." },
+    es: { label: "Idioma", notice: "Traducción de cortesía. Solo la versión italiana de este documento es jurídicamente vinculante." },
+    fr: { label: "Langue", notice: "Traduction de courtoisie. Seule la version italienne de ce document fait foi juridiquement." },
+    de: { label: "Sprache", notice: "Unverbindliche Übersetzung. Rechtlich maßgeblich ist ausschließlich die italienische Fassung dieses Dokuments." },
+    pt: { label: "Idioma", notice: "Tradução de cortesia. Apenas a versão italiana deste documento é juridicamente vinculativa." },
+    nl: { label: "Taal", notice: "Vrijblijvende vertaling. Alleen de Italiaanse versie van dit document is juridisch bindend." }
+  };
+
+  /* Testi traducibili: ogni elemento con testo proprio diventa un modello
+     ("La tua societa', <0>un posto solo.</0>") in cui i figli con testo sono
+     coppie <n>...</n> e quelli senza testo (icone, svg, br) sono <n/>. */
+  var SKIP = { SCRIPT: 1, STYLE: 1, SVG: 1, svg: 1, TEMPLATE: 1, NOSCRIPT: 1, TEXTAREA: 1 };
+  var LETTER = /[A-Za-zÀ-ÿ]/;
+  var NO_TRANSLATE = /^(?:[\w.+-]+@[\w.-]+\.\w+|(?:https?:\/\/|www\.)\S+|[+\d\s().\/-]+)$/;
+
+  function norm(s) {
+    return s.replace(/\s+/g, " ");
+  }
+
+  function hasOwnText(el) {
+    for (var c = el.firstChild; c; c = c.nextSibling) {
+      if (c.nodeType === 3 && LETTER.test(c.data)) return true;
+    }
+    return false;
+  }
+
+  function hasText(el) {
+    return LETTER.test(el.textContent || "");
+  }
+
+  function collectUnits(root) {
+    var out = [];
+    (function walk(el) {
+      for (var c = el.firstElementChild; c; c = c.nextElementSibling) {
+        if (SKIP[c.tagName] || c.hasAttribute("data-ah-no-i18n")) continue;
+        if (hasOwnText(c)) out.push(c);
+        else walk(c);
+      }
+    })(root);
+    return out;
+  }
+
+  function template(el, nodes) {
+    var s = "";
+    for (var c = el.firstChild; c; c = c.nextSibling) {
+      if (c.nodeType === 3) {
+        s += c.data.replace(/</g, "‹");
+      } else if (c.nodeType === 1) {
+        var n = nodes.length;
+        nodes.push(c);
+        if (SKIP[c.tagName] || !hasText(c)) s += "<" + n + "/>";
+        else s += "<" + n + ">" + template(c, nodes) + "</" + n + ">";
+      }
+    }
+    return s;
+  }
+
+  function unitKey(el) {
+    var key = norm(template(el, [])).trim();
+    var plain = key.replace(/<\/?\d+\/?>/g, "").trim();
+    if (!LETTER.test(plain) || NO_TRANSLATE.test(plain)) return null;
+    return key;
+  }
+
+  var ATTRS = ["aria-label", "title", "alt", "placeholder"];
+
+  function collectAttrs(root) {
+    var out = [];
+    var els = root.querySelectorAll("[aria-label],[title],[alt],[placeholder]");
+    for (var i = 0; i < els.length; i++) {
+      if (els[i].closest("[data-ah-no-i18n]")) continue;
+      for (var j = 0; j < ATTRS.length; j++) {
+        var v = els[i].getAttribute(ATTRS[j]);
+        if (v && LETTER.test(v)) out.push([els[i], ATTRS[j], norm(v).trim()]);
+      }
+    }
+    return out;
+  }
+
+
+  function flag(code) {
+    return '<svg class="ah-lang__flag" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">' + FLAGS[code] + "</svg>";
+  }
+
+  function build(parent, str, nodes) {
+    var re = /<(\/?)(\d+)(\/?)>/g;
+    var stack = [parent];
+    var last = 0;
+    var m;
+    function text(s) {
+      if (s) stack[stack.length - 1].appendChild(document.createTextNode(s.replace(/‹/g, "<")));
+    }
+    while ((m = re.exec(str))) {
+      text(str.slice(last, m.index));
+      var n = nodes[+m[2]];
+      if (m[3]) {
+        if (n) stack[stack.length - 1].appendChild(n.cloneNode(true));
+      } else if (m[1]) {
+        if (stack.length > 1) stack.pop();
+      } else {
+        var c = n ? n.cloneNode(false) : document.createElement("span");
+        stack[stack.length - 1].appendChild(c);
+        stack.push(c);
+      }
+      last = re.lastIndex;
+    }
+    text(str.slice(last));
+  }
+
+  /* Stato originale (italiano) */
+  var units = [];
+  collectUnits(document.body).forEach(function (el) {
+    var key = unitKey(el);
+    if (!key) return;
+    var nodes = [];
+    template(el, nodes);
+    units.push({ el: el, key: key, nodes: nodes, orig: Array.prototype.slice.call(el.childNodes) });
+  });
+  var attrs = collectAttrs(document.body);
+  var meta = document.querySelector('meta[name="description"]');
+  var head = { title: document.title, desc: meta ? meta.getAttribute("content") : "" };
+  var links = [];
+  var all = document.querySelectorAll("a[href]");
+  for (var i = 0; i < all.length; i++) {
+    var h = all[i].getAttribute("href");
+    if (/^(?:[a-z]+:|\/\/|#)/i.test(h)) continue;
+    links.push([all[i], h]);
+  }
+
+  var legal = document.querySelector(".ah-legal .ah-legal__meta, .ah-legal h1");
+  var notice = null;
+  var current = "it";
+
+  function tr(lang, key) {
+    var d = DICT[lang];
+    return d && Object.prototype.hasOwnProperty.call(d, key) ? d[key] : null;
+  }
+
+  var touched = false;
+
+  function apply(lang) {
+    current = lang;
+    if (lang !== "it") touched = true;
+    if (touched) units.forEach(function (u) {
+      var t = lang === "it" ? null : tr(lang, u.key);
+      while (u.el.firstChild) u.el.removeChild(u.el.firstChild);
+      if (t === null) {
+        u.orig.forEach(function (n) { u.el.appendChild(n.cloneNode(true)); });
+      } else {
+        build(u.el, t, u.nodes);
+      }
+    });
+    if (touched) attrs.forEach(function (a) {
+      var t = lang === "it" ? null : tr(lang, a[2]);
+      a[0].setAttribute(a[1], t === null ? a[2] : t);
+    });
+    document.title = (lang !== "it" && tr(lang, head.title)) || head.title;
+    if (meta) meta.setAttribute("content", (lang !== "it" && tr(lang, head.desc)) || head.desc);
+    document.documentElement.setAttribute("lang", lang);
+
+    links.forEach(function (l) {
+      var h = l[1];
+      if (lang === "it") return l[0].setAttribute("href", h);
+      var cut = h.indexOf("#");
+      var path = cut < 0 ? h : h.slice(0, cut);
+      var hash = cut < 0 ? "" : h.slice(cut);
+      l[0].setAttribute("href", path + (path.indexOf("?") < 0 ? "?" : "&") + "lang=" + lang + hash);
+    });
+
+    if (legal) {
+      if (!notice) {
+        notice = document.createElement("p");
+        notice.className = "ah-legal__notice";
+        notice.setAttribute("data-ah-no-i18n", "");
+        legal.parentNode.insertBefore(notice, legal.nextSibling);
+      }
+      notice.textContent = UI[lang].notice;
+      notice.hidden = lang === "it";
+    }
+
+    renderSwitcher();
+  }
+
+  /* Selettore lingua, come su archeryhub.it */
+  var nav = document.querySelector(".ah-nav__inner");
+  var box = null;
+  if (nav) {
+    box = document.createElement("div");
+    box.className = "ah-lang";
+    box.setAttribute("data-ah-no-i18n", "");
+    nav.appendChild(box);
+    document.addEventListener("click", function (e) {
+      if (!box.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && box.classList.contains("is-open")) {
+        setOpen(false);
+        box.querySelector(".ah-lang__button").focus();
+      }
+    });
+  }
+
+  function setOpen(open) {
+    if (!box) return;
+    box.classList.toggle("is-open", open);
+    var b = box.querySelector(".ah-lang__button");
+    if (b) b.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  function renderSwitcher() {
+    if (!box) return;
+    var wasOpen = box.classList.contains("is-open");
+    var html = '<button class="ah-lang__button" type="button" aria-haspopup="true" aria-expanded="false" aria-label="' + UI[current].label + ": " + nameOf(current) + '">' +
+      flag(current) + '<span class="ah-lang__code">' + current.toUpperCase() + '</span>' +
+      '<svg class="ah-lang__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>' +
+      '<ul class="ah-lang__menu" aria-label="' + UI[current].label + '">';
+    LANGS.forEach(function (l) {
+      var on = l[0] === current;
+      html += '<li><button type="button" lang="' + l[0] + '" data-lang="' + l[0] + '"' + (on ? ' aria-current="true"' : "") + ">" +
+        flag(l[0]) + '<span class="ah-lang__code">' + l[0].toUpperCase() + '</span><span class="ah-lang__name">' + l[1] + "</span>" +
+        (on ? '<svg class="ah-lang__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' : "") +
+        "</button></li>";
+    });
+    box.innerHTML = html + "</ul>";
+    box.querySelector(".ah-lang__button").addEventListener("click", function () {
+      setOpen(!box.classList.contains("is-open"));
+    });
+    var opts = box.querySelectorAll("[data-lang]");
+    for (var k = 0; k < opts.length; k++) {
+      opts[k].addEventListener("click", function () {
+        choose(this.getAttribute("data-lang"));
+        setOpen(false);
+        box.querySelector(".ah-lang__button").focus();
+      });
+    }
+    if (wasOpen) setOpen(true);
+  }
+
+  function nameOf(code) {
+    for (var k = 0; k < LANGS.length; k++) if (LANGS[k][0] === code) return LANGS[k][1];
+    return code;
+  }
+
+  function valid(code) {
+    code = (code || "").toLowerCase();
+    return UI[code] ? code : null;
+  }
+
+  function choose(lang) {
+    try { localStorage.setItem("ah-lang", lang); } catch (e) {}
+    try {
+      var url = new URL(location.href);
+      if (lang === "it") url.searchParams.delete("lang");
+      else url.searchParams.set("lang", lang);
+      history.replaceState(history.state, "", url.toString());
+    } catch (e) {}
+    apply(lang);
+  }
+
+  var start = null;
+  var q = /[?&]lang=([a-z]{2})/i.exec(location.search);
+  if (q) start = valid(q[1]);
+  if (!start) {
+    try { start = valid(localStorage.getItem("ah-lang")); } catch (e) {}
+  }
+  if (!start) {
+    /* Lingua del dispositivo: la prima tra quelle preferite che il sito
+       supporta (en-GB, en-US -> en; pt-BR -> pt). */
+    var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+    for (var p = 0; p < prefs.length && !start; p++) start = valid(String(prefs[p]).slice(0, 2));
+  }
+  if (start && q) {
+    try { localStorage.setItem("ah-lang", start); } catch (e) {}
+  }
+  apply(start || "it");
 })();
 </script>
 </body>
