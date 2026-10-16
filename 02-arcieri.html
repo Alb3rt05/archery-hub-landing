@@ -2084,6 +2084,857 @@ a.ah-card:hover {
   }
 }
 
+/* ---------- Rifiniture ---------- */
+
+.ah-page ::selection {
+  color: #1b1b3a;
+  background: #ffc2e3;
+}
+
+.ah-page [id] {
+  scroll-margin-top: 88px;
+}
+
+.ah-page :focus-visible {
+  outline: 3px solid var(--magenta);
+  outline-offset: 3px;
+}
+
+.ah-h1,
+.ah-h2 {
+  text-wrap: balance;
+}
+
+.ah-lead,
+.ah-card p {
+  text-wrap: pretty;
+}
+
+.ah-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ah-kicker::before {
+  content: "";
+  width: 22px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 3px;
+}
+
+.ah-section__header--center .ah-kicker {
+  justify-content: center;
+}
+
+.ah-nav {
+  transition:
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.ah-nav.is-scrolled {
+  background: rgba(253, 253, 255, 0.98);
+  box-shadow: 0 10px 30px rgba(27, 27, 58, 0.08);
+}
+
+.ah-nav__links a {
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.ah-button {
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.ah-button--primary,
+.ah-nav__links .ah-nav__cta {
+  box-shadow: 0 10px 24px -10px rgba(230, 5, 127, 0.7);
+}
+
+.ah-button--primary:hover,
+.ah-nav__links .ah-nav__cta:hover {
+  box-shadow: 0 14px 30px -10px rgba(230, 5, 127, 0.8);
+}
+
+.ah-button:active {
+  transform: translateY(0);
+}
+
+/* Hero: bersaglio decorativo e ingresso */
+
+.ah-hero::before,
+.ah-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ah-hero::before {
+  top: -260px;
+  right: -220px;
+  width: 760px;
+  height: 760px;
+  background: repeating-radial-gradient(circle, rgba(255, 92, 184, 0.13) 0 2px, transparent 2px 62px);
+  -webkit-mask-image: radial-gradient(circle, #000 30%, transparent 70%);
+  mask-image: radial-gradient(circle, #000 30%, transparent 70%);
+}
+
+.ah-hero::after {
+  bottom: -320px;
+  left: -200px;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(230, 5, 127, 0.22) 0%, transparent 65%);
+}
+
+.ah-hero > .ah-shell {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes ah-rise {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes ah-bob {
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+.ah-hero__copy > *,
+.ah-hero__visual {
+  animation: ah-rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.ah-hero__copy > :nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.ah-hero__copy > :nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.ah-hero__copy > :nth-child(n + 4) {
+  animation-delay: 240ms;
+}
+
+.ah-hero__visual {
+  animation-delay: 200ms;
+}
+
+.ah-float {
+  animation: ah-bob 6s ease-in-out 1s infinite;
+}
+
+.ah-float--bottom {
+  animation-delay: 2.5s;
+}
+
+/* Comparsa allo scroll */
+
+.ah-reveal {
+  opacity: 0;
+  translate: 0 28px;
+  transition:
+    opacity 700ms ease,
+    translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ah-reveal.is-in {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Carte e mockup */
+
+.ah-card {
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.ah-card:hover {
+  border-color: #cfd0ea;
+  box-shadow: 0 18px 40px rgba(27, 27, 58, 0.08);
+}
+
+a.ah-card:hover .ah-card__link svg {
+  translate: 4px 0;
+}
+
+.ah-card__link svg {
+  transition: translate 180ms ease;
+}
+
+.ah-card .ah-icon {
+  transition:
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.ah-card:hover .ah-icon {
+  color: #fdfdff;
+  background: var(--magenta);
+}
+
+.ah-mess__card {
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.ah-mess__card:hover {
+  box-shadow: 0 24px 50px rgba(27, 27, 58, 0.16);
+}
+
+.ah-role {
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.ah-role:hover {
+  background: #4443a3;
+  border-color: var(--pink);
+}
+
+.ah-window {
+  box-shadow:
+    0 1px 0 rgba(27, 27, 58, 0.04),
+    var(--shadow);
+}
+
+.ah-contacts a {
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.ah-contacts a:hover {
+  border-color: rgba(255, 92, 184, 0.5);
+}
+
+/* Pagine legali */
+
+.ah-legal {
+  background: linear-gradient(180deg, #ececf8 0, var(--card) 320px);
+}
+
+.ah-legal__back {
+  padding: 8px 16px;
+  color: var(--indigo);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.ah-legal__back:hover {
+  border-color: var(--indigo);
+}
+
+.ah-legal h1 {
+  margin-top: 28px;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Footer */
+
+.ah-footer {
+  padding: 64px 0 28px;
+  font-size: 0.95rem;
+}
+
+.ah-footer__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.ah-footer__brand {
+  gap: 10px;
+  max-width: 320px;
+}
+
+.ah-footer__brand strong {
+  font-size: 1.35rem;
+}
+
+.ah-footer__brand strong span {
+  color: var(--pink);
+}
+
+.ah-footer__login {
+  justify-self: start;
+  margin-top: 8px;
+  padding: 8px 18px;
+  color: #fdfdff;
+  border: 2px solid rgba(246, 246, 251, 0.4);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.ah-footer__login:hover {
+  background: rgba(246, 246, 251, 0.1);
+  border-color: #fdfdff;
+}
+
+.ah-footer__col h3 {
+  margin-bottom: 14px;
+  color: var(--on-dark);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ah-footer__col ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ah-footer__col a {
+  transition: color 160ms ease;
+}
+
+.ah-footer__col a:hover,
+.ah-footer__bottom a:hover {
+  color: #fdfdff;
+}
+
+.ah-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(246, 246, 251, 0.12);
+  font-size: 0.85rem;
+}
+
+.ah-footer__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+@media (max-width: 980px) {
+  .ah-nav.is-open {
+    box-shadow: 0 20px 40px rgba(27, 27, 58, 0.14);
+  }
+
+  .ah-nav.is-open .ah-nav__links a:not(.ah-nav__cta) {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+
+  .ah-footer__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ah-footer__brand {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .ah-hero::before {
+    top: -200px;
+    right: -320px;
+  }
+
+  .ah-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ah-hero__copy > *,
+  .ah-hero__visual,
+  .ah-float {
+    animation: none;
+  }
+
+  .ah-card,
+  .ah-mess__card,
+  .ah-role,
+  .ah-nav {
+    transition: none;
+  }
+}
+
+@media print {
+  .ah-reveal {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+
+
+/* ---------- Mobile compatto ---------- */
+
+@media (max-width: 640px) {
+  .ah-section {
+    padding: 56px 0;
+  }
+
+  .ah-section__header {
+    margin-bottom: 28px;
+  }
+
+  .ah-lead {
+    margin-top: 14px;
+  }
+
+  .ah-actions {
+    margin-top: 24px;
+  }
+
+  /* Hero: niente riquadri volanti, telefono piu' basso */
+
+  .ah-hero {
+    padding: 36px 0 48px;
+  }
+
+  .ah-hero__grid {
+    gap: 32px;
+  }
+
+  .ah-hero .ah-float {
+    display: none;
+  }
+
+  .ah-phone {
+    width: min(100%, 260px);
+    min-height: 0;
+    gap: 10px;
+    padding: 24px 18px;
+    border-width: 8px;
+    border-radius: 36px;
+  }
+
+  .ah-phone__title {
+    font-size: 1.4rem;
+  }
+
+  .ah-phone__btn {
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  .ah-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .ah-score {
+    gap: 8px;
+  }
+
+  .ah-score span {
+    padding: 8px 0;
+    font-size: 1.25rem;
+  }
+
+  .ah-score__total strong {
+    font-size: 1.6rem;
+  }
+
+  /* Il problema: griglia 2x2 */
+
+  .ah-mess {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .ah-mess__card {
+    gap: 2px;
+    padding: 12px;
+    box-shadow: 0 10px 24px rgba(27, 27, 58, 0.08);
+  }
+
+  .ah-mess__card:nth-child(odd) {
+    transform: rotate(-1deg);
+  }
+
+  .ah-mess__card:nth-child(even) {
+    transform: rotate(1deg);
+  }
+
+  .ah-mess__art {
+    height: 76px;
+    margin-bottom: 8px;
+    padding: 8px;
+    overflow: hidden;
+  }
+
+  .ah-mess__card h3 {
+    font-size: 1.15rem;
+  }
+
+  .ah-mess__card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .ah-mess__claim {
+    margin-top: 32px;
+  }
+
+  .ah-art-sheet i {
+    height: 12px;
+  }
+
+  .ah-art-chat {
+    gap: 4px;
+  }
+
+  .ah-art-chat span {
+    padding: 1px 8px;
+    font-size: 0.7rem;
+  }
+
+  .ah-art-money {
+    gap: 10px;
+  }
+
+  .ah-art-money b {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .ah-art-money span {
+    gap: 6px;
+  }
+
+  .ah-art-money i {
+    height: 6px;
+  }
+
+  .ah-art-paper span {
+    font-size: 0.8rem;
+  }
+
+  /* Una piattaforma per tutti: logo piccolo, ruoli 2x2 */
+
+  .ah-hub {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "hub hub"
+      "a b"
+      "c d";
+    gap: 12px;
+  }
+
+  .ah-hub__center {
+    width: 136px;
+    height: 136px;
+    margin-bottom: 28px;
+    border-width: 6px;
+    box-shadow:
+      0 0 0 12px rgba(230, 5, 127, 0.18),
+      0 0 0 26px rgba(230, 5, 127, 0.07);
+  }
+
+  .ah-hub__center svg {
+    width: 62px;
+  }
+
+  .ah-role {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .ah-role .ah-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ah-role .ah-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .ah-role h3 {
+    font-size: 1.1rem;
+  }
+
+  .ah-role p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .ah-hub__claim {
+    margin-top: 32px;
+  }
+
+  /* Funzionalita': il telefono ripete la finestra accanto, resta solo questa */
+
+  .ah-feature {
+    gap: 28px;
+  }
+
+  .ah-feature + .ah-feature {
+    margin-top: 64px;
+  }
+
+  .ah-feature__visual .ah-window ~ .ah-mini-phone {
+    display: none;
+  }
+
+  .ah-window__body {
+    gap: 8px;
+    padding: 18px;
+  }
+
+  .ah-row {
+    padding: 8px 12px;
+  }
+
+  .ah-modes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .ah-mode {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 14px;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .ah-feature__visual .ah-phone {
+    align-self: center;
+    margin-inline: auto;
+  }
+
+  /* Mockup gia' mostrato poco sopra nella stessa pagina */
+
+  .ah-hide-mobile {
+    display: none;
+  }
+
+  /* Facile da usare */
+
+  .ah-checks {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .ah-checks li {
+    gap: 12px;
+    font-size: 1.05rem;
+  }
+
+  .ah-checks .ah-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ah-checks .ah-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ah-laptop__screen {
+    gap: 10px;
+    padding: 28px 14%;
+    border-width: 8px;
+  }
+
+  /* Griglie di card: carosello orizzontale da scorrere col dito */
+
+  .ah-grid,
+  .ah-grid--2,
+  .ah-grid--4 {
+    grid-template-columns: none;
+    grid-auto-columns: 80%;
+    grid-auto-flow: column;
+    gap: 12px;
+    margin-inline: -16px;
+    padding: 4px 16px 18px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+  }
+
+  .ah-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ah-grid > * {
+    scroll-snap-align: start;
+  }
+
+  .ah-grid .ah-card {
+    gap: 8px;
+    padding: 22px;
+  }
+
+  .ah-grid .ah-card .ah-icon {
+    margin-bottom: 4px;
+  }
+
+  .ah-grid .ah-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .ah-grid .ah-reveal {
+    opacity: 1;
+    translate: none;
+  }
+
+  /* Settore giovanile: le fasce bastano, via il telefono */
+
+  .ah-ages .ah-phone {
+    display: none;
+  }
+
+  .ah-ages__bands {
+    gap: 18px;
+  }
+
+  .ah-age {
+    gap: 6px;
+  }
+
+  .ah-age b {
+    font-size: 1.5rem;
+  }
+
+  .ah-age i {
+    height: 10px;
+  }
+
+  .ah-age p {
+    font-size: 0.98rem;
+  }
+
+  /* Prima e dopo */
+
+  .ah-compare__col {
+    gap: 14px;
+    padding: 22px;
+  }
+
+  .ah-compare__col h3 {
+    font-size: 1.35rem;
+  }
+
+  .ah-compare__col ul {
+    gap: 10px;
+  }
+
+  /* Come si parte: passi 2x2 */
+
+  .ah-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 8px;
+  }
+
+  .ah-step {
+    gap: 2px;
+    padding: 0 4px;
+  }
+
+  .ah-step::before {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+  }
+
+  .ah-step h3 {
+    font-size: 1.05rem;
+  }
+
+  .ah-step p {
+    font-size: 0.88rem;
+  }
+
+  .ah-plans {
+    gap: 12px;
+    margin-top: 36px;
+  }
+
+  .ah-plan {
+    gap: 14px;
+    padding: 18px;
+    font-size: 0.95rem;
+  }
+
+  .ah-plan strong {
+    font-size: 1.1rem;
+  }
+
+  /* FAQ e contatti */
+
+  .ah-faq details {
+    padding: 16px 0;
+  }
+
+  .ah-faq summary {
+    font-size: 1.05rem;
+  }
+
+  .ah-contacts a {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .ah-form-box {
+    padding: 22px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2160,7 +3011,7 @@ a.ah-card:hover {
         <p class="ah-mode"><span class="ah-icon ah-icon--sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>Prova di gara</p>
       </div>
     </div>
-    <div class="ah-feature__visual">
+    <div class="ah-feature__visual ah-hide-mobile">
       <div class="ah-phone" aria-label="Esempio: segnapunti sul telefono">
           <div class="ah-score__total"><span>Totale</span><strong>165</strong></div>
           <div class="ah-score" aria-hidden="true"><span>X</span><span>10</span><span>9</span><span class="is-red">8</span><span class="is-red">7</span><span class="is-blue">6</span><span class="is-blue">5</span><span class="is-black">4</span><span class="is-black">3</span><span class="is-white">2</span><span class="is-white">1</span><span class="is-miss">M</span></div>
@@ -2245,16 +3096,122 @@ a.ah-card:hover {
   </div>
 </section>
 <footer class="ah-footer" data-afai-block="footer-section" data-gjs-name="Footer">
-  <div class="ah-shell ah-footer__inner">
-    <div class="ah-footer__brand"><strong>Archery Hub</strong><span>La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.</span></div>
-    <nav class="ah-footer__legal" aria-label="Informazioni legali">
-      <a href="mailto:info@archeryhub.it">info@archeryhub.it</a>
-      <a href="https://archeryhub.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
-      <a href="./termini-e-condizioni">Termini e Condizioni</a>
-      <a href="./cookie-policy">Cookie Policy</a>
-    </nav>
+  <div class="ah-shell">
+    <div class="ah-footer__grid">
+      <div class="ah-footer__brand">
+        <strong>Archery <span>Hub</span></strong>
+        <span>La piattaforma per le società di tiro con l'arco, i loro tecnici e i loro arcieri.</span>
+        <a class="ah-footer__login" href="https://archeryhub.it/login" target="_blank" rel="noopener">Accedi alla piattaforma</a>
+      </div>
+      <nav class="ah-footer__col" aria-label="Pagine del sito">
+        <h3>Per chi</h3>
+        <ul>
+          <li><a href="./home">Home</a></li>
+          <li><a href="./societa">Società</a></li>
+          <li><a href="./arcieri">Arcieri</a></li>
+          <li><a href="./tecnici">Tecnici</a></li>
+        </ul>
+      </nav>
+      <div class="ah-footer__col">
+        <h3>Contatti</h3>
+        <ul>
+          <li><a href="mailto:info@archeryhub.it">info@archeryhub.it</a></li>
+          <li><a href="tel:+393383991869">338 3991869</a></li>
+          <li><a href="./societa#richiedi-info">Richiedi una demo</a></li>
+        </ul>
+      </div>
+      <nav class="ah-footer__col" aria-label="Informazioni legali">
+        <h3>Legale</h3>
+        <ul>
+          <li><a href="https://archeryhub.it/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href="./termini-e-condizioni">Termini e Condizioni</a></li>
+          <li><a href="./cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ah-footer__bottom">
+      <span>© <span data-ah-year>2026</span> Archery Hub · AMT di Francesco Toso · P. IVA 13333860966</span>
+      <a class="ah-footer__top" href="#top">Torna su <span aria-hidden="true">↑</span></a>
+    </div>
   </div>
 </footer>
 </main>
+<script data-ah="routes">
+(function () {
+  if (window.__ahRoutesBound) return;
+  window.__ahRoutesBound = true;
+  var doc = document.documentElement;
+
+  /* Rotte: su AFAI "./societa" e' lo stepPath della pagina. Aperte come file
+     (repo, anteprima locale, hosting statico) le pagine si chiamano
+     "01-societa.html": qui i link vengono tradotti. Moduli e Demo non hanno
+     piu' uno stepPath e portano al form "Richiedi info". */
+  var FILES = {
+    "home": "00-home.html",
+    "societa": "01-societa.html",
+    "arcieri": "02-arcieri.html",
+    "tecnici": "05-tecnici.html",
+    "termini-e-condizioni": "06-termini-e-condizioni.html",
+    "cookie-policy": "07-cookie-policy.html",
+    "moduli": "01-societa.html#richiedi-info",
+    "demo": "01-societa.html#richiedi-info"
+  };
+  var asFiles = location.protocol === "file:" || /\.html?$/i.test(location.pathname);
+  var links = document.querySelectorAll('a[href^="./"]');
+  for (var i = 0; i < links.length; i++) {
+    var m = links[i].getAttribute("href").match(/^\.\/([a-z0-9-]+)\/?(#[^?]*)?$/i);
+    if (!m) continue;
+    var step = m[1].toLowerCase();
+    if (step === "moduli" || step === "demo") {
+      links[i].setAttribute("href", asFiles ? FILES[step] : "./societa#richiedi-info");
+    } else if (asFiles && FILES[step]) {
+      links[i].setAttribute("href", FILES[step] + (m[2] || ""));
+    }
+  }
+
+  /* Barra di navigazione: ombra dopo lo scroll, Esc chiude il menu. */
+  var nav = document.querySelector(".ah-nav");
+  if (nav) {
+    var onScroll = function () { nav.classList.toggle("is-scrolled", window.scrollY > 8); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || !nav.classList.contains("is-open")) return;
+      nav.classList.remove("is-open");
+      var btn = nav.querySelector(".ah-menu");
+      if (btn) { btn.setAttribute("aria-expanded", "false"); btn.focus(); }
+    });
+  }
+
+  var year = document.querySelector("[data-ah-year]");
+  if (year) year.textContent = new Date().getFullYear();
+
+  /* Comparsa dei blocchi allo scroll (senza JS o con movimento ridotto
+     tutto resta visibile). */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  var targets = document.querySelectorAll(
+    ".ah-section__header, .ah-mess__card, .ah-role, .ah-hub__center, .ah-feature__copy, .ah-feature__visual, " +
+    ".ah-card, .ah-step, .ah-compare > *, .ah-form-box, .ah-faq-grid > *, .ah-ages > *, .ah-easy > *, " +
+    ".ah-statement > *, .ah-cta__grid > *, .ah-plans > *, .ah-modes > *"
+  );
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("is-in");
+      io.unobserve(en.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  var vh = window.innerHeight;
+  for (var j = 0; j < targets.length; j++) {
+    var t = targets[j];
+    if (t.getBoundingClientRect().top < vh) continue;
+    var sibs = t.parentElement ? Array.prototype.indexOf.call(t.parentElement.children, t) : 0;
+    t.style.transitionDelay = Math.min(sibs, 5) * 70 + "ms";
+    t.classList.add("ah-reveal");
+    io.observe(t);
+  }
+})();
+</script>
 </body>
 </html>

@@ -1111,5 +1111,82 @@ details p {
   </div>
 </footer>
 </main>
+<script data-ah="routes">
+(function () {
+  if (window.__ahRoutesBound) return;
+  window.__ahRoutesBound = true;
+  var doc = document.documentElement;
+
+  /* Rotte: su AFAI "./societa" e' lo stepPath della pagina. Aperte come file
+     (repo, anteprima locale, hosting statico) le pagine si chiamano
+     "01-societa.html": qui i link vengono tradotti. Moduli e Demo non hanno
+     piu' uno stepPath e portano al form "Richiedi info". */
+  var FILES = {
+    "home": "00-home.html",
+    "societa": "01-societa.html",
+    "arcieri": "02-arcieri.html",
+    "tecnici": "05-tecnici.html",
+    "termini-e-condizioni": "06-termini-e-condizioni.html",
+    "cookie-policy": "07-cookie-policy.html",
+    "moduli": "01-societa.html#richiedi-info",
+    "demo": "01-societa.html#richiedi-info"
+  };
+  var asFiles = location.protocol === "file:" || /\.html?$/i.test(location.pathname);
+  var links = document.querySelectorAll('a[href^="./"]');
+  for (var i = 0; i < links.length; i++) {
+    var m = links[i].getAttribute("href").match(/^\.\/([a-z0-9-]+)\/?(#[^?]*)?$/i);
+    if (!m) continue;
+    var step = m[1].toLowerCase();
+    if (step === "moduli" || step === "demo") {
+      links[i].setAttribute("href", asFiles ? FILES[step] : "./societa#richiedi-info");
+    } else if (asFiles && FILES[step]) {
+      links[i].setAttribute("href", FILES[step] + (m[2] || ""));
+    }
+  }
+
+  /* Barra di navigazione: ombra dopo lo scroll, Esc chiude il menu. */
+  var nav = document.querySelector(".ah-nav");
+  if (nav) {
+    var onScroll = function () { nav.classList.toggle("is-scrolled", window.scrollY > 8); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || !nav.classList.contains("is-open")) return;
+      nav.classList.remove("is-open");
+      var btn = nav.querySelector(".ah-menu");
+      if (btn) { btn.setAttribute("aria-expanded", "false"); btn.focus(); }
+    });
+  }
+
+  var year = document.querySelector("[data-ah-year]");
+  if (year) year.textContent = new Date().getFullYear();
+
+  /* Comparsa dei blocchi allo scroll (senza JS o con movimento ridotto
+     tutto resta visibile). */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  var targets = document.querySelectorAll(
+    ".ah-section__header, .ah-mess__card, .ah-role, .ah-hub__center, .ah-feature__copy, .ah-feature__visual, " +
+    ".ah-card, .ah-step, .ah-compare > *, .ah-form-box, .ah-faq-grid > *, .ah-ages > *, .ah-easy > *, " +
+    ".ah-statement > *, .ah-cta__grid > *, .ah-plans > *, .ah-modes > *"
+  );
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("is-in");
+      io.unobserve(en.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  var vh = window.innerHeight;
+  for (var j = 0; j < targets.length; j++) {
+    var t = targets[j];
+    if (t.getBoundingClientRect().top < vh) continue;
+    var sibs = t.parentElement ? Array.prototype.indexOf.call(t.parentElement.children, t) : 0;
+    t.style.transitionDelay = Math.min(sibs, 5) * 70 + "ms";
+    t.classList.add("ah-reveal");
+    io.observe(t);
+  }
+})();
+</script>
 </body>
 </html>
